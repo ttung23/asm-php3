@@ -23,6 +23,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('categories.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Categories</a>
                     </li>
+                    <li class="nav-item">
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button class="mdi mdi-sitemap mr-2">Logout</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
