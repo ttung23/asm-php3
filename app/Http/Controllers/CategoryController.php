@@ -34,7 +34,7 @@ class CategoryController extends Controller
             'material' => 'required',
             'description' => 'required',
         ]);
-        Product::create($request->post());
+        Category::create($request->post());
 
         return redirect()->route('categories.index')->with('success','Company has been created successfully.');
     }
@@ -52,7 +52,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        $categorie = Product::find($id);
+        $categorie = Category::find($id);
         return view('categories.edit', compact('categorie'));
     }
 
@@ -66,7 +66,7 @@ class CategoryController extends Controller
             'rate' => 'required',
         ]);
 
-        $categorie = Product::find($id);
+        $categorie = Category::find($id);
         $categorie->fill($request->post())->save();
 
         return redirect()->route('categories.index')->with('success','Company Has Been updated successfully');
@@ -77,7 +77,7 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        Product::find($id)->delete();
+        Category::find($id)->delete();
         return redirect()->route('categories.index')->with('success','Company Has Been updated successfully');
     }
 }
