@@ -20,9 +20,15 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('products.index') }}"><i class="mdi mdi-account-circle-outline mr-2"></i>Products</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('categories.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Categories</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('profile.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Users</a>
+                    </li>
+
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
