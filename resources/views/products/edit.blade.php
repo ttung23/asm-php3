@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Categpry ID</strong>
+                        <strong>Categpry</strong>
                         <input type="number" name="cate_id" class="form-control" placeholder="Category" value="{{ $product->cate_id  }}">
                         @error('cate_id')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>

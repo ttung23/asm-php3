@@ -19,6 +19,9 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Quantity of product</th>
+                    <th>Updated at</th>
+                    <th>Created at</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -27,8 +30,8 @@
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->quantity_of_products }}</td>
+                        <td>{{ $category->updated_at }}</td>
                         <td>{{ $category->created_at }}</td>
-                        <td></td>
                         <td>
                             <a href="{{ route('categories.edit', $category) }}">Edit</a>
                             <form action="{{ route('categories.destroy', $category->id) }}" method="POST">

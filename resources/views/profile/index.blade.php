@@ -19,6 +19,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>

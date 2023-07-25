@@ -18,7 +18,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Category ID</th>
+                    <th>Category</th>
                     <th>Material</th>
                     <th>Rate</th>
                     <th>Price</th>
@@ -33,7 +33,7 @@
                     <tr>
                         <td>{{ $product->id }}</td>
                         <td>{{ $product->name }}</td>
-                        <td>{{ $product->cate_id }}</td>
+                        <td>{{ $product->cate_name }}</td>
                         <td>{{ $product->rate }}</td>
                         <td>{{ $product->material }}</td>
                         <td>{{ $product->price }}</td>

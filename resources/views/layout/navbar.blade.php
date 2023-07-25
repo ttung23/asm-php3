@@ -32,7 +32,7 @@
                     <li class="nav-item">
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button class="mdi mdi-sitemap mr-2">Logoutt</button>
+                            <button class="mdi mdi-sitemap mr-2">Logout</button>
                         </form>
                     </li>
                 </ul>
