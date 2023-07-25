@@ -27,16 +27,11 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => "required|string|max:50|",
-            'cate_id' => 'required',
-            'rate' => 'required',
-            'price' => 'required',
-            'material' => 'required',
-            'description' => 'required',
+            'name' => "required|string|max:50|"
         ]);
         Category::create($request->post());
 
-        return redirect()->route('categories.index')->with('success','Company has been created successfully.');
+        return redirect()->route('categories.index')->with('success','Category has been created successfully.');
     }
 
     /**
