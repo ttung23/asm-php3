@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [GuestController::class, 'home'])->name('home');
+Route::get('/detail/{id}', [GuestController::class, 'detail'])->name('detail');
 
 Route::get('/login', [UserController::class, 'login'])->name('users.login');
 Route::post('/authen', [UserController::class, 'authen'])->name('users.authen');

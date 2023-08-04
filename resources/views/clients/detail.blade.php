@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
 
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
-    <title>Tung & Lam</title>
+    <title>{{ $product->name }}</title>
     <meta name='robots' content='noindex, nofollow'/>
     <link rel='dns-prefetch' href='http://stats.wp.com/'/>
     <link rel='dns-prefetch' href='http://fonts.googleapis.com/'/>
@@ -17,6 +17,8 @@
           href="https://neytri.wpengine.com/feed/"/>
     <link rel="alternate" type="application/rss+xml" title="Neytri Site &raquo; Comments Feed"
           href="https://neytri.wpengine.com/comments/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="Neytri Site &raquo; Summer Suit Comments Feed"
+          href="https://neytri.wpengine.com/product/summer-suit/feed/"/>
     <script type="text/javascript">
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/",
@@ -503,6 +505,9 @@
             line-height: 1.6;
         }
     </style>
+    <link rel='stylesheet' id='contact-form-7-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.7'
+          type='text/css' media='all'/>
     <link rel='stylesheet' id='neytri-plus-elementor-css'
           href='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/elementor/assets/css/elementor.css?ver=1.0.2'
           type='text/css' media='all'/>
@@ -543,6 +548,12 @@
             --wdt-elementor-typo-accent-font-weight: 500;
         }
     </style>
+    <link rel='stylesheet' id='photoswipe-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipe.min.css?ver=7.8.0'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='photoswipe-default-skin-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skin.min.css?ver=7.8.0'
+          type='text/css' media='all'/>
     <link rel='stylesheet' id='woocommerce-layout-css'
           href='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=7.8.0'
           type='text/css' media='all'/>
@@ -608,8 +619,8 @@
     <link rel='stylesheet' id='elementor-global-css'
           href='https://neytri.wpengine.com/wp-content/uploads/elementor/css/global.css?ver=1687868352' type='text/css'
           media='all'/>
-    <link rel='stylesheet' id='elementor-post-500-css'
-          href='https://neytri.wpengine.com/wp-content/uploads/elementor/css/post-500.css?ver=1687922894'
+    <link rel='stylesheet' id='elementor-post-858-css'
+          href='https://neytri.wpengine.com/wp-content/uploads/elementor/css/post-858.css?ver=1688118998'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='3c10ce638b3032a2784975cd3339db7e-css'
           href='http://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&amp;subset=latin-ext'
@@ -745,693 +756,7 @@
     <link rel='stylesheet' id='neytri-woo-css'
           href='https://neytri.wpengine.com/wp-content/themes/neytri/modules/woocommerce/assets/css/default.css?ver=1.0.1'
           type='text/css' media='all'/>
-    <style id='neytri-woo-cart-notification-inline-css' type='text/css'>
-
-
-        /*--------------------------------------------------------------*/
-        /* #region - Add-to-Cart Notification Widget */
-        /*--------------------------------------------------------------*/
-
-        .wdt-shop-cart-widget.cart-notification-widget, .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-inner,
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content {
-            float: left;
-            width: 100%;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button {
-            font-size: 0;
-            height: 25px;
-            line-height: 0;
-            position: absolute;
-            right: 3px;
-            top: 3px;
-            text-align: center;
-            width: 25px;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button:before {
-            content: "\2716";
-            display: block;
-            font-size: 14px;
-            font-weight: normal;
-            line-height: 25px;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget {
-            max-width: 500px;
-            position: fixed;
-            bottom: 32px;
-            left: 18px;
-            width: auto;
-            z-index: 999;
-            -webkit-transition: var(--wdtBaseTransition);
-            transition: var(--wdtBaseTransition);
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-inner {
-            padding: 20px;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content > * {
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-thumb {
-            line-height: 0;
-            padding: 0 10px;
-            width: 120px;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-info {
-            padding: 5px 10px;
-            text-align: left;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-thumb a,
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-thumb a img {
-            display: block;
-            width: 100%;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-info a {
-            display: block;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget.wdt-shop-cart-widget-active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-
-        .wdt-shop-cart-widget.cart-notification-widget {
-            background-color: var(--wdtBodyBGColor);
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button:before {
-            color: var(--wdtAccentTxtColor);
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget {
-            -webkit-box-shadow: 0 1px 3px 1px rgba(var(--wdtHeadAltColorRgb), 0.25);
-            box-shadow: 0 1px 3px 1px rgba(var(--wdtHeadAltColorRgb), 0.25);
-        }
-
-        /* #endregion - Add-to-Cart Notification Widget */
-
-
-        /*--------------------------------------------------------------*/
-        /* #region - Add-to-Cart Sidebar Widget */
-        /*--------------------------------------------------------------*/
-
-        .wdt-shop-cart-widget.activate-sidebar-widget {
-            height: 100%;
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: 350px;
-            z-index: 999992;
-            -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-            -webkit-transition: var(--wdtBaseTransition);
-            transition: var(--wdtBaseTransition);
-        }
-
-        .wdt-shop-cart-widget.activate-sidebar-widget:before {
-            content: "";
-        }
-
-        .wdt-shop-cart-widget.activate-sidebar-widget.wdt-shop-cart-widget-active {
-            -webkit-transform: translateX(0);
-            transform: translateX(0);
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-inner {
-            height: 100%;
-            padding: 45px 0 120px;
-            position: relative;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header {
-            border-width: 0 0 1px;
-            padding-left: 15px;
-            padding-right: 45px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 {
-            font-size: 15px;
-            font-weight: bold;
-            line-height: 45px;
-            margin: 0;
-            text-transform: uppercase;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 span, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header a {
-            height: 45px;
-            position: absolute;
-            top: 0;
-            text-align: center;
-            width: 45px;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 span {
-            font-size: 18px;
-            right: 0;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a {
-            font-size: 0;
-            line-height: 0;
-            margin-right: 1px;
-            overflow: hidden;
-            right: 100%;
-            text-indent: -9999px;
-            -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a:before {
-            content: "\2716";
-            display: block;
-            font-size: 15px;
-            font-weight: normal;
-            line-height: 45px;
-            text-indent: 0;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"].activate-sidebar-widget:hover .wdt-shop-cart-widget-header h3 a {
-            -webkit-transform: translateX(0);
-            transform: translateX(0);
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content {
-            float: left;
-            width: 100%;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-inner,
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget,
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li {
-            float: left;
-            width: 100%;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget,
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .total {
-            padding: 0 15px;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li {
-            border-width: 1px 0;
-            display: inline;
-            margin: -1px 0 0 !important;
-            padding: 15px 25px 15px 50px;
-            position: relative;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li:first-child {
-            border-top-width: 0;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li:last-child {
-            border-bottom-width: 0;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a:not(.remove) {
-            font-weight: 600;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a img {
-            margin: auto;
-            position: absolute;
-            left: 0;
-            top: 16px;
-            width: 40px;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove {
-            font-size: 16px;
-            height: 20px;
-            line-height: 20px;
-            margin: auto;
-            position: absolute;
-            bottom: 0;
-            left: auto;
-            right: 0;
-            top: 0 !important;
-            text-align: center;
-            width: 20px;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove:not(:focus) {
-            text-decoration: none;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li:before {
-            content: none !important;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li .quantity {
-            display: table;
-            margin: 0;
-            font-size: 14px;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer::before {
-            content: "";
-            height: 1px;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            width: auto;
-            z-index: -1;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p {
-            height: 50px;
-            line-height: 50px;
-            margin: 0;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.total {
-            padding: 0 15px;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.total strong {
-            float: left;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.total .amount {
-            float: right;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons {
-            display: flex;
-            grid-gap: 1px;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons a {
-            height: 100%;
-            line-height: inherit;
-            margin: 0;
-            padding-top: 0;
-            padding-bottom: 0;
-            text-align: center;
-            width: 50%;
-            -webkit-border-radius: 0;
-            border-radius: 0;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart__empty-message {
-            margin: 0;
-            padding: 15px;
-        }
-
-        .wdt-shop-cart-widget-overlay {
-            background-color: rgba(var(--wdtHeadAltColorRgb), 0.7);
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 999991;
-            -webkit-transition: opacity .25s ease, visibility 0s ease .25s;
-            transition: opacity .25s ease, visibility 0s ease .25s;
-        }
-
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li {
-            border-style: solid;
-        }
-
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove, .wdt-shop-cart-widget-overlay {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"].activate-sidebar-widget:hover .wdt-shop-cart-widget-header h3 a,
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li:hover a.remove,
-        .wdt-shop-cart-widget.activate-sidebar-widget.wdt-shop-cart-widget-active + .wdt-shop-cart-widget-overlay {
-            opacity: 1;
-            visibility: visible;
-        }
-
-
-        /* Default Color - Colors */
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a:not(.remove):not(:hover),
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.total .amount {
-            color: var(--wdtHeadAltColor);
-        }
-
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a:hover {
-            color: var(--wdtAccentTxtColor);
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove {
-            color: var(--wdtAccentTxtColor) !important;
-        }
-
-
-        /* Default Color - Borders */
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer::before {
-            -webkit-box-shadow: 0 2px 6px 0 rgba(var(--wdtHeadAltColorRgb), 0.5);
-            box-shadow: 0 2px 6px 0 rgba(var(--wdtHeadAltColorRgb), 0.5);
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li {
-            border-color: rgba(var(--wdtHeadAltColorRgb), 0.075);
-        }
-
-
-        /* Default Color - BG */
-        .wdt-shop-cart-widget.activate-sidebar-widget {
-            background-color: #f7f7f7;
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer {
-            background-color: var(--wdtBodyBGColor);
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons a.checkout, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove,
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons a:not(.checkout),
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons a:hover, .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button {
-            background-color: var(--wdtHeadAltColor);
-        }
-
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 span {
-            background-color: rgba(var(--wdtBodyBGColorRgb), 0.15);
-        }
-
-        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button:hover,
-        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove:hover {
-            background-color: #9f2124;
-        }
-
-
-        /* #endregion - Add-to-Cart Sidebar Widget */
-
-        .wdt-shop-cart-widget.activate-sidebar-widget .wdt-shop-cart-widget-inner .wdt-shop-cart-widget-header .wdt-shop-cart-widget-close-button {
-            background: transparent;
-        }
-
-
-        /*--------------------------------------------------------------*/
-        /* #region - Responsive */
-        /*--------------------------------------------------------------*/
-
-        /*----*****---- << Mobile (Landscape) >> ----*****----*/
-
-        /* Common Styles for the devices below 767px width */
-        @media only screen and (max-width: 767px) {
-
-            .wdt-shop-cart-widget.cart-notification-widget {
-                margin: auto;
-                bottom: 5px;
-                left: 0;
-                right: 0;
-            }
-
-        }
-
-
-        /* Note: Design for a width of 480px */
-        @media only screen and (min-width: 480px) and (max-width: 767px) {
-
-            .wdt-shop-cart-widget.cart-notification-widget {
-                max-width: 420px;
-            }
-
-        }
-
-        /* Common Styles for the devices below 479px width */
-        @media only screen and (max-width: 479px) {
-
-            .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content > * {
-                display: table;
-                margin: auto;
-                text-align: center !important;
-            }
-
-            .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-info {
-                font-size: 11px;
-            }
-
-            .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-info a {
-                font-size: 13px;
-            }
-
-
-            .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a {
-                right: 0;
-                -webkit-border-radius: 50%;
-                border-radius: 50%;
-                -webkit-transform: scale(0);
-                transform: scale(0);
-            }
-
-            .wdt-shop-cart-widget[class*="sidebar"].activate-sidebar-widget:hover .wdt-shop-cart-widget-header h3 a {
-                -webkit-border-radius: 0;
-                border-radius: 0;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-
-        }
-
-        /*----*****---- << Mobile >> ----*****----*/
-
-        /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-        @media only screen and (min-width: 320px) and (max-width: 479px) {
-
-            .wdt-shop-cart-widget.cart-notification-widget {
-                max-width: 290px;
-            }
-
-
-            .wdt-shop-cart-widget.activate-sidebar-widget {
-                max-width: 290px;
-            }
-
-            .wdt-shop-cart-widget.activate-sidebar-widget {
-                width: 290px;
-            }
-
-        }
-
-
-        /* #endregion - Responsive */
-
-    </style>
-    <link rel='stylesheet' id='neytri-plus-blog-css'
-          href='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/blog/assets/css/blog.css?ver=1.0.2'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='dtplugin-nav-menu-animations-css'
-          href='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/menu/assets/css/nav-menu-animations.css?ver=1.0.2'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='dtplugin-nav-menu-css'
-          href='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/menu/assets/css/nav-menu.css?ver=1.0.2'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='neytri-pro-advance-field-css'
-          href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/advance-field/assets/css/style.css?ver=1.0.0'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='neytri-pro-blog-css'
-          href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/blog/assets/css/blog.css?ver=1.0.0'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='jquery-select2-css'
-          href='https://neytri.wpengine.com/wp-content/themes/neytri/assets/lib/select2/select2.css?ver=1.0.1'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='neytri-theme-css'
-          href='https://neytri.wpengine.com/wp-content/themes/neytri/assets/css/theme.css?ver=1.0.1' type='text/css'
-          media='all'/>
-    <style id='neytri-admin-inline-css' type='text/css'>
-        .custom_loader {
-            background-color: var(--wdtBodyBGColor);
-        }
-
-        .custom_loader:before {
-            background-color: var(--wdtTertiaryColor);
-        }
-
-        body {
-            font-family: 'Jost', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 1.63;
-            color: #808080;
-        }
-
-        a {
-            color: #000000;
-        }
-
-        a:hover {
-            color: #9e9e9e;
-        }
-
-        h1 {
-            font-family: 'Jost', sans-serif;
-            font-weight: 600;
-            font-size: 55px;
-            line-height: 1.3;
-            color: #000000;
-        }
-
-        h2 {
-            font-family: 'Jost', sans-serif;
-            font-weight: 600;
-            font-size: 45px;
-            line-height: 1.3;
-            color: #000000;
-        }
-
-        h3 {
-            font-family: 'Jost', sans-serif;
-            font-weight: 600;
-            font-size: 35px;
-            line-height: 1.3;
-            color: #000000;
-        }
-
-        h4 {
-            font-family: 'Jost', sans-serif;
-            font-weight: 600;
-            font-size: 25px;
-            line-height: 1.3;
-            color: #000000;
-        }
-
-        h5 {
-            font-family: 'Jost', sans-serif;
-            font-weight: 600;
-            font-size: 20px;
-            line-height: 1.3;
-            color: #000000;
-        }
-
-        h6 {
-            font-family: 'Jost', sans-serif;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 1.3;
-            color: #000000;
-        }
-
-    </style>
-    <link rel='stylesheet' id='google-fonts-1-css'
-          href='https://fonts.googleapis.com/css?family=Jost%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CWaterfall%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.2.2'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='elementor-icons-shared-0-css'
-          href='https://neytri.wpengine.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='elementor-icons-fa-regular-css'
-          href='https://neytri.wpengine.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3'
-          type='text/css' media='all'/>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <script type='text/javascript'
-            src='https://neytri.wpengine.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2'
-            id='wp-polyfill-inert-js'></script>
-    <script type='text/javascript'
-            src='https://neytri.wpengine.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11'
-            id='regenerator-runtime-js'></script>
-    <script type='text/javascript'
-            src='https://neytri.wpengine.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0'
-            id='wp-polyfill-js'></script>
-    <script type='text/javascript'
-            src='https://neytri.wpengine.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5'
-            id='wp-hooks-js'></script>
-    <script type='text/javascript' src='https://stats.wp.com/w.js?ver=202326' id='woo-tracks-js'></script>
-    <script type='text/javascript' src='https://neytri.wpengine.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4'
-            id='jquery-core-js'></script>
-    <script type='text/javascript'
-            src='https://neytri.wpengine.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0'
-            id='jquery-migrate-js'></script>
-    <link rel="https://api.w.org/" href="https://neytri.wpengine.com/wp-json/"/>
-    <link rel="alternate" type="application/json" href="https://neytri.wpengine.com/wp-json/wp/v2/pages/500"/>
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://neytri.wpengine.com/xmlrpc.php?rsd"/>
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
-          href="https://neytri.wpengine.com/wp-includes/wlwmanifest.xml"/>
-    <link rel="canonical" href="https://neytri.wpengine.com/home-3/"/>
-    <link rel='shortlink' href='https://neytri.wpengine.com/?p=500'/>
-    <link rel="alternate" type="application/json+oembed"
-          href="https://neytri.wpengine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fneytri.wpengine.com%2Fhome-3%2F"/>
-    <link rel="alternate" type="text/xml+oembed"
-          href="https://neytri.wpengine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fneytri.wpengine.com%2Fhome-3%2F&amp;format=xml"/>
-    <noscript>
-        <style>.woocommerce-product-gallery {
-                opacity: 1 !important;
-            }</style>
-    </noscript>
-    <meta name="generator"
-          content="Elementor 3.14.1; features: e_optimized_assets_loading, e_optimized_css_loading, a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
-    <link rel="icon" href="https://neytri.wpengine.com/wp-content/uploads/2023/06/Fav-Icon.png" sizes="32x32"/>
-    <link rel="icon" href="https://neytri.wpengine.com/wp-content/uploads/2023/06/Fav-Icon.png" sizes="192x192"/>
-    <link rel="apple-touch-icon" href="https://neytri.wpengine.com/wp-content/uploads/2023/06/Fav-Icon.png"/>
-    <meta name="msapplication-TileImage" content="https://neytri.wpengine.com/wp-content/uploads/2023/06/Fav-Icon.png"/>
-    <script>
-        var woocs_is_mobile = 0;
-        var woocs_special_ajax_mode = 0;
-        var woocs_drop_down_view = "ddslick";
-        var woocs_current_currency = {
-            "name": "USD",
-            "rate": 1,
-            "symbol": "&#36;",
-            "position": "left",
-            "is_etalon": 1,
-            "hide_cents": 0,
-            "hide_on_front": 0,
-            "rate_plus": "",
-            "decimals": 2,
-            "separators": "0",
-            "description": "USA dollar",
-            "flag": "https:\/\/neytri.wpengine.com\/wp-content\/plugins\/woocommerce-currency-switcher\/img\/no_flag.png"
-        };
-        var woocs_default_currency = {
-            "name": "USD",
-            "rate": 1,
-            "symbol": "&#36;",
-            "position": "left",
-            "is_etalon": 1,
-            "hide_cents": 0,
-            "hide_on_front": 0,
-            "rate_plus": "",
-            "decimals": 2,
-            "separators": "0",
-            "description": "USA dollar",
-            "flag": "https:\/\/neytri.wpengine.com\/wp-content\/plugins\/woocommerce-currency-switcher\/img\/no_flag.png"
-        };
-        var woocs_redraw_cart = 1;
-        var woocs_array_of_get = '{}';
-
-        woocs_array_no_cents = '["JPY","TWD"]';
-
-        var woocs_ajaxurl = "https://neytri.wpengine.com/wp-admin/admin-ajax.php";
-        var woocs_lang_loading = "loading";
-        var woocs_shop_is_cached = 0;
-    </script>
-    <style id='neytri-woo-non-archive-inline-css' type='text/css'>
+    <style id='neytri-woo-inline-css' type='text/css'>
 
 
         /*--------------------------------------------------------------*/
@@ -3585,836 +2910,6 @@
         /* #endregion - Accents */
 
 
-        /*--------------------------------------------------------------*/
-        /* #region - Responsive */
-        /*--------------------------------------------------------------*/
-
-        /* Note: Design for a width of 960px */
-        @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-
-            .woocommerce table.shop_table th, .woocommerce-page table.shop_table th,
-            .woocommerce table.shop_table td, .woocommerce-page table.shop_table td,
-            .woocommerce table.shop_table tbody th, .woocommerce table.shop_table tfoot th, .woocommerce table.shop_table tfoot td {
-                font-weight: normal;
-            }
-
-        }
-
-        /*----*****---- << Tablet >> ----*****----*/
-
-        /* Note: Design for a width of 768px */
-        @media only screen and (min-width: 768px) and (max-width: 1280px) {
-
-            .woocommerce .page-with-sidebar table.shop_table,
-            .woocommerce .page-with-sidebar table.shop_table tbody,
-            .woocommerce .page-with-sidebar table.shop_table tfoot,
-            .woocommerce .page-with-sidebar table.shop_table tr,
-            .woocommerce .page-with-sidebar table.shop_table tr th,
-            .woocommerce .page-with-sidebar table.shop_table tr td {
-                display: block;
-                margin: 10px 0 0;
-                text-align: center;
-                width: 100%;
-            }
-
-            .woocommerce .page-with-sidebar table.shop_table tr {
-                display: block;
-                overflow: hidden;
-                position: relative;
-            }
-
-            .page-with-sidebar .woocommerce table.shop_table tbody tr:last-child td:last-child,
-            .woocommerce-page .page-with-sidebar table.shop_table tbody tr:last-child td:last-child {
-                padding-top: 0 !important;
-            }
-
-            .page-with-sidebar .woocommerce table.shop_table tr td.product-remove {
-                background-color: var(--wdtBodyBGColor);
-                border: 1px solid rgba(var(--wdtHeadAltColorRgb), 0.15) !important;
-                border-right-width: 1px;
-                border-radius: 5px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 45px !important;
-                line-height: 45px;
-                margin: auto;
-                padding: 0;
-                padding-top: 0px;
-                position: absolute;
-                right: 20px;
-                text-align: center;
-                top: 20px;
-                width: 45px !important;
-                z-index: 1;
-            }
-
-            .woocommerce .page-with-sidebar table.shop_table tr td.product-thumbnail {
-                line-height: 0;
-                margin: 0;
-                padding: 15px;
-                width: 100% !important;
-            }
-
-            .woocommerce .page-with-sidebar form.woocommerce input[type="hidden"] + table.shop_table {
-                margin-top: 0;
-            }
-
-            .woocommerce .page-with-sidebar table.shop_table tr th,
-            body .woocommerce .page-with-sidebar table.shop_table tr td {
-                border-bottom-width: 0;
-                border-left-width: 0;
-                border-width: 0;
-                float: left;
-                height: auto !important;
-                margin-bottom: 20px;
-                padding: 5px 15px;
-                text-align: left;
-                width: auto !important;
-            }
-
-            .page-with-sidebar .woocommerce table.shop_table tr td.product-thumbnail {
-                font-size: 18px;
-            }
-
-            .page-with-sidebar .woocommerce .shop_table .product-thumbnail a {
-                display: inline-block;
-                margin: 0;
-                max-width: 100%;
-            }
-
-            .page-with-sidebar .woocommerce table.shop_table tr td.product-thumbnail img {
-                width: 100%;
-                height: auto;
-            }
-
-            .page-with-sidebar .woocommerce table.shop_table tr td > label,
-            .page-with-sidebar .woocommerce-page table.shop_table tr td > label {
-                display: block;
-                font-size: calc(var(--wdtFontSize_Base) - 2px);
-                font-weight: 700;
-                line-height: normal;
-                margin-bottom: 10px;
-                width: 100%;
-            }
-
-            .page-with-sidebar .woocommerce table.shop_table tr td.product-quantity,
-            .page-with-sidebar .woocommerce table.shop_table tr td.product-price {
-                display: table-cell;
-                float: none;
-                text-align: center;
-                vertical-align: middle;
-                width: 1% !important;
-            }
-
-            .page-with-sidebar .woocommerce table.shop_table tr td.product-subtotal {
-                border-style: solid;
-                border-bottom-style: solid;
-                border-width: 1px 0 0;
-                border-bottom-width: 0px;
-                display: block;
-                margin: 10px 0 0;
-                padding: 20px 15px;
-            }
-
-            .page-with-sidebar .woocommerce table.shop_table tr th,
-            body .page-with-sidebar .woocommerce table.shop_table tr td {
-                border-width: 0;
-            }
-
-            .page-with-sidebar .woocommerce table.shop_table,
-            .page-with-sidebar .woocommerce table.shop_table tbody,
-            .page-with-sidebar .woocommerce table.shop_table tfoot,
-            .page-with-sidebar .woocommerce table.shop_table tr,
-            .page-with-sidebar .woocommerce table.shop_table tr th,
-            .page-with-sidebar .woocommerce table.shop_table tr td {
-                margin-bottom: 15px;
-            }
-
-            .woocommerce .page-with-sidebar form .form-row,
-            .woocommerce-page .page-with-sidebar form .form-row {
-                padding: 0;
-            }
-
-            .woocommerce .page-with-sidebar form .form-row-first,
-            .woocommerce-page .page-with-sidebar form .form-row-first,
-            .woocommerce .page-with-sidebar form .form-row-last,
-            .woocommerce-page .page-with-sidebar form .form-row-last {
-                width: 100%;
-            }
-
-
-            .woocommerce .page-with-sidebar .woocommerce-message,
-            .woocommerce .page-with-sidebar .woocommerce-info,
-            .woocommerce .page-with-sidebar .woocommerce-error {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-            }
-
-            .woocommerce .page-with-sidebar .woocommerce-error > a:not(.button),
-            .woocommerce .page-with-sidebar .woocommerce-info > a:not(.button),
-            .woocommerce .page-with-sidebar .woocommerce-message > a:not(.button) {
-                text-decoration: underline;
-            }
-
-            .woocommerce .page-with-sidebar .woocommerce-error > a,
-            .woocommerce .page-with-sidebar .woocommerce-info > a,
-            .woocommerce .page-with-sidebar .woocommerce-message > a {
-                display: block;
-                margin-left: 0;
-                order: 1;
-                -webkit-box-shadow: none !important;
-                box-shadow: none !important;
-            }
-
-
-            .page-with-sidebar .woocommerce table.shop_table.order_details tbody tr td,
-            .woocommerce-page .page-with-sidebar table.shop_table.order_details tbody tr td,
-            .page-with-sidebar .woocommerce table.shop_table.order_details tfoot tr:not(:last-child) th,
-            .woocommerce-page .page-with-sidebar table.shop_table.order_details tfoot tr:not(:last-child) th,
-            .page-with-sidebar .woocommerce table.shop_table.order_details tfoot tr:not(:last-child) td,
-            .woocommerce-page .page-with-sidebar table.shop_table.order_details tfoot tr:not(:last-child) td {
-                border-bottom: 1px solid rgba(var(--wdtHeadAltColorRgb), 0.15);
-            }
-
-            .woocommerce-page .page-with-sidebar .woocommerce-order-details {
-                padding: 25px 20px;
-            }
-
-        }
-
-
-        @media only screen and (min-width: 768px) and (max-width: 1024px) {
-
-            .woocommerce table.shop_table tbody th,
-            .woocommerce table.shop_table th, .woocommerce table.shop_table td,
-            .woocommerce-page table.shop_table th, .woocommerce-page table.shop_table td,
-            .woocommerce table.shop_table tfoot th, .woocommerce table.shop_table tfoot td {
-                font-weight: normal;
-            }
-
-            .woocommerce table.shop_table td, .woocommerce-page table.shop_table td,
-            .woocommerce table.shop_table thead th, .woocommerce-page table.shop_table thead th {
-                padding: 20px 10px;
-            }
-
-            .woocommerce .shop_table tr td.product-stock-status > span {
-                font-size: 10px;
-                line-height: 20px;
-            }
-
-
-            .woocommerce table.shop_table tbody td .quantity.quantity-with-plusminus input[type="button"],
-            .woocommerce-page table.shop_table tbody td .quantity.quantity-with-plusminus input[type="button"] {
-                width: 30px;
-            }
-
-            .woocommerce table.shop_table tbody td .quantity.quantity-with-plusminus input.qty,
-            .woocommerce-page table.shop_table tbody td .quantity.quantity-with-plusminus input.qty {
-                width: 35px;
-            }
-
-
-            /* .page-with-sidebar .woocommerce .order_details li:not(:last-child) { border-color: rgba(var(--wdtHeadAltColorRgb),0.15); border-style: solid; border-width: 0 0 1px; font-size: calc(var(--wdtFontSize_Base) - 3px); margin-bottom: 10px; margin-top: 10px; width: 100%; }
-
-        .page-with-sidebar .woocommerce .order_details li:first-child { margin-top: 0; margin-right: 0; }
-
-        .woocommerce .order_details li strong { font-size: 1.25em; } */
-
-        }
-
-
-        @media only screen and (max-width: 768px) {
-
-            .woocommerce .woocommerce-message, .woocommerce .woocommerce-info, .woocommerce .woocommerce-error {
-                display: table;
-                text-align: center;
-                width: 100%;
-            }
-
-            .woocommerce .woocommerce-error .button, .woocommerce .woocommerce-info .button, .woocommerce .woocommerce-message .button {
-                display: table-footer-group;
-                float: none;
-                text-decoration: underline;
-                -webkit-box-shadow: none !important;
-                box-shadow: none !important;
-            }
-
-            .woocommerce ul.products li.product, .woocommerce ul.products[class*="columns-"] li.product,
-            .woocommerce-page ul.products li.product, .woocommerce-page ul.products[class*="columns-"] li.product {
-                margin: 0;
-                width: 100%;
-            }
-
-            .woocommerce table.shop_table tr td::before,
-            .woocommerce-page table.shop_table tr td::before {
-                content: none;
-            }
-
-            .woocommerce-page .woocommerce-customer-details .addresses .woocommerce-column {
-                margin: 0 0 20px;
-            }
-
-        }
-
-        @media only screen and (min-width: 768px) {
-
-            /* Plugin Styles Override */
-            .woocommerce table.shop_table thead, .woocommerce-page table.shop_table thead {
-                display: table-header-group;
-            }
-
-            .woocommerce table.shop_table tr, .woocommerce-page table.shop_table tr {
-                display: table-row;
-            }
-
-            .woocommerce table.shop_table tbody th, .woocommerce-page table.shop_table tbody th,
-            .woocommerce table.shop_table tr td, .woocommerce-page table.shop_table tr td {
-                display: table-cell;
-            }
-
-            .woocommerce table.shop_table tr:nth-child(2n) td,
-            .woocommerce-page table.shop_table tr:nth-child(2n) td {
-                background: none;
-            }
-
-            .woocommerce table.shop_table tr td:not(:last-child), .woocommerce-page table.shop_table tr td:not(:last-child) {
-                text-align: left !important;
-            }
-
-
-            .woocommerce #content table.cart .product-thumbnail, .woocommerce table.cart .product-thumbnail, .woocommerce-page #content table.cart .product-thumbnail, .woocommerce-page table.cart .product-thumbnail {
-                display: table-cell;
-            }
-
-
-            .woocommerce-cart table.shop_table tr.cart-discount th,
-            .woocommerce-cart table.shop_table tr.cart-discount td {
-                vertical-align: middle;
-            }
-
-        }
-
-
-        /*----*****---- << Mobile (Landscape) >> ----*****----*/
-
-        /* Common Styles for the devices below 767px width */
-        @media only screen and (max-width: 767px) {
-
-            .woocommerce .pagination .column {
-                margin: 0 auto;
-                text-align: center;
-                width: 100%;
-            }
-
-            .woocommerce .pagination ul, .woocommerce .pagination ul li {
-                float: none;
-            }
-
-            .woocommerce .pagination ul li {
-                display: inline-block;
-            }
-
-            .woocommerce .woocommerce-message, .woocommerce .woocommerce-info, .woocommerce .woocommerce-error {
-                display: table;
-                text-align: center;
-                width: 100%;
-            }
-
-            .woocommerce .woocommerce-error .button, .woocommerce .woocommerce-info .button, .woocommerce .woocommerce-message .button {
-                display: table-footer-group;
-                float: none;
-                text-decoration: underline;
-                -webkit-box-shadow: none !important;
-                box-shadow: none !important;
-            }
-
-            .woocommerce .woocommerce-error > a, .woocommerce .woocommerce-info > a, .woocommerce .woocommerce-message > a {
-                display: block;
-                margin-left: 0;
-                -webkit-box-shadow: none !important;
-                box-shadow: none !important;
-            }
-
-            .woocommerce .woocommerce-error > a:not(.button), .woocommerce .woocommerce-info > a:not(.button), .woocommerce .woocommerce-message > a:not(.button) {
-                text-decoration: underline;
-            }
-
-
-            .woocommerce .product p.price del, .woocommerce-page .product p.price del,
-            .woocommerce div.product p.price del, .woocommerce-page div.product p.price del,
-            .woocommerce .product span.price del, .woocommerce-page .product span.price del,
-            .woocommerce div.product span.price del, .woocommerce-page div.product span.price del,
-            .woocommerce .product-price del, .woocommerce-page .product-price del {
-                font-size: 14px;
-            }
-
-            .woocommerce .product p.price, .woocommerce-page .product p.price,
-            .woocommerce div.product p.price, .woocommerce-page div.product p.price,
-            .woocommerce .product span.price, .woocommerce-page .product span.price,
-            .woocommerce div.product span.price, .woocommerce-page div.product span.price,
-            .woocommerce .product p.price ins, .woocommerce-page .product p.price ins,
-            .woocommerce div.product p.price ins, .woocommerce-page div.product p.price ins,
-            .woocommerce .product span.price ins, .woocommerce-page .product span.price ins,
-            .woocommerce div.product span.price ins, .woocommerce-page div.product span.price ins {
-                font-size: 16px;
-            }
-
-            .woocommerce div.product form.cart div.quantity .qty {
-                font-size: 14px;
-            }
-
-
-            /* #region - Plugin Style Override */
-            .woocommerce table.shop_table tr:nth-child(2n) td,
-            .woocommerce-page table.shop_table tr:nth-child(2n) td {
-                background: none;
-            }
-
-            .woocommerce table.shop_table tr td,
-            .woocommerce-page table.shop_table tr td {
-                text-align: inherit !important;
-            }
-
-            .woocommerce table.shop_table tr td:before,
-            .woocommerce-page table.shop_table tr td:before {
-                display: none;
-            }
-
-            /* #endregion */
-            .woocommerce table.shop_table tr {
-                display: block;
-                overflow: hidden;
-                position: relative;
-            }
-
-            .woocommerce table.shop_table th, .woocommerce-page table.shop_table th,
-            .woocommerce table.shop_table td, .woocommerce-page table.shop_table td,
-            .woocommerce table.shop_table tbody th, .woocommerce table.shop_table tfoot th,
-            .woocommerce table.shop_table tfoot td {
-                font-size: 16px;
-                font-weight: normal;
-            }
-
-            .woocommerce table.shop_table tr td.product-name[data-title="Product"] a {
-                font-size: calc(var(--wdtFontSize_Base) + 3px);
-                font-weight: var(--wdtFontWeight_Alt);
-            }
-
-            .woocommerce table.shop_table th, .woocommerce-page table.shop_table th,
-            .woocommerce table.shop_table tbody th, .woocommerce-page table.shop_table tbody th,
-            .woocommerce table.shop_table tfoot th, .woocommerce-page table.shop_table tfoot th {
-                font-size: 13px;
-            }
-
-            .woocommerce table.shop_table th, .woocommerce-page table.shop_table th {
-                text-align: center;
-            }
-
-            .woocommerce table.shop_table td, .woocommerce-page table.shop_table td {
-                padding: 0;
-            }
-
-
-            .woocommerce table.shop_table th, .woocommerce-page table.shop_table th,
-            .woocommerce .shop_table thead th:first-child, .woocommerce .shop_table thead th:last-child {
-                border-bottom-width: 0;
-                border-top: 1px solid transparent;
-            }
-
-            .woocommerce .shop_table .product-thumbnail a {
-                display: inline-block;
-                margin: 10px 0 0;
-            }
-
-            .woocommerce .shop_table td.product-name a,
-            .woocommerce .shop_table td.product-stock-status span, .woocommerce .shop_table tr.order td a {
-                display: inline-block;
-                margin-top: 18px;
-            }
-
-            .woocommerce .shop_table td.product-name a {
-                white-space: normal;
-            }
-
-            .woocommerce .shop_table td.product-price span, .woocommerce .shop_table td.product-subtotal span {
-                margin-top: 10px;
-                display: inline-block;
-            }
-
-            .woocommerce table.shop_table tr td.product-remove {
-                background-color: transparent;
-                border: 1px solid rgba(var(--wdtHeadAltColorRgb), 0.15) !important;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 45px !important;
-                line-height: 45px;
-                margin: auto;
-                padding: 0 !important;
-                position: absolute;
-                right: 15px;
-                text-align: center;
-                top: 15px;
-                width: 45px !important;
-                z-index: 1;
-            }
-
-            .woocommerce table.shop_table tr td.product-remove > div {
-                display: inherit;
-            }
-
-
-            .woocommerce table.shop_table, .woocommerce table.shop_table tbody, .woocommerce table.shop_table tfoot,
-            .woocommerce table.shop_table tr, .woocommerce table.shop_table tr th, .woocommerce table.shop_table tr td {
-                display: block;
-                text-align: center;
-                width: 100%;
-            }
-
-            .woocommerce table.shop_table tr th, body .woocommerce table.shop_table tr td {
-                border-width: 0;
-                float: left;
-                height: auto !important;
-                margin-bottom: 20px;
-                padding: 5px 15px;
-                text-align: left;
-                width: auto !important;
-            }
-
-            .woocommerce table.shop_table tr td:first-child, .woocommerce-page table.shop_table tr td:first-child {
-                padding-left: 15px;
-            }
-
-            .woocommerce table.shop_table tr td:last-child, .woocommerce-page table.shop_table tr td:last-child {
-                padding-right: 15px;
-            }
-
-
-            .woocommerce table.shop_table tr td.product-thumbnail {
-                line-height: 0;
-                margin: 0;
-                padding: 15px;
-                width: 100% !important;
-            }
-
-            .woocommerce #content table.cart .product-thumbnail, .woocommerce table.cart .product-thumbnail, .woocommerce-page #content table.cart .product-thumbnail, .woocommerce-page table.cart .product-thumbnail {
-                display: block;
-            }
-
-
-            .woocommerce table.shop_table tr td.product-thumbnail a {
-                display: inline-block;
-                margin: 0;
-                max-width: 100%;
-                width: 100%;
-            }
-
-            .woocommerce table.shop_table tr td.product-thumbnail img {
-                height: auto;
-                width: 100%;
-            }
-
-            .woocommerce table.shop_table tr td.product-name {
-                margin: 0 0 10px;
-            }
-
-            .woocommerce .shop_table td.product-name a, .woocommerce .shop_table tr.order td a, .woocommerce .shop_table td.product-stock-status span {
-                margin: 0;
-            }
-
-            .woocommerce table.shop_table tr td.product-quantity,
-            .woocommerce table.shop_table tr td.product-price {
-                display: table-cell;
-                float: none;
-                text-align: center;
-                vertical-align: middle;
-                width: 1% !important;
-            }
-
-
-            .woocommerce table.shop_table tr td.product-subtotal {
-                border-style: solid;
-                border-width: 1px 0 0;
-                display: block;
-                margin: 10px 0 0;
-                padding: 20px 15px 15px;
-            }
-
-            .woocommerce table.shop_table tr td.product-name, .woocommerce table.shop_table tr td.product-subtotal {
-                text-align: center;
-                width: 100% !important;
-            }
-
-            .woocommerce table.shop_table tr td > label, .woocommerce-page table.shop_table tr td > label {
-                display: block;
-                font-size: 14px;
-                font-weight: 600;
-                line-height: normal;
-                margin-bottom: 10px;
-                width: 100%;
-            }
-
-            .woocommerce .shop_table td.product-price span, .woocommerce .shop_table td.product-subtotal span {
-                margin: 0;
-                line-height: 30px;
-                height: 30px;
-            }
-
-            .woocommerce .shop_table td.product-price del > span {
-                display: unset;
-            }
-
-
-            .woocommerce .shop_table.order_details th, .woocommerce .shop_table.order_details td {
-                text-align: center;
-            }
-
-            .woocommerce table.shop_table.order_details thead th,
-            .woocommerce-page table.shop_table.order_details thead th {
-                border-bottom-width: 0;
-            }
-
-            .woocommerce .shop_table.order_details td.product-name a {
-                margin-top: 0;
-            }
-
-            .woocommerce .woocommerce-order-details .shop_table.order_details tr td.woocommerce-table__product-name a,
-            .woocommerce table.shop_table.woocommerce-table--order-downloads tr td[data-title="Product"] a {
-                font-size: var(--wdtFontSize_Base);
-                font-weight: bold;
-            }
-
-            .woocommerce-page .woocommerce-order-details {
-                padding: 25px 20px;
-            }
-
-            .woocommerce .woocommerce-order-details .woocommerce-order-details__title {
-                margin-bottom: 10px;
-                text-align: center;
-                width: 100%;
-            }
-
-            .woocommerce .woocommerce-order-details .shop_table.order_details thead {
-                display: none;
-            }
-
-            .woocommerce .woocommerce-order-details .shop_table.order_details tr {
-                border-color: rgba(var(--wdtHeadAltColorRgb), 0.15);
-                border-style: solid;
-                border-width: 0 0 1px;
-                padding: 10px 0;
-            }
-
-            .woocommerce .woocommerce-order-details .shop_table.order_details tfoot tr:last-child {
-                border-width: 0;
-            }
-
-            .woocommerce .woocommerce-order-details .shop_table.order_details tr th,
-            .woocommerce .woocommerce-order-details .shop_table.order_details tr td {
-                display: block;
-                margin: 0;
-                padding: 0 !important;
-                width: 100% !important;
-            }
-
-            .woocommerce .woocommerce-order-details .order-again {
-                text-align: center;
-            }
-
-            .woocommerce-page .woocommerce-order-details table.shop_table tr td:last-child {
-                text-align: center;
-            }
-
-
-            .woocommerce table.shop_table tbody td .quantity .qty,
-            .woocommerce-page table.shop_table tbody td .quantity .qty {
-                font-size: 14px;
-            }
-
-            .woocommerce .quantity.quantity-with-plusminus .qty,
-            .woocommerce-page .quantity.quantity-with-plusminus .qty,
-            .woocommerce .quantity.quantity-with-plusminus input,
-            .woocommerce-page .quantity.quantity-with-plusminus input,
-            .woocommerce table.shop_table tbody td .quantity.quantity-with-plusminus input[type="button"],
-            .woocommerce-page table.shop_table tbody td .quantity.quantity-with-plusminus input[type="button"] {
-                width: 35px;
-            }
-
-            .woocommerce form .form-row-first, .woocommerce-page form .form-row-first,
-            .woocommerce form .form-row-last, .woocommerce-page form .form-row-last {
-                width: 100%;
-            }
-
-            .woocommerce form .form-row, .woocommerce-page form .form-row {
-                padding: 0;
-            }
-
-
-            /* Quick View */
-            body[class*="woocommerce"] .yith-wcqv-wrapper #yith-quick-view-content > div.product > div.product {
-                padding-right: 0;
-                -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
-            }
-
-            body[class*="woocommerce"] .yith-wcqv-wrapper #yith-quick-view-content div.images,
-            body[class*="woocommerce"] .yith-wcqv-wrapper #yith-quick-view-content div.summary {
-                display: block;
-                float: none;
-                margin: 25px;
-                width: auto;
-            }
-
-            body[class*="woocommerce"] .yith-wcqv-wrapper #yith-quick-view-content div.summary {
-                margin-top: 0;
-            }
-
-            body[class*="woocommerce"] .yith-wcqv-wrapper #yith-quick-view-close {
-                background-color: var(--wdtPrimaryColor);
-                color: var(--wdtAccentTxtColor) !important;
-                height: 45px;
-                line-height: 45px;
-                opacity: 1;
-                right: 0;
-                top: 0;
-                width: 45px;
-                z-index: 10;
-                -webkit-transform: scale(0);
-                transform: scale(0);
-                -webkit-transition: all 0.3s linear;
-                transition: all 0.3s linear;
-            }
-
-            body[class*="woocommerce"] .yith-wcqv-wrapper:hover #yith-quick-view-close {
-                -webkit-transform: scale(1);
-                transform: scale(1);
-            }
-
-            body[class*="woocommerce"] .yith-wcqv-wrapper:hover #yith-quick-view-close:hover {
-                background-color: var(--wdtHeadAltColor);
-            }
-
-            body[class*="woocommerce"] .yith-wcqv-wrapper #yith-quick-view-content div.summary,
-            body[class*="woocommerce"] .yith-wcqv-wrapper #yith-quick-view-content div.summary .product form.cart .variations li.zoo-cw-attr-row div.label,
-            body[class*="woocommerce"] .yith-wcqv-wrapper #yith-quick-view-content div.summary .product form.cart .variations li.zoo-cw-attr-row div.label label {
-                text-align: left;
-            }
-
-        }
-
-        @media only screen and (max-width: 767px) {
-            body[class*="woocommerce"] .yith-wcqv-wrapper #yith-quick-view-content div.images {
-                margin-bottom: 0;
-            }
-        }
-
-        @media only screen and (max-width: 768px) {
-
-            .woocommerce-page.woocommerce-view-order .woocommerce-customer-details .addresses .woocommerce-column + .woocommerce-column {
-                margin-top: 30px;
-            }
-
-        }
-
-        /*----*****---- << Mobile >> ----*****----*/
-
-        /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-        @media only screen and (max-width: 479px) {
-            .woocommerce div.product .product_title {
-                font-size: calc(var(--wdtFontSize_H3) - 2px);
-            }
-
-            .woocommerce .shop_table tr td.product-stock-status > span {
-                font-size: 10px;
-                padding: 10px 5px;
-            }
-
-            .woocommerce form .form-row label.inline {
-                padding-left: 0;
-            }
-
-            .woocommerce .woocommerce-message, .woocommerce .woocommerce-info, .woocommerce .woocommerce-error {
-                display: table;
-                text-align: center;
-            }
-
-            .woocommerce .woocommerce-error .button, .woocommerce .woocommerce-info .button, .woocommerce .woocommerce-message .button {
-                display: table-footer-group;
-                float: none;
-                text-decoration: underline;
-                -webkit-box-shadow: none !important;
-                box-shadow: none !important;
-            }
-
-
-            .woocommerce div.product form.cart div.quantity,
-            .woocommerce div.product form.cart div.quantity ~ a,
-            .woocommerce div.product form.cart div.quantity ~ a.button,
-            .woocommerce div.product form.cart div.quantity ~ button,
-            .woocommerce div.product form.cart div.quantity ~ button.button,
-            .woocommerce div.product form.cart div.quantity ~ .button,
-            .woocommerce div.product form.cart div.quantity ~ .button.alt,
-            .woocommerce div.product form.cart div.quantity ~ .button.disabled,
-            .woocommerce div.product form.cart div.quantity ~ .button[disabled],
-            .woocommerce div.product form.cart div.quantity ~ .button.alt.disabled,
-            .woocommerce div.product form.cart div.quantity ~ .button.alt[disabled] {
-                margin-top: 5px;
-                margin-bottom: 5px;
-            }
-
-        }
-
-
-        /*----*****---- << Mobile >> ----*****----*/
-
-        /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-        @media only screen and (min-width: 320px) and (max-width: 479px) {
-
-            .woocommerce select, .woocommerce-page select {
-                min-height: auto;
-            }
-
-        }
-
-
-        /*----*****---- << Mobile >> ----*****----*/
-
-        /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-        @media only screen and (max-width: 319px) {
-
-            .woocommerce .woocommerce-ordering {
-                min-width: 100%;
-            }
-
-            .woocommerce table.shop_table th, .woocommerce-page table.shop_table th {
-                width: 90px;
-            }
-
-            .woocommerce table.shop_table td, .woocommerce-page table.shop_table td {
-                width: 161px;
-            }
-
-            .woocommerce table.shop_table .quantity.quantity-with-plusminus input,
-            .woocommerce-page table.shop_table .quantity.quantity-with-plusminus input,
-            .woocommerce table.shop_table tbody td .quantity.quantity-with-plusminus .qty,
-            .woocommerce-page table.shop_table tbody td .quantity.quantity-with-plusminus .qty,
-            .woocommerce table.shop_table tbody td .quantity.quantity-with-plusminus input[type="button"],
-            .woocommerce-page table.shop_table tbody td .quantity.quantity-with-plusminus input[type="button"] {
-                width: 24px;
-            }
-
-            .woocommerce .shop_table.order_details th:first-child, .woocommerce .shop_table.order_details td:first-child {
-                width: 50%;
-            }
-
-        }
-
-        /* #endregion - Responsive */
-
-
         /*-------------------------------------------*/
         /* #region - Product Listing without isotop  */
         /*-------------------------------------------*/
@@ -4466,1114 +2961,434 @@
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media only screen and (max-width: 1540px) {
-
-            .woocommerce .product-loop-sorting {
-                padding-bottom: 50px !important;
-            }
-        }
-
-
-        @media only screen and (min-width: 1281px) and (max-width: 1540px) {
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper) {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .woocommerce ul.products[class*="columns-3"]:not(.products-apply-isotope, .swiper-wrapper),
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper).wdt-columns-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .woocommerce ul.products[class*="columns-2"]:not(.products-apply-isotope, .swiper-wrapper),
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper).wdt-columns-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper) {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .woocommerce ul.products[class*="columns-3"]:not(.products-apply-isotope, .swiper-wrapper),
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper).wdt-columns-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .woocommerce ul.products[class*="columns-2"]:not(.products-apply-isotope, .swiper-wrapper),
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper).wdt-columns-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-
-        @media only screen and (min-width: 481px) and (max-width: 1024px) {
-
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper) {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media only screen and (max-width: 800px) {
-
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper).list-product-active {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper) {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
-
-        @media only screen and (max-width: 767px) {
-
-            .woocommerce ul.products[class*="columns-"]:not(.products-apply-isotope, .swiper-wrapper) {
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
-
-        /*----------------------------------------------*/
-        /* #endregion - Product Listing without isotop  */
-        /*----------------------------------------------*/
-
 
         /*--------------------------------------------------------------*/
-        /* #region - Product Single */
+        /* #region - Carousel */
         /*--------------------------------------------------------------*/
 
-        .woocommerce div.product div.images, .woocommerce div.product div.summary,
-        .woocommerce div.product .wdt-product-tabs div.summary,
-        .woocommerce-page div.product .wdt-product-tabs div.summary,
-        .woocommerce div.product *[class*="-wdt-shop-product-single-summary"] div.summary,
-        .woocommerce-page div.product *[class*="-wdt-shop-product-single-summary"] div.summary {
-            float: left;
-            margin: 0 0 35px;
-            position: relative;
-            width: 100%;
-        }
-
-        .woocommerce div.product .elementor-widget div.images,
-        .woocommerce div.product .elementor-widget div.summary {
-            float: none;
-            width: 100%;
-        }
-
-        .woocommerce.single-product div.images span.onsale, .woocommerce-product-gallery span.onsale, .wdt-product-image-gallery-container span.onsale, #yith-quick-view-content span.onsale,
-        .woocommerce.single-product div.images span.out-of-stock, .woocommerce-product-gallery span.out-of-stock, .wdt-product-image-gallery-container span.out-of-stock, #yith-quick-view-content span.out-of-stock {
-            display: inline-block;
-            height: 20px;
-            line-height: 18px;
-            margin: 0;
-            min-height: 20px;
-            min-width: 42px;
-            text-align: center;
-            vertical-align: middle;
-            border-radius: 3px;
-            text-transform: uppercase;
-            letter-spacing: 1.6px;
-            left: 20px;
-            top: 45px;
-            z-index: 1;
-            font-size: 10px;
-        }
-
-        /* .woocommerce.single-product div.images span.out-of-stock, .woocommerce-product-gallery span.out-of-stock, .wdt-product-image-gallery-container span.out-of-stock, #yith-quick-view-content span.out-of-stock { font-size: 12px; padding: 0 20px; position: absolute; top: 10px; left: 10px; width: auto; z-index: 1; } */
-
-        .woocommerce-product-gallery .featured-tag + span.new, .wdt-product-image-gallery-container .featured-tag + span.new {
-            right: 0;
-            top: 30px;
-        }
-
-        .woocommerce.single-product .featured-tag span, .wdt-product-image-gallery-container .featured-tag span {
-            opacity: 0;
-            filter: alpha(opacity=0);
-        }
-
-        .woocommerce.single-product .featured-tag > div span, .wdt-product-image-gallery-container .featured-tag > div span {
-            opacity: 1;
-            filter: alpha(opacity=100);
-        }
-
-        .related-products-container, .upsell-products-container {
+        .wdt-products-carousel-container {
             clear: both;
-            float: left;
-            margin: 20px 0 0;
-            padding: 0;
-            width: 100%;
-        }
-
-
-        /* #region - Product Images Gallery - Default */
-        .woocommerce div.product.type-product > div.images {
-            width: 36%;
-        }
-
-        .woocommerce div.product div.images .woocommerce-product-gallery__trigger {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-            z-index: 9;
-            text-align: center;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            background: var(--wdtBodyBGColor);
-            border-radius: 50%;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .woocommerce div.product div.images .woocommerce-product-gallery__trigger:before {
-            content: "\e802";
-            display: inline-block;
-            font-family: "Neytri Icons";
-            font-size: 1em;
-            height: 100%;
-            width: 100%;
-        }
-
-        .woocommerce div.product div.images .woocommerce-product-gallery__trigger img {
-            margin: auto !important;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: 0;
-        }
-
-        .woocommerce div.product div.images:hover .woocommerce-product-gallery__trigger {
-            opacity: 1;
-            visibility: visible;
-            -webkit-transform: scale(1);
-            -moz-transform: scale(1);
-            -ms-transform: scale(1);
-            -o-transform: scale(1);
-            transform: scale(1);
-        }
-
-
-        .woocommerce div.product div.images .flex-viewport, .woocommerce div.product div.images .flex-viewport .woocommerce-product-gallery__wrapper,
-        .woocommerce div.product div.images .flex-viewport .woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image,
-        .woocommerce div.product div.images .flex-viewport .woocommerce-product-gallery__wrapper .woocommerce-product-gallery__image a {
             display: block;
             float: left;
             overflow: hidden;
             width: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+        }
+
+        .wdt-products-carousel-container ul.products li .wdt-col { /* padding: 0 1px; */
+            width: 100%;
+        }
+
+        .wdt-products-carousel-container .swiper-container[data-carouselslidesperview="1"] ul.products li .wdt-col {
+            padding: 0;
+        }
+
+        .wdt-products-carousel-container .swiper-container[data-carouselslidesperview="1"] ul.products li.product .product-wrapper {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical {
+            height: 500px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal .swiper-wrapper {
+            cursor: e-resize;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical .swiper-wrapper {
+            cursor: s-resize;
+        }
+
+        div[class*="thumb-container"] .swiper-wrapper .swiper-slide {
+            cursor: pointer;
+            text-align: center;
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
         }
 
-        .woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
-            margin: 0;
-        }
-
-
-        .woocommerce div.product div.images ol.flex-control-nav {
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-pack: center;
-            -webkit-justify-content: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            margin: 0 -5px;
-            min-width: 100%;
-            overflow: hidden;
-            padding: 5px 0 0;
-            width: auto;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        /* .woocommerce div.product div.images ol.flex-control-nav li { float: left; list-style: none; min-height: 100%; min-width: 20%; padding: 5px; width: 20%; } */
-
-        .woocommerce div.product div.images ol.flex-control-nav li {
-            float: left;
-            list-style: none;
-            min-height: 100%;
-            min-width: auto;
-            padding: 5px;
-            width: auto;
-        }
-
-        .woocommerce div.product div.images ol.flex-control-nav li img {
-            border: 2px solid transparent !important;
-            cursor: pointer;
-            height: auto;
+        div[class*="thumb-container"] .swiper-wrapper .swiper-slide img {
+            border: 1px solid transparent;
             margin: auto;
-            min-height: 100%;
-            opacity: 1;
-            width: auto;
-            -webkit-box-shadow: 0 0 0 1px rgba(var(--wdtHeadAltColorRgb), 0.05);
-            box-shadow: 0 0 0 1px rgba(var(--wdtHeadAltColorRgb), 0.05);
+            padding: 3px;
+            -webkit-box-shadow: 0 0 0 1px rgba(var(--wdtHeadAltColorRgb), 0.05) inset;
+            box-shadow: 0 0 0 1px rgba(var(--wdtHeadAltColorRgb), 0.05) inset;
             -webkit-transition: var(--wdtBaseTransition);
             transition: var(--wdtBaseTransition);
         }
 
-        .woocommerce div.product div.images ol.flex-control-nav li img.flex-active {
-            -webkit-box-shadow: 0 0 0 1px var(--wdtBorderColor);
-            box-shadow: 0 0 0 1px var(--wdtBorderColor);
+        div[class*="thumb-container"] .swiper-wrapper .swiper-slide-active img {
+            -webkit-box-shadow: 0 0 0 1px var(--wdtBorderColor) inset;
+            box-shadow: 0 0 0 1px var(--wdtBorderColor) inset;
         }
 
-        .woocommerce.single-product .product-with-secondary-image {
-            clear: both;
+        /*div[class*="thumb-container"] .swiper-wrapper .swiper-slide:after { border: 1px solid; content: ""; opacity: 0; position: absolute; bottom: 0; left: 0; right: 0; top: 0; visibility: hidden; -webkit-transition: var(--wdtBaseTransition); transition: var(--wdtBaseTransition); }
+    div[class*="thumb-container"] .swiper-wrapper .swiper-slide.swiper-slide-active:after { opacity: 1; visibility: visible; }*/
+
+        div[class*="thumb-container"].swiper-container.swiper-container-vertical .swiper-wrapper {
+            justify-content: center;
         }
 
-        .woocommerce.single-product .product-thumb-wrapper {
+        div[class*="thumb-container"].swiper-container.swiper-container-vertical .swiper-wrapper .swiper-slide {
+            height: auto;
+        }
+
+        div[class*="thumb-container"].swiper-container.swiper-container-vertical .swiper-wrapper .swiper-slide img {
+            height: 100%;
+            width: auto;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        div[class*="product"] .swiper-container {
             float: left;
+            overflow: hidden;
             position: relative;
             width: 100%;
         }
 
-        .woocommerce.single-product .product-thumb-wrapper span.onsale, .woocommerce.single-product .product-thumb-wrapper span.out-of-stock {
-            font-size: 11px;
-            height: 50px;
-            line-height: 50px;
-            left: auto;
-            right: -1em;
-            top: -1em;
-            width: 50px;
-            z-index: 1000;
-        }
-
-        .woocommerce.single-product .product-thumb-wrapper span.out-of-stock {
-            font-size: 10px;
-            height: 50px;
-            line-height: normal;
-            padding: 12px 0 0;
-            width: 50px;
-        }
-
-        .woocommerce-product-gallery span.new {
-            background-color: var(--wdtPrimaryColor);
-            font-size: 10px;
-            color: var(--wdtAccentTxtColor);
-            padding: 0 5px;
-            position: absolute;
-            left: auto;
-            left: 20px;
-            top: 20px;
-            z-index: 9;
-            letter-spacing: 1.6px;
-            text-transform: uppercase;
-            height: 20px;
-            line-height: 20px;
-            margin: 0 0 5px 0;
-            min-height: 20px;
-            min-width: 42px;
-            text-align: center;
-            vertical-align: middle;
-            border-radius: 3px;
-        }
-
-
-        .woocommerce div.product .images .thumbnails {
-            margin: 0 -5px;
+        div[class*="product"] .swiper-container.swiper-container-vertical .swiper-wrapper .swiper-slide {
             overflow: hidden;
         }
 
-        .woocommerce div.product .images .thumbnails .yith_magnifier_gallery li {
-            margin: 0 5px;
+        div[class*="thumb-container"].swiper-container.swiper-container-horizontal .swiper-wrapper {
+
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+
+        }
+
+        /* Carousel ScrollBar */
+        div[class*="product"] .swiper-container div[class*="pagination-holder"] > div[class*="scrollbar"] {
+            float: left;
+            height: 8px;
+            position: absolute;
+            width: 100%;
+            border-radius: 10px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.08) 17%, rgba(0, 0, 0, 0.08) 83%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="pagination-holder"] > div[class*="scrollbar"] {
+            height: 100%;
+            margin: 0;
+            right: 0;
+            top: 0;
+            width: 8px;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.08) 17%, rgba(0, 0, 0, 0.08) 83%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        div[class*="product"] .swiper-container div[class*="pagination-holder"] > div[class*="scrollbar"]:before,
+        div[class*="product"] .swiper-container div[class*="pagination-holder"] > div[class*="scrollbar"]:after {
+            content: "";
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 17%, rgba(0, 0, 0, 0.1) 83%, rgba(0, 0, 0, 0) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=1);
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal div[class*="pagination-holder"] > div[class*="scrollbar"]:before {
+            top: -1px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal div[class*="pagination-holder"] > div[class*="scrollbar"]:after {
+            bottom: -1px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="pagination-holder"] > div[class*="scrollbar"]:before {
+            left: -1px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="pagination-holder"] > div[class*="scrollbar"]:after {
+            right: -1px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="pagination-holder"] > div[class*="scrollbar"]:before,
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="pagination-holder"] > div[class*="scrollbar"]:after {
+            height: 100%;
+            width: 1px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 17%, rgba(0, 0, 0, 0.1) 83%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        div[class*="product"] .swiper-container div[class$="scrollbar"] .swiper-scrollbar-drag {
+            background-color: var(--wdtPrimaryColor);
+            border-radius: inherit;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal[data-carouselscrollbar="true"] {
+            padding-bottom: 30px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal div[class*="scrollbar"] {
+            bottom: 0;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal[data-carouselbulletpagination="true"][data-carouselscrollbar="true"] div[class*="scrollbar"] {
+            bottom: 0;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselscrollbar="true"] {
+            padding-right: 30px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="scrollbar"] {
+            right: 0;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselbulletpagination="true"][data-carouselscrollbar="true"] div[class*="scrollbar"] {
+            right: 0;
+        }
+
+
+        /* Carousel Bullets */
+        div[class*="product"] .swiper-container div[class*="bullet-pagination"] {
+            float: left;
+            font-size: 0;
+            line-height: 0;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+
+        div[class*="product"] .swiper-container div[class*="bullet-pagination"] .swiper-pagination-bullet {
+            background: none;
+            height: 16px;
+            margin: 0;
             padding: 0;
-            width: 122px !important;
+            position: relative;
+            width: 16px;
         }
 
-        .woocommerce .page-with-sidebar .product .images .thumbnails .yith_magnifier_gallery li,
-        .woocommerce-page .page-with-sidebar .product .images .thumbnails .yith_magnifier_gallery li {
-            width: 88px !important;
+        div[class*="product"] .swiper-container div[class*="bullet-pagination"] .swiper-pagination-bullet:before {
+            background-color: var(--wdtHeadAltColor);
+            content: "";
+            height: auto;
+            margin: auto;
+            position: absolute;
+            bottom: 2px;
+            left: 2px;
+            right: 2px;
+            top: 2px;
+            width: auto;
+            -webkit-border-radius: inherit;
+            border-radius: inherit;
+            -webkit-transition: var(--wdtBaseTransition);
+            transition: var(--wdtBaseTransition);
         }
 
-        .woocommerce div.product div.images div.thumbnails a {
-            margin-right: 3.8%;
-            width: 30.75%;
+        div[class*="product"] .swiper-container div[class*="bullet-pagination"] .swiper-pagination-bullet-active:before {
+            background-color: #666;
         }
 
-        .woocommerce div.product div.images div.thumbnails a.first {
-            clear: both;
+
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="bullet-pagination"] {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            right: 32px;
+            width: 16px;
+            z-index: 10;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
         }
 
-        .woocommerce div.product div.images div.thumbnails a.last {
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="bullet-pagination"] .swiper-pagination-bullet {
+            display: block;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal[data-carouselbulletpagination="true"] {
+            padding-bottom: 30px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal div[class*="bullet-pagination"] {
+            bottom: 0;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal[data-carouselbulletpagination="true"][data-carouselscrollbar="true"] {
+            padding-bottom: 60px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-horizontal[data-carouselbulletpagination="true"][data-carouselscrollbar="true"] div[class*="bullet-pagination"] {
+            bottom: 25px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselbulletpagination="true"] {
+            padding-right: 30px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="bullet-pagination"] {
+            right: 0;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselbulletpagination="true"][data-carouselscrollbar="true"] {
+            padding-right: 60px;
+        }
+
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselbulletpagination="true"][data-carouselscrollbar="true"] div[class*="bullet-pagination"] {
+            right: 25px;
+        }
+
+
+        /* Carousel Arrows */
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"] > a[class*="arrow"] {
+            font-size: 0;
+            height: 80px;
+            line-height: 80px;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            text-align: center;
+            visibility: hidden;
+            width: 40px;
+            z-index: 2;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"] > a[class*="arrow"] {
+            background-color: rgba(var(--wdtHeadAltColorRgb), 0.15);
+            color: var(--wdtAccentTxtColor);
+        }
+
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"] > a[class*="arrow"]:hover {
+            background-color: rgba(var(--wdtHeadAltColorRgb), 0.35);
+        }
+
+
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"] > a[class$="arrow-prev"] {
+            margin-left: -40px;
+            left: 0;
+        }
+
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"] > a[class$="arrow-next"] {
+            margin-right: -40px;
+            right: 0;
+        }
+
+
+        div[class*="product"] .swiper-container:hover div[class*="arrow-pagination"] > a[class*="arrow"] {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        div[class*="product"] .swiper-container:hover div[class*="arrow-pagination"] > a[class$="arrow-prev"] {
+            margin-left: 0;
+        }
+
+        div[class*="product"] .swiper-container:hover div[class*="arrow-pagination"] > a[class$="arrow-next"] {
             margin-right: 0;
         }
 
-        /* #endregion - Product Images Gallery - Default */
-
-
-        /* #region - Product Content Summary */
-        .woocommerce div.product.type-product > div.summary {
-            width: 60%;
-            margin: 0 0 0 4%;
-        }
-
-        .woocommerce div.product.type-product > div.summary > *:not(.clear):not(.button):not([id*="tmpl-add-to-cart-button"]),
-        .woocommerce div.product .summary-content > *,
-        .woocommerce div.product .summary-content .woocommerce-product-rating,
-        .woocommerce div.product .summary form.cart,
-        .woocommerce div.product .summary form.cart .variations,
-        .woocommerce div.product .summary .variations_button,
-        .woocommerce div.product .summary .woocommerce-variation-price,
-        .woocommerce div.product .summary .woocommerce-variation-availability,
-        .woocommerce div.product .summary .woocommerce-variation-description {
-            clear: both;
-            display: inline-block;
-            line-height: var(--wdtLineHeight_Base);
-            margin: 10px 0;
-            width: 100%;
-        }
-
-        .woocommerce div.product .summary form.cart .variations {
-            padding: 0;
-        }
-
-        .woocommerce div.product .summary form.cart .single_variation_wrap .single_variation > p {
-            margin: 10px 0;
-        }
-
-        .woocommerce div.product > div.summary > *:first-child {
-            margin-top: 0;
-        }
-
-        .woocommerce div.product > div.summary > *:last-child {
-            margin-bottom: 0;
-        }
-
-        .woocommerce div.product .summary form.cart + .yith-wcwl-add-to-wishlist,
-        .woocommerce div.product .summary form.cart + .compare {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
-        .woocommerce div.product .summary form.cart *:last-child {
-            margin-bottom: 0;
-        }
-
-        .woocommerce div.product form.cart .variations label {
-            color: var(--wdtHeadAltColor);
-            text-transform: capitalize;
-            font-size: var(--wdtFontSize_H4);
-            font-weight: var(--wdtFontWeight_Alt);
-        }
-
-
-        .woocommerce div.product div.summary > *:not(.clear):not(.wdt-single-product-separator):not(.wdt-single-product-clear):empty,
-        .woocommerce div.product .summary-content > *:not(.clear):empty,
-        .woocommerce div.product .summary .woocommerce-variation-description:empty,
-        .woocommerce div.product .summary-content .woocommerce-variation-description:empty,
-        .woocommerce div.product .summary .woocommerce-variation-price:empty,
-        .woocommerce div.product .summary-content .woocommerce-variation-price:empty,
-        .woocommerce div.product .summary .woocommerce-variation-availability:empty,
-        .woocommerce div.product .summary-content .woocommerce-variation-availability:empty,
-        .woocommerce div.product .summary .woocommerce-variation.single-variation > *:empty,
-        .woocommerce div.product.type-product > .summary > *[id*="tmpl-add-to-cart-button"] {
-            display: none;
-        }
-
-
-        .woocommerce .product p.price del, .woocommerce-page .product p.price del,
-        .woocommerce div.product p.price del, .woocommerce-page div.product p.price del,
-        .woocommerce .product span.price del, .woocommerce-page .product span.price del,
-        .woocommerce div.product span.price del, .woocommerce-page div.product span.price del,
-        .woocommerce .product-price del, .woocommerce-page .product-price del {
-            font-size: 16px;
-            margin: 0 5px 0 0;
-            position: relative;
-            text-decoration: none;
-        }
-
-
-        .woocommerce .product p.price del:after, .woocommerce-page .product p.price del:after,
-        .woocommerce div.product p.price del:after, .woocommerce-page div.product p.price del:after,
-        .woocommerce .product span.price del:after, .woocommerce-page .product span.price del:after,
-        .woocommerce div.product span.price del:after, .woocommerce-page div.product span.price del:after,
-        .woocommerce .product-price del:after, .woocommerce-page .product-price del:after {
-            background-color: currentColor;
-            content: "";
-            height: 1px;
-            margin: auto;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: 0;
-            width: 100%;
-        }
-
-        .woocommerce .product p.price, .woocommerce-page .product p.price,
-        .woocommerce div.product p.price, .woocommerce-page div.product p.price,
-        .woocommerce .product span.price, .woocommerce-page .product span.price,
-        .woocommerce div.product span.price, .woocommerce-page div.product span.price,
-        .woocommerce .product p.price ins, .woocommerce-page .product p.price ins,
-        .woocommerce div.product p.price ins, .woocommerce-page div.product p.price ins,
-        .woocommerce .product span.price ins, .woocommerce-page .product span.price ins,
-        .woocommerce div.product span.price ins, .woocommerce-page div.product span.price ins {
-            font-size: 30px;
-            font-weight: normal;
-        }
-
-        .woocommerce .product-price, .woocommerce-page .product-price,
-        .woocommerce .product-price ins, .woocommerce-page .product-price ins {
-            font-size: 18px;
-        }
-
-        .woocommerce div.product .summary .variations_button,
-        .woocommerce div.product .summary .woocommerce-variation-price,
-        .woocommerce div.product .summary .woocommerce-variation-availability,
-        .woocommerce div.product .summary .woocommerce-variation-description,
-        .woocommerce div.product .summary .woocommerce-product-details__short-description,
-        .woocommerce div.product .summary form.cart .single_variation_wrap .single_variation > p {
-            line-height: var(--wdtLineHeight_Base);
-        }
-
-        .woocommerce div.product .summary .woocommerce-variation-availability,
-        .woocommerce div.product .summary .woocommerce-variation-description,
-        .woocommerce div.product .summary .woocommerce-product-details__short-description {
-            margin: 0;
-        }
-
-        .woocommerce div.product .summary .variations_form .variations_button .button.alt.disabled.wc-variation-is-unavailable {
-            opacity: 1;
-        }
-
-        .woocommerce div.product .summary .variations_form .variations_button .button.alt.disabled.wc-variation-is-unavailable:before {
-            content: none;
-        }
-
-        .woocommerce div.product .summary .woocommerce-variation-description > *:last-child,
-        .woocommerce div.product .summary .woocommerce-product-details__short-description > *:last-child {
-            margin-bottom: 0;
-        }
-
-        .woocommerce div.product p.price del, .woocommerce div.product p.price ins,
-        .woocommerce div.product span.price del, .woocommerce div.product span.price ins {
-            display: inline-block;
-        }
-
-
-        .woocommerce div.product .summary .variations_form .stock,
-        .woocommerce div.product .summary .variations_form p.stock {
-            margin: 0 0 10px;
-        }
-
-        .woocommerce div.product form.cart p:last-child,
-        .woocommerce div.product .variations_form .stock:last-child, .woocommerce div.product .variations_form p.stock:last-child,
-        .woocommerce-product-details__short-description *:last-child, .woocommerce-variation-description *:last-child {
-            margin-bottom: 0;
-        }
-
-
-        .woocommerce div.product .summary form.cart .variations,
-        .woocommerce div.product .summary .yith-wcwl-add-to-wishlist a, .woocommerce div.product .summary .compare,
-        .woocommerce div.product .summary .yith-wcqv-button, .woocommerce div.product .summary .wdt-wcsg-button {
-            width: auto;
-        }
-
-        .woocommerce div.product .summary .woocommerce-product-rating {
-            display: inline-block;
-        }
-
-        .woocommerce div.product .summary .woocommerce-product-rating .star-rating {
-            margin: 0 5px 0 0;
-        }
-
-        .woocommerce div.product .summary .woocommerce-product-rating .star-rating,
-        .woocommerce div.product .summary .woocommerce-product-rating .woocommerce-review-link {
-            display: inline-block;
-            float: none;
-            vertical-align: middle;
-        }
-
-        .woocommerce div.product .summary .woocommerce-product-rating .woocommerce-review-link:not(:focus) {
-            text-decoration: none;
-        }
-
-        .woocommerce div.product .summary .woocommerce-variation.single-variation > *:empty {
-            display: none;
-        }
-
-        .woocommerce div.product div.summary .stock, .woocommerce div.product.type-product > div.summary p.stock {
-            border: 1px solid rgba(var(--wdtHeadAltColorRgb), 0.15);
-            color: rgba(var(--wdtHeadAltColorRgb), 0.75);
-            display: table;
-            padding: 5px 10px;
-            vertical-align: middle;
-            width: auto;
-            border-radius: 3px;
-        }
-
-        .woocommerce div.product .summary .stock.out-of-stock, .woocommerce div.product.type-product > .summary p.stock.out-of-stock {
-            border-color: currentColor;
-            color: #9f2124;
-        }
-
-        .woocommerce div.product.type-product > .summary p.price del, .woocommerce div.product.type-product > .summary span.price del {
-            display: inline-block;
-        }
-
-        .woocommerce div.product form.cart .group_table td {
-            padding: 12px 15px;
-            vertical-align: middle;
-        }
-
-        .woocommerce div.product form.cart .group_table td.woocommerce-grouped-product-list-item__quantity {
-            padding-left: 0;
-            text-align: left;
-        }
-
-        .woocommerce div.product form.cart .group_table td.woocommerce-grouped-product-list-item__price {
-            padding-right: 0;
-            text-align: right;
-        }
-
-        .woocommerce .product.product-type-grouped .summary .cart .group_table {
-            margin-bottom: 30px;
-        }
-
-        .woocommerce .product.product-type-grouped .summary .cart .group_table td {
-            border-width: 0;
-            padding: 15px 0;
-            vertical-align: middle;
-        }
-
-        .woocommerce .product.product-type-grouped .summary .cart .group_table tr {
-            border-color: rgba(var(--wdtHeadAltColorRgb), 0.15);
-            border-style: solid;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-
-        .woocommerce .product.product-type-grouped .summary .cart .group_table tr + tr {
-            border-width: 1px 0 0;
-            margin-top: 25px;
-            padding-top: 15px;
-        }
-
-        .woocommerce .product.product-type-grouped .summary .cart .group_table td {
-            border-width: 0;
-            padding: 0;
-            text-align: left;
-            width: auto;
-        }
-
-        .woocommerce .product.product-type-grouped .summary .cart .group_table td a {
-            background: transparent !important;
-            padding: 0 !important;
-        }
-
-        .woocommerce .product.product-type-grouped .summary .cart .group_table td a:not(:focus) {
-            text-decoration: none;
-        }
-
-        .woocommerce .product.product-type-grouped .summary .cart .group_table td a:not(:hover) {
-            color: inherit;
-        }
-
-        .woocommerce .product.product-type-grouped .summary .cart .group_table td a:hover {
-            opacity: 0.75;
-        }
-
-        .woocommerce div.product.product-type-grouped .summary form.cart .group_table tr td.woocommerce-grouped-product-list-item__label {
-            font-family: var(--wdtFontTypo_Alt);
-            font-weight: bold;
-            font-size: 1em;
-            color: var(--wdtHeadAltColor);
-            flex: 1;
-        }
-
-        .woocommerce div.product.product-type-grouped .summary form.cart .group_table tr td.woocommerce-grouped-product-list-item__quantity {
-            position: relative;
-            margin-right: 40px;
-        }
-
-        .woocommerce div.product.product-type-grouped .summary form.cart .group_table tr td.woocommerce-grouped-product-list-item__price {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            padding: 0;
-            align-items: center;
-            flex: 1;
-            justify-content: flex-end;
-        }
-
-        .woocommerce div.product.product-type-grouped .summary form.cart .group_table tr td.woocommerce-grouped-product-list-item__price del,
-        .woocommerce div.product.product-type-grouped .summary form.cart .group_table tr td.woocommerce-grouped-product-list-item__price ins {
-            display: inline-block;
-        }
-
-        .woocommerce div.product.product-type-grouped .summary form.cart .group_table tr td.woocommerce-grouped-product-list-item__price del + ins {
-            margin-left: 4px;
-        }
-
-        .woocommerce .product form.cart .variations li {
-            padding: 0;
-        }
-
-        .woocommerce .product form.cart table.variations {
-            display: table;
-        }
-
-        .woocommerce .product form.cart table.variations tbody {
-            display: inline-flex;
-            flex-direction: row;
-            margin: 0 -5px;
-            position: relative;
-            z-index: 0;
-            flex-wrap: wrap;
-        }
-
-        .woocommerce .product form.cart .variations tr {
-            width: 100%;
-        }
-
-
-        .woocommerce .product form.cart .variations tr {
-            display: inline-block;
-            padding: 5px;
-            vertical-align: middle;
-        }
-
-        .woocommerce .product form.cart .variations tr th {
-            display: table;
-            padding: 0;
-        }
-
-        .woocommerce .product form.cart .variations tr th.label {
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"] > a[class*="arrow"]:before {
             display: block;
-            margin-bottom: 10px;
-            padding: 0;
-            text-align: left;
-            background-color: transparent;
-        }
-
-        .woocommerce div.product form.cart .variations .selection-box {
-            position: relative;
-            z-index: 1;
-        }
-
-        .woocommerce div.product form.cart .variations select {
-            display: block;
-            float: none;
-        }
-
-        .woocommerce div.product form.cart .variations td, .woocommerce div.product form.cart .variations th {
-            vertical-align: middle;
-        }
-
-        .woocommerce div.product form.cart .variations .zoo-cw-group-attribute .zoo-cw-attribute-option.unavailable {
-            cursor: not-allowed;
-        }
-
-        .woocommerce div.product form.cart .variations .zoo-cw-group-attribute[data-attribute-display-type="text"] .selection-box:after {
-            content: none;
-        }
-
-        .woocommerce .product form.cart table.variations {
-            margin-bottom: 0 !important;
-        }
-
-        .woocommerce div.product form.cart .variations .reset_variations {
-            margin-left: 20px;
-        }
-
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > div {
-            display: inline-block;
-            float: none;
-            line-height: normal;
-            position: relative;
-            text-align: inherit;
-            vertical-align: middle;
-            width: auto;
-        }
-
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row div.label {
-            margin: 0 15px 0 0;
-            min-width: 60px;
-        }
-
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row div.label label {
-            display: inline-block;
-            font-size: var(--wdtFontSize_Base);
-            line-height: var(--wdtLineHeight_Base);
-            margin: 0;
-        }
-
-        .woocommerce .product form.cart .variations li:not(.zoo-cw-attr-row) div.label label {
-            display: block;
-            margin: 0 0 8px;
-        }
-
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row div.label .zoo-cw-name {
-            display: none;
-        }
-
-        .woocommerce div.product .summary form.cart .variations {
-            padding: 0;
-        }
-
-        /* .woocommerce div.product .summary form.cart .variations li:not(:last-child) { margin: 0 0 20px; } */
-
-        /* #endregion - Product Content Summary */
-
-
-        /* #region - Product Summary Meta */
-        .woocommerce div.product .summary .product_meta {
-            margin: 0;
-        }
-
-        .woocommerce div.product .summary .product_meta > span {
-            display: inline-block;
-            margin: 10px 0;
-            width: 100%;
-        }
-
-        .woocommerce div.product .summary .product_meta > span:only-child {
-            margin: 0;
-        }
-
-        .woocommerce div.product .summary .product_meta > span strong {
-            margin-right: 3px;
-        }
-
-        .woocommerce div.product .summary .product_meta a {
-            position: relative;
-        }
-
-        .woocommerce div.product .summary .product_meta a:not(:focus) {
-            text-decoration: none;
-        }
-
-        .woocommerce div.product .summary form.cart + .product_meta,
-        .woocommerce div.product .summary .compare + .product_meta,
-        .woocommerce div.product .summary .wccm_btn_wrapper a.compare + .product_meta,
-        .woocommerce div.product .summary .yith-wcwl-add-to-wishlist a + .product_meta,
-        .woocommerce div.product .summary .wcqv_btn_wrapper a.button + .product_meta,
-        .woocommerce div.product .summary .wcsg_btn_wrapper a.button + .product_meta,
-        .woocommerce div.product .summary .product-buttons-wrapper + .product_meta,
-        .woocommerce div.product .summary .product-buttons-wrapper + .product_meta_wrapper {
-            margin-top: 0;
-        }
-
-        .woocommerce div.product .summary .product_meta > span.yith-wcbr-brands {
-            font-weight: bold;
-        }
-
-        .woocommerce div.product .summary .product_meta > span.yith-wcbr-brands span {
-            font-weight: normal;
-        }
-
-        .woocommerce div.product .summary .product_meta > span.yith-wcbr-brands + .yith-wcbr-brands-logo {
-            display: none;
-        }
-
-        .woocommerce div.product .summary .product_meta > .yith-wcbr-brands-logo img {
-            max-width: 120px;
-        }
-
-        /* #endregion - Summary Meta */
-
-
-        /* #region - Product Summary Buttons */
-        .woocommerce div.product .summary .product-button.style-simple .compare,
-        .woocommerce div.product .summary .product-button.style-simple .yith-wcwl-add-to-wishlist a {
-            background: none !important;
-            border-width: 0;
-            padding: 0;
-        }
-
-        .woocommerce.single-product .product .single_add_to_cart_button:before {
-            content: "\f217";
-            font-family: 'Neytri Icons';
-            font-weight: normal;
-            margin-right: 7px;
-            vertical-align: top;
-        }
-
-        .woocommerce.single-product .product .add_to_wishlist:before {
-            content: "\e804";
             font-family: "ny-icons";
-            font-weight: normal;
-            margin-right: 5px;
-            position: relative;
-            top: 1px;
-        }
-
-        .woocommerce.single-product .product .yith-wcwl-wishlistaddedbrowse a:before,
-        .woocommerce.single-product .product .yith-wcwl-wishlistexistsbrowse a:before {
-            content: "\e804";
-            font-family: 'Neytri Icons';
-            margin-right: 5px;
-        }
-
-        .woocommerce.single-product .product .compare:before {
-            content: '\e800';
-            font-family: "ny-icons";
-            margin-right: 5px;
-            position: relative;
-            top: -1px;
-            font-size: 14px;
-        }
-
-        .woocommerce.single-product .product .yith-wcqv-button:before {
-            content: "\e802";
-            font-family: "Neytri Icons";
-            margin-right: 5px;
-            position: relative;
-            top: 1px;
-        }
-
-        .woocommerce.single-product .product .wdt-wcsg-button:before {
-            content: "\e809";
-            display: inline-block;
-            font-family: 'Ext Icons';
-            font-weight: normal;
-            margin-right: 10px;
-        }
-
-        /* Variations / Swatches */
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option {
-            border: 2px solid;
-            display: inline-block;
-            font-size: 14px;
-            font-weight: 400;
-            height: 30px;
-            line-height: 26px;
-            margin: 5px 10px 5px 0;
-            text-align: center; /*width: 40px;*/
-            -webkit-border-radius: 0;
-            border-radius: 0;
-        }
-
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option .zoo-cw-attr-item {
-            display: inline-block;
-            height: 100% !important;
-            line-height: 26px;
-            margin: 0;
-            overflow: hidden;
-            padding: 0;
-            width: 100%;
-            -webkit-border-radius: 0;
-            border-radius: 0;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-        }
-
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option .zoo-cw-attr-item:after {
-            content: none;
-        }
-
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option .zoo-cw-attr-item span {
-            display: inline-block;
-            font-size: 16px;
+            font-size: 12px;
             line-height: inherit;
-            padding: 0 10px;
+        }
+
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"] > a[class$="arrow-prev"]:before {
+            content: "\e801";
+            transform: rotate(180deg);
+        }
+
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"] > a[class$="arrow-next"]:before {
+            content: "\e801";
+        }
+
+
+        /* div[class*="product"] .swiper-container.swiper-container-vertical div[class*="arrow-pagination"] > a[class*="arrow"] { height: 40px; line-height: 40px; left: 50%; width: 80px; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+    div[class*="product"] .swiper-container.swiper-container-vertical div[class*="arrow-pagination"] > a[class*="arrow"]:before { -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+
+    div[class*="product"] .swiper-container.swiper-container-vertical div[class*="arrow-pagination"] > a[class$="arrow-prev"] { margin: -40px 0 0; top: 0; }
+    div[class*="product"] .swiper-container.swiper-container-vertical div[class*="arrow-pagination"] > a[class$="arrow-next"] { margin: 0 0 -40px; bottom: 0; top: auto; } */
+
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"].type2 {
+            float: left;
+            margin: 25px auto 0;
             position: relative;
+            text-align: center;
             width: 100%;
         }
 
-        .woocommerce .product form.cart .variations .zoo-cw-group-attribute.zoo-cw-type-text .zoo-cw-attribute-option:hover .zoo-cw-attr-item .zoo-cw-label-text,
-        .woocommerce .product form.cart .variations .zoo-cw-group-attribute.zoo-cw-type-text .zoo-cw-attribute-option.zoo-cw-active .zoo-cw-attr-item .zoo-cw-label-text {
-            color: inherit;
-        }
-
-        /* #endregion - Product Summary Buttons */
-
-
-        /* #region - Product Rating */
-        .woocommerce #review_form #respond p.stars {
-            display: inline-flex;
-            width: auto;
-        }
-
-        .woocommerce #review_form #respond p.stars span {
-            margin: 0;
-            padding: 0;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-
-        .woocommerce p.stars a:before {
-            color: var(--wdtBorderColor);
-            -webkit-transition: inherit;
-            transition: inherit;
-        }
-
-        .woocommerce p.stars a:before, .woocommerce p.stars a:hover ~ a:before, .woocommerce p.stars.selected a.active:before {
-            content: "\e021";
-            font-family: "WooCommerce";
-        }
-
-        .woocommerce p.stars.selected a.active:before {
-            content: "\e020";
-            font-family: "WooCommerce";
-        }
-
-        .woocommerce p.stars a:hover ~ a:before, .woocommerce p.stars.selected a.active:before {
-            color: var(--wdtPrimaryColor);
-        }
-
-        .woocommerce p.stars a:before, .woocommerce p.stars a:hover ~ a:before, .woocommerce p.stars.selected a.active ~ a:before {
-            color: rgba(var(--wdtHeadAltColorRgb), 0.25) !important;
-        }
-
-        .woocommerce p.stars.selected a.active:before, .woocommerce p.stars:hover a:before,
-        .woocommerce p.stars.selected a:not(.active):before, .woocommerce p.stars.selected a.active:before {
-            color: var(--wdtPrimaryColor) !important;
-        }
-
-        /* #endregion - Product Rating */
-
-
-        /* #region - Product Tabs */
-        .woocommerce div.product .wdt-product-tabs:empty {
-            display: none;
-        }
-
-        .woocommerce div.product .wdt-product-tabs {
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"].type2 > a[class*="arrow"] {
             display: inline-block;
-            margin: 50px 0 0 0;
-            position: relative;
-            width: 100%;
+            font-size: 0;
+            height: 50px;
+            line-height: 0;
+            margin: 0 1px;
+            opacity: 1;
+            position: static;
+            visibility: visible;
+            width: 35px;
+            transform: none;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs {
-            clear: both;
-            display: inline-block;
-            position: relative;
-            width: 100%;
+        div[class*="product"] .swiper-container div[class*="arrow-pagination"].type2 > a[class*="arrow"]:before {
+            font-size: 18px;
+            line-height: 50px;
         }
 
-        /* .woocommerce div.product .wdt-product-tabs .woocommerce-tabs:before { content: ''; height: 1px; left: 50%; position: absolute; top: 0; transform: translateX(-50%); transform: translateX(-50%); width: -webkit-calc(100vw); width: -moz-calc(100vw); width: calc(100vw); -moz-transform: translateX(-50%); -webkit-transform: translateX(-50%); } */
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs {
-            clear: both;
-            margin: 0 0 60px;
-            overflow: visible;
-            padding: 0;
-            text-align: left;
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="arrow-pagination"].type2 {
+            height: auto;
+            margin: auto 25px auto 0;
+            width: 50px;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs:before {
-            border: none;
-            content: '';
-            height: 1px;
-            left: 50%;
-            position: absolute;
-            transform: translateX(-50%);
-            transform: translateX(-50%);
-            width: 100%;
-            width: 100%;
-            width: 100%;
-            -moz-transform: translateX(-50%);
-            -webkit-transform: translateX(-50%);
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="arrow-pagination"].type2 > a[class*="arrow"] {
+            float: left;
+            height: 35px;
+            width: 50px;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li {
-            background: none !important;
-            border-radius: 0;
-            border-width: 0;
-            display: inline-block;
-            list-style: none;
-            margin: 0 80px;
-            padding: 0;
+        div[class*="product"] .swiper-container.swiper-container-vertical div[class*="arrow-pagination"].type2 > a[class*="arrow"]:before {
+            line-height: 35px;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li:first-child {
-            margin-left: 0;
-            padding-left: 0;
+
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselscrollbar="true"] div[class*="arrow-pagination"]:not(.type2) > a[class*="arrow"],
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselbulletpagination="true"] div[class*="arrow-pagination"]:not(.type2) > a[class*="arrow"] {
+            margin-top: -15px;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li.active {
-            z-index: auto;
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselbulletpagination="true"][data-carouselscrollbar="true"] div[class*="arrow-pagination"]:not(.type2) > a[class*="arrow"] {
+            margin-top: -30px;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li:after, .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li:before,
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li.active:after, .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li.active:before {
-            content: none;
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselscrollbar="true"] div[class*="arrow-pagination"]:not(.type2) > a[class*="arrow"],
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselbulletpagination="true"] div[class*="arrow-pagination"]:not(.type2) > a[class*="arrow"] {
+            margin-left: -15px;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a {
-            font-size: var(--wdtFontSize_H4);
-            font-weight: 600 !important;
-            letter-spacing: 0;
-            line-height: 26px;
-            padding: 10px 0;
-            position: relative;
-            text-transform: none;
+        div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselbulletpagination="true"][data-carouselscrollbar="true"] div[class*="arrow-pagination"]:not(.type2) > a[class*="arrow"] {
+            margin-left: -30px;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:before, .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 4px;
-            bottom: 0;
-            margin: auto;
-            border-radius: 10px;
+        div[class*="product"] .swiper-container.swiper-container-vertical:hover div[class*="arrow-pagination"] > a[class$="arrow-prev"], div[class*="product"] .swiper-container.swiper-container-vertical[data-carouselbulletpagination="true"]:hover div[class*="arrow-pagination"]:not(.type2) > a[class*="arrow"] {
+            margin-top: 0;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:before {
-            left: 0px;
+        div[class*="product"] .swiper-container.swiper-container-vertical:hover div[class*="arrow-pagination"] > a[class$="arrow-next"] {
+            margin-bottom: 0;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:after {
-            right: 0;
-            transition: width .8s cubic-bezier(.22, .61, .36, 1);
-            -moz-transition: width .8s cubic-bezier(.22, .61, .36, 1);
-            -webkit-transition: width .8s cubic-bezier(.22, .61, .36, 1);
+        /* #endregion - Carousel */
+
+
+        /*--------------------------------------------------------------*/
+        /* #region - Product Single Tabs Exploded */
+        /*--------------------------------------------------------------*/
+
+        .woocommerce div.product .wdt-product-tabs.wdt-product-tabs-exploded {
+            margin: 5px 0 0;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li:hover a:before,
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li.active a:before {
-            width: 100%;
-            -webkit-transition: width .5s cubic-bezier(.22, .61, .36, 1);
-            -moz-transition: width .5s cubic-bezier(.22, .61, .36, 1);
-            transition: width .5s cubic-bezier(.22, .61, .36, 1);
-        }
-
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li:hover a:after,
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li.active a:after {
-            background: transparent;
-            width: 100%;
-        }
-
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs .panel {
-            background-color: transparent;
-            border: none;
-            margin: 0 0 50px 0;
-            position: relative;
-            text-align: left;
-            width: 100%;
-        }
-
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs .panel > h2, .woocommerce div.product .wdt-product-tabs .woocommerce-Reviews-title {
-            display: none;
+        .woocommerce div.product .wdt-product-tabs-exploded > h2 {
             font-size: 1.6em;
             margin-bottom: 30px;
             padding-bottom: 15px;
@@ -5584,7 +3399,20 @@
             -ms-word-wrap: break-word;
         }
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs .panel > h2:before, .woocommerce div.product .wdt-product-tabs .woocommerce-Reviews-title:before {
+
+        .wdt-product-tabs-exploded.wdt-product-hide-tab-title > h2,
+        .wdt-product-tabs-exploded.wdt-product-hide-tab-title .woocommerce-Reviews-title {
+            display: none;
+        }
+
+
+        .woocommerce.single-product .wdt-product-tabs.wdt-product-tabs-exploded table.shop_attributes,
+        .woocommerce.single-product .wdt-product-tabs.wdt-product-tabs-exploded .comment-respond form,
+        .woocommerce.single-product .wdt-product-tabs.wdt-product-tabs-exploded .comment-respond form p:last-child {
+            margin-bottom: 0;
+        }
+
+        .woocommerce div.product .wdt-product-tabs-exploded > h2:before {
             bottom: 0;
             content: '';
             display: block;
@@ -5596,495 +3424,533 @@
             width: 40px;
         }
 
-        .wdt-product-tabs-wrapper.wdt-product-hide-tab-title .woocommerce-tabs .panel > h2:first-child,
-        .wdt-product-tabs-wrapper.wdt-product-hide-tab-title .woocommerce-Reviews-title {
-            display: none;
-        }
 
-        .woocommerce div.product .elementor-toggle-item .wdt-product-tabs {
-            margin: 0;
-        }
-
-        .woocommerce div.product .elementor-toggle-item .wdt-product-tabs.wdt-product-tabs-exploded > h2 {
-            font-size: 1.2rem;
-        }
-
-        .woocommerce table.shop_attributes td p {
-            line-height: normal;
-            padding: 0;
-        }
-
-        .woocommerce .comment-form-rating select, .woocommerce .comment-form-rating .select2 {
-            display: none;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist {
-            margin: 0 0 20px;
-            padding: 0;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li {
-            border: 1px solid rgba(var(--wdtHeadAltColorRgb), 0.15);
-            padding: 30px 20px 25px;
-            background: var(--wdtBodyBGColor);
-            border-radius: 10px;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li:last-child {
-            margin-bottom: 0;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .comment_container {
-            position: relative;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li img.avatar {
-            background: none;
-            position: absolute;
-            left: 0;
-            top: 5px;
-            width: 40px;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .star-rating {
-            display: inline-block;
-            float: right;
-            margin: 5px 0;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .star-rating:before, .woocommerce #reviews #comments ol.commentlist li .star-rating span:before {
-            font-size: var(--wdtFontSize_Base);
-            line-height: inherit;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .comment-text {
-            border-width: 0;
-            display: block;
-            margin: 0 0 0 50px;
-            padding: 0;
-            -webkit-border-radius: var(--wdtRadius_Zero);
-            border-radius: var(--wdtRadius_Zero);
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .meta {
-            color: var(--wdtBodyTxtColor);
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
-            float: left;
-            font-size: 14px;
-            line-height: 30px;
-            margin: 5px 0;
-            min-height: 30px;
-            vertical-align: middle;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta .woocommerce-review__author {
-            color: var(--wdtHeadAltColor);
-            font-size: var(--wdtFontSize_Base);
-            text-transform: capitalize;
-            font-weight: var(--wdtFontWeight_Base);
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta .woocommerce-review__published-date {
-            letter-spacing: 0;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .description {
-            border-top: 1px solid rgba(var(--wdtHeadAltColorRgb), 0.15);
-            clear: both;
-            display: block;
-            margin: 0;
-            padding: 10px 0 0;
-        }
-
-        .woocommerce #reviews #comments ol.commentlist li .description p:last-child {
-            margin-bottom: 0;
-        }
-
-        .woocommerce #review_form #respond {
-            margin-top: 20px;
-        }
-
-        .woocommerce #review_form #respond > .comment-form:last-child,
-        .woocommerce #review_form #respond > .comment-form:last-child > p:last-child {
-            margin-bottom: 0;
-        }
-
-        .woocommerce #review_form #respond .comment-reply-title {
-            display: inline-block;
-            font-size: 20px;
-            font-weight: bold;
-            line-height: normal;
-            margin-bottom: 20px;
-        }
-
-        .woocommerce #review_form #respond p, .woocommerce #review_form #respond .comment-notes {
-            margin-bottom: 0;
-        }
-
-        .woocommerce #review_form #respond p, .woocommerce #review_form #respond .comment-form-rating {
-            clear: both;
-            line-height: inherit;
-        }
-
-        .woocommerce #review_form #respond label {
-            display: block;
-            line-height: 1em;
-            margin-bottom: 0;
-            font-weight: 500;
-        }
-
-        .woocommerce #review_form #respond .comment-form-cookies-consent label {
-            display: inline;
-            font-weight: 500;
-        }
-
-        .woocommerce #review_form #respond .comment-form > .column:first-child:not(.first),
-        .woocommerce #review_form #respond .comment-notes + .column.wdt-three-fourth,
-        .woocommerce #review_form #respond form.comment-form .column.wdt-three-fourth:first-child {
-            margin-left: 0;
-            width: 100%;
-        }
-
-        .woocommerce.single-product .elementor-widget-tabs .wdt-product-tabs {
-            margin-left: 10px !important;
-            margin-right: 10px !important;
-            width: auto;
-        }
-
-        .woocommerce.single-product .elementor-widget-tabs .wdt-product-tabs .elementor-tab-title,
-        .woocommerce.single-product .elementor-widget-tabs .wdt-product-tabs .elementor-tab-content {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        .wdt-shop-default-single-template.woocommerce div.product .wdt-product-tabs .woocommerce-tabs .panel > h2 {
-            display: none;
-        }
-
-
-        .woocommerce .page-with-sidebar div.product .wdt-product-tabs .woocommerce-tabs:before,
-        .woocommerce .page-with-sidebar div.product .wdt-product-tabs .woocommerce-tabs ul.tabs:before {
-            width: 100%;
-        }
-
-        .woocommerce .page-with-sidebar div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li {
-            margin: 0 20px;
-        }
-
-
-        /* #endregion - Product Tabs */
-
-        /* Additional Info */
-
-        .woocommerce div.product .summary > ul.product-additional-info {
-            clear: both;
-            display: inline-block;
-            margin-top: 20px;
-            padding: 0;
-            width: 100%;
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info li {
-            display: inline-block;
-            list-style: none;
-            line-height: normal;
-            margin: 15px 0;
-            padding: 0 0 0 30px;
-            position: relative;
-            width: 100%;
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info li:last-child {
-            margin-bottom: 0;
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info li i {
-            color: var(--wdtPrimaryColor);
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info li i:before {
-            font-weight: normal;
-            margin-right: 7px;
-            vertical-align: top;
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info li span.offer-end-of-day,
-        .woocommerce div.product .summary > ul.product-additional-info li span.offer-delivery-date,
-        .woocommerce div.product .summary > ul.product-additional-info li span.offer-free-shipping {
-            color: var(--wdtPrimaryColor);
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info li span.offer-end-of-day,
-        .woocommerce div.product .summary > ul.product-additional-info li span.offer-delivery-date {
-            text-decoration: underline;
-            text-decoration-skip-ink: none;
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info li span.ai-visitors-count {
-            background: var(--wdtPrimaryColor);
-            color: var(--wdtAccentTxtColor);
-            padding: 2px 8px;
-            margin: 0 3px;
-            border-radius: 5px;
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info.single-item {
-            display: inline-flex;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info.single-item li {
-            margin: 0;
-        }
-
-        .woocommerce div.product .summary > .wdt-single-product-separator + .product-additional-info {
-            margin-top: 0;
-        }
-
-        .woocommerce div.product .summary > ul.product-additional-info:not(.single-item):last-child {
-            margin-bottom: 0;
-        }
-
-
-        .woocommerce div.product .summary.aligncenter > ul.product-additional-info li {
-            padding-left: 0;
-        }
-
-        .woocommerce div.product .summary.aligncenter > ul.product-additional-info li i {
-            position: relative;
-        }
-
-
-        /* #endregion - Product Single */
-
-
-        /*--------------------------------------------------------------*/
-        /* #region - Custom CSS - Single Product Page */
-        /*--------------------------------------------------------------*/
-
-        .woocommerce div.product .summary.bg-with-shadow {
-            background: var(--wdtBodyBGColor);
-            padding: 35px 35px 30px 35px;
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            -webkit-box-shadow: 0 0 5px rgba(var(--wdtHeadAltColorRgb), 0.15);
-            box-shadow: 0 0 5px rgba(var(--wdtHeadAltColorRgb), 0.15);
-        }
-
-        .woocommerce div.product .bg-white .wdt-product-tabs .woocommerce-tabs:after {
-            background: var(--wdtBodyBGColor);
-            content: "";
-            height: 100%;
-            position: absolute;
-            left: 50%;
-            top: 0;
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-            width: -webkit-calc(100vw);
-            width: -moz-calc(100vw);
-            width: calc(100vw);
-            z-index: -1;
-        }
-
-        .wdt-content-scroll {
-            padding-right: 6px;
-        }
-
-        .wdt-content-scroll .elementor-section > .elementor-column-gap-default > .elementor-row,
-        .wdt-content-scroll .elementor-section.elementor-section-boxed:not([data-settings*="background_background"]):not([class*="ary-bg"]) > .elementor-column-gap-default > .elementor-row {
-            margin: 0 0 0 -10px;
-            width: auto;
-        }
-
-
-        /* Custom Vertical Bordered Tabs */
-        .elementor-widget-tabs.elementor-tabs-view-vertical.wdt-vertical-bordered .elementor-tabs-wrapper {
-            border-color: rgba(var(--wdtHeadAltColorRgb), 0.2);
-            border-style: solid;
-            border-width: 1px 0 1px 1px;
-        }
-
-        .elementor-widget-tabs.elementor-tabs-view-vertical.wdt-vertical-bordered .elementor-tabs-wrapper .elementor-tab-title {
-            border-width: 1px 0 !important;
-        }
-
-        .elementor-widget-tabs.elementor-tabs-view-vertical.wdt-vertical-bordered .elementor-tabs-wrapper .elementor-tab-title:first-child {
-            border-top-width: 0 !important;
-        }
-
-        .elementor-widget-tabs.elementor-tabs-view-vertical.wdt-vertical-bordered .elementor-tabs-wrapper .elementor-tab-title:last-child {
-            margin-bottom: -1px;
-        }
-
-
-        /* Custom Bottom-line Accordion */
-        .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-tab-title,
-        .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-tab-content {
-            border-color: var(--wdtBorderColor);
-            border-style: solid;
-            border-width: 0 0 1px !important;
-        }
-
-        .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-tab-title {
-            line-height: normal;
-            padding: 30px 0;
-        }
-
-        .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-tab-content {
-            padding: 24px 0 28px;
-        }
-
-        .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-tab-content > *:last-child {
-            margin-bottom: 0;
-        }
-
-
-        .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-accordion-item {
-            border-width: 0;
-        }
-
-        .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-accordion-item:first-child .elementor-tab-title {
-            padding-top: 10px;
-        }
-
-        .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-accordion-item:last-child .elementor-tab-title:not(.elementor-active) {
-            border-width: 0 !important;
-            padding-bottom: 10px;
-        }
-
-        /* #endregion - Custom CSS - Single Product Page */
-
-
-        /*--------------------------------------------------------------*/
-        /* #region - Default Colors */
-        /*--------------------------------------------------------------*/
-
-        /* Backgrounds */
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs .panel > h2:before, .woocommerce div.product .wdt-product-tabs .woocommerce-Reviews-title:before, .woocommerce div.product .woocommerce-tabs:before, .woocommerce div.product .woocommerce-tabs ul.tabs:before {
+        .woocommerce div.product .wdt-product-tabs-exploded > h2:before {
             background-color: rgba(var(--wdtHeadAltColorRgb), 0.15);
         }
 
-        .woocommerce div.product .wdt-product-summary .product-buttons-wrapper.style-skin-bgfill .wc_btn_inline button.disabled.wc-variation-is-unavailable,
-        .woocommerce div.product .wdt-product-summary .product-buttons-wrapper.style-skin-bgfill .wc_btn_inline button.button.disabled.wc-variation-is-unavailable,
-        .woocommerce div.product .wdt-product-summary .product-buttons-wrapper.style-skin-bgfill .wc_btn_inline .button.alt.disabled.wc-variation-is-unavailable,
-        .woocommerce div.product .wdt-product-summary .product-buttons-wrapper.style-skin-bgfill .wc_btn_inline .button.disabled.wc-variation-is-unavailable,
-        .woocommerce div.product .wdt-product-summary .product-buttons-wrapper.style-skin-bgfill .wc_btn_inline .button.alt.disabled.wc-variation-is-unavailable {
-            background-color: rgba(var(--wdtHeadAltColorRgb), 0.5);
+        /* #endregion - Product Single Tabs Exploded */
+
+
+        /*--------------------------------------------------------------*/
+        /* #region - Product Custom Type Labels & Offer Labels */
+        /*--------------------------------------------------------------*/
+
+        .woocommerce ul.products li.product .product-custom-type {
+            position: absolute;
+            top: 10px;
+            text-align: center;
+            z-index: 9;
         }
 
-
-        /* Borders */
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option {
-            border-color: rgba(var(--wdtHeadAltColorRgb), 0.15);
+        .woocommerce ul.products li.product .product-custom-type {
+            height: 25px;
+            left: 5px;
+            min-width: 50px;
+            min-height: 25px;
         }
 
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option:hover,
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option.zoo-cw-active {
-            border-color: var(--wdtHeadAltColor);
+        .woocommerce ul.products li.product .product-custom-type .product-custom-type-label {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 25px;
+            padding: 0 10px;
+            text-transform: uppercase;
         }
 
-
-        /* Colors */
-        .woocommerce div.product .summary .yith-wcwl-add-to-wishlist a, .woocommerce div.product .summary .compare,
-        .woocommerce div.product .summary .yith-wcqv-button, .woocommerce div.product .summary .wdt-wcsg-button {
+        .woocommerce ul.products li.product .product-custom-type .product-custom-type-label {
+            background: #7da754;
             color: var(--wdtAccentTxtColor);
         }
 
-        .woocommerce div.product .summary .product_meta a,
-        .woocommerce div.product .summary .product_meta > span strong,
-        .woocommerce div.product .summary .product_meta > span.yith-wcbr-brands,
-        .woocommerce div.product .summary .product-button.style-simple .compare,
-        .woocommerce div.product .summary form.cart .group_table td label a,
-        .woocommerce div.product .woocommerce-tabs ul.tabs li a,
-        .woocommerce #review_form #respond .comment-reply-title,
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row div.label label,
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option:hover .zoo-cw-attr-item span:before,
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option.zoo-cw-active .zoo-cw-attr-item span:before,
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option .zoo-cw-attr-item span:hover:first-letter {
-            color: var(--wdtHeadAltColor);
+        .woocommerce ul.products.product-label-rounded li.product .product-custom-type .product-custom-type-label {
+            border-radius: 5px;
         }
 
-        .woocommerce .woocommerce-breadcrumb, .woocommerce .woocommerce-breadcrumb a, .woocommerce small.note,
-        .woocommerce .product form.cart .variations li.zoo-cw-attr-row > .zoo-cw-type-text > .zoo-cw-attribute-option .zoo-cw-attr-item span:first-letter {
+        /* #endregion - Product Custom Type Labels & Offer Labels */
+
+
+    </style>
+    <style id='neytri-woo-archive-inline-css' type='text/css'>
+
+
+        /*--------------------------------------------------------------*/
+        /* #region - Product Listing - Loop Sorting */
+        /*--------------------------------------------------------------*/
+
+        .woocommerce .product-loop-sorting {
+            clear: both;
+            display: block;
+            float: none;
+            font-size: 0;
+            line-height: 0;
+            margin: 0;
+            padding-bottom: 30px;
+            position: relative;
+            width: auto;
+        }
+
+        .woocommerce .product-loop-sorting,
+        .woocommerce .product-loop-sorting > *, .woocommerce .product-loop-sorting > .product-loop-sorting-item-group,
+        .woocommerce .product-loop-sorting > *, .woocommerce .product-loop-sorting > .product-loop-sorting-item-group > .product-loop-sorting-item {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+
+
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .woocommerce .product-loop-sorting > *, .woocommerce .product-loop-sorting > .product-loop-sorting-item-group,
+        .woocommerce .product-loop-sorting > *, .woocommerce .product-loop-sorting > .product-loop-sorting-item-group > .product-loop-sorting-item {
+            -ms-flex-pack: distribute;
+            justify-content: space-around;
+        }
+
+        .woocommerce .product-loop-sorting:before {
+            content: "";
+            margin: 0 10px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+        }
+
+        .woocommerce ul.products ~ .product-loop-sorting {
+            margin-top: 35px;
+            margin-bottom: 0;
+            padding: 15px 0 0;
+        }
+
+        .woocommerce ul.products ~ .product-loop-sorting:before {
+            bottom: auto;
+            top: 0;
+        }
+
+        .woocommerce .product-loop-sorting > *, .woocommerce .product-loop-sorting > .product-loop-sorting-item-group > .product-loop-sorting-item { /* display: inline-block; */
+            float: none !important;
+            font-size: var(--wdtFontSize_Base);
+            line-height: normal;
+            margin: 5px 0;
+            vertical-align: middle;
+        }
+
+        .woocommerce .product-loop-sorting > .woocommerce-notices-wrapper {
+            width: 100%;
+        }
+
+        .woocommerce .product-loop-sorting > .woocommerce-notices-wrapper:empty {
+            display: none;
+        }
+
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item:first-child {
+            text-align: left;
+
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item:last-child {
+            text-align: right;
+
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+        }
+
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item-group,
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item-group > .product-loop-sorting-item,
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item:only-child,
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item-group:only-child {
+            text-align: center;
+
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .woocommerce .product-loop-sorting .product-loop-sorting-item {
+            padding: 0 10px;
+        }
+
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item {
+            margin: 10px 0;
+        }
+
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item-group {
+            margin: 0;
+        }
+
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item:only-child,
+        .woocommerce .product-loop-sorting > .product-loop-sorting-item-group:only-child {
+            text-align: center;
+            width: 100%;
+        }
+
+        .woocommerce .product-loop-sorting .woocommerce-result-count {
+            margin: 0;
+            width: 100%;
+        }
+
+        .woocommerce .product-loop-sorting .woocommerce-ordering {
+            display: inline-block;
+            float: none;
+            margin: 0;
+            min-width: auto;
+        }
+
+        .woocommerce .product-loop-sorting .woocommerce-ordering select {
+            height: 46px;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .woocommerce .product-loop-sorting .product-loop-sorting-item .select2-container {
+            text-align: left;
+        }
+
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display,
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options,
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li,
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li,
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li span,
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li span {
+            display: inline-block;
+        }
+
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display,
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options {
+            margin: 0;
+            padding: 0;
+        }
+
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li,
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li span,
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li span {
+            border: 0px solid rgba(var(--wdtHeadAltColorRgb), 0.25);
+            font-size: 0;
+            height: 30px;
+            line-height: 30px;
+            opacity: 0.2;
+            padding: 0;
+            position: relative;
+            text-align: center;
+            vertical-align: middle;
+            width: 30px;
+            -webkit-border-radius: var(--wdtRadius_2X);
+            border-radius: var(--wdtRadius_2X);
+        }
+
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li:hover span,
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li:hover span,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li:hover span {
+            cursor: pointer;
+        }
+
+
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li:hover span,
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li:hover span,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li:hover span,
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span.active,
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li span.active,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li span.active {
+            opacity: 1;
+        }
+
+
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span:before,
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li span:before,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li span:before {
+            display: inline-block;
+            font-size: 20px;
+            margin: auto;
+            width: 100%;
+            -webkit-transition: inherit;
+            transition: inherit;
+        }
+
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span[data-column="1"]:before {
+            content: "\ec6d";
+            font-family: 'IcoMoon-Ultimate' !important;
+        }
+
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span[data-column="2"]:before {
+            content: "\e816";
+            font-family: 'Ext Icons';
+            font-size: 18px;
+        }
+
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span[data-column="3"]:before {
+            content: "\e819";
+            font-family: 'Ext Icons';
+            font-size: 20px;
+        }
+
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span[data-column="4"]:before {
+            content: "\e801";
+            font-family: 'Ext Icons';
+            font-size: 20px;
+        }
+
+
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li span[data-display="grid"]:before {
+            content: "\e801";
+            font-family: "ny-shop-icons";
+            font-size: 30px;
+        }
+
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li span[data-display="list"]:before {
+            content: "\e800";
+            font-family: "ny-shop-icons";
+            font-size: 30px;
+        }
+
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li span[data-list-option="left-thumb"]:before {
+            content: "\e814";
+            font-family: "Ext Icons";
+            font-size: 18px;
+        }
+
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li span[data-list-option="right-thumb"]:before {
+            content: "\e812";
+            font-family: "Ext Icons";
+            font-size: 18px;
+        }
+
+        .woocommerce .product-loop-sorting nav.woocommerce-pagination {
+            clear: none;
+            margin: 0;
+            width: auto;
+        }
+
+        .woocommerce .product-loop-sorting nav.woocommerce-pagination ul {
+            border-width: 0;
+            font-size: 0;
+        }
+
+        .woocommerce .product-loop-sorting nav.woocommerce-pagination ul li {
+            border-width: 0;
+            display: inline-block;
+            float: none;
+            margin: 3px;
+            overflow: visible;
+        }
+
+        /* .woocommerce .page-with-sidebar .product-loop-sorting .product-display-controller,
+    .page-with-sidebar .woocommerce .product-loop-sorting .product-display-controller,  */
+        .woocommerce .page-with-sidebar .product-loop-sorting .product-layout-controller,
+        .page-with-sidebar .woocommerce .product-loop-sorting .product-layout-controller {
+            opacity: 0.35;
+        }
+
+        /* .woocommerce .page-with-sidebar .product-loop-sorting .product-display-controller, .woocommerce .page-with-sidebar .product-loop-sorting .product-display-controller ul, .woocommerce .page-with-sidebar .product-loop-sorting .product-display-controller li, .woocommerce .page-with-sidebar .product-loop-sorting .product-display-controller ul li span, .woocommerce .page-with-sidebar .product-loop-sorting .product-display-controller ul li span:before, .woocommerce .page-with-sidebar .product-loop-sorting .product-display-controller .product-change-display li:hover span, .woocommerce .page-with-sidebar .product-loop-sorting .product-layout-controller .product-change-layout li:hover span,
+
+    .page-with-sidebar .woocommerce .product-loop-sorting .product-display-controller, .page-with-sidebar .woocommerce .product-loop-sorting .product-display-controller ul, .page-with-sidebar .woocommerce .product-loop-sorting .product-display-controller li, .page-with-sidebar .woocommerce .product-loop-sorting .product-display-controller ul li span, .page-with-sidebar .woocommerce .product-loop-sorting .product-display-controller ul li span:before, .page-with-sidebar .woocommerce .product-loop-sorting .product-display-controller .product-change-display li:hover span, .page-with-sidebar .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li:hover span,
+
+    */
+
+        .woocommerce .page-with-sidebar .product-loop-sorting .product-layout-controller, .woocommerce .page-with-sidebar .product-loop-sorting .product-layout-controller ul, .woocommerce .page-with-sidebar .product-loop-sorting .product-layout-controller li, .woocommerce .page-with-sidebar .product-loop-sorting .product-layout-controller ul li span, .woocommerce .page-with-sidebar .product-loop-sorting .product-layout-controller ul li span:before, .woocommerce .page-with-sidebar .product-loop-sorting .product-layout-controller .product-change-layout li:hover span,
+        .page-with-sidebar .woocommerce .product-loop-sorting .product-layout-controller, .page-with-sidebar .woocommerce .product-loop-sorting .product-layout-controller ul, .page-with-sidebar .woocommerce .product-loop-sorting .product-layout-controller li, .page-with-sidebar .woocommerce .product-loop-sorting .product-layout-controller ul li span, .page-with-sidebar .woocommerce .product-loop-sorting .product-layout-controller ul li span:before, .page-with-sidebar .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li:hover span {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Product Loop Filter Widget */
+
+        .product-loop-filters-area-content {
+            display: none;
+        }
+
+        .product-loop-filters-area-content.show {
+            display: block;
+        }
+
+        .product-loop-filters-area-content.show .product-loop-filters-area-content-inner {
+            opacity: 0;
+            transition: var(--wdt-elementor-base-transition);
+            -webkit-transition: var(--wdt-elementor-base-transition);
+        }
+
+        .product-loop-filters-area-content.show .product-loop-filters-area-content-inner {
+            opacity: 1;
+        }
+
+        .product-loop-filters-area-content .product-loop-filters-area-content-inner {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+            border-width: 1px 0;
+            border-color: var(--wdtBorderColor);
+            border-style: solid;
+            margin: 0 0 30px;
+        }
+
+        .product-loop-filters-area-content .widget {
+            flex: 0 0 25%;
+            max-width: 25%;
+            margin: 0;
+            padding: 10px;
+            box-shadow: none;
+        }
+
+        .product-loop-filters-area-content .widget .widgettitle {
+            font-size: 1rem;
+            padding: 0;
+            margin: 0 0 15px;
+        }
+
+        .product-loop-filters-area-content .widgettitle:before {
+            content: none;
+        }
+
+        .product-loop-filters-area-content .widget ul li,
+        .product-loop-filters-area-content .widget ol li {
+            border: none;
+        }
+
+        .product-loop-filters-area-content .widget ul li > a,
+        .product-loop-filters-area-content .widget ol li > a,
+        .product-loop-filters-area-content .woocommerce .widget_layered_nav ul li span,
+        .product-loop-filters-area-content .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item span {
+            font-size: 0.9rem;
+            line-height: normal;
+        }
+
+        .product-loop-filters-area-content .widget ul li,
+        .product-loop-filters-area-content .widget ol li,
+        .product-loop-filters-area-content .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item a,
+        .product-loop-filters-area-content .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item span {
+            padding: 5px 0;
+            line-height: normal;
+        }
+
+        .product-loop-filters-area-content .widget ul li,
+        .product-loop-filters-area-content .widget ol li,
+        .product-loop-filters-area-content .woocommerce .widget_layered_nav ul li:first-child a,
+        .product-loop-filters-area-content .woocommerce .widget_layered_nav_filters ul li:first-child a,
+        .product-loop-filters-area-content .woocommerce .widget_rating_filter ul li:first-child a,
+        .product-loop-filters-area-content .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item:first-child a {
+            padding-top: 0;
+        }
+
+        .product-loop-filters-area-content .woocommerce .widget_layered_nav ul li span,
+        .product-loop-filters-area-content .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item span {
+            line-height: normal;
+        }
+
+        .product-loop-filters-area-content .woocommerce.widget_price_filter .price_slider_amount .button {
+            font-size: 0.8rem;
+            padding: 8px 30px;
+            border-radius: var(--wdtRadius_2X);
+        }
+
+        .product-loop-filters-area-content .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item {
+            display: flex;
+            flex: 1 1 auto;
+            align-items: center;
+        }
+
+        .product-loop-filters-area-content .woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item .woocommerce-widget-bg-color {
+            font-size: 0;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            position: relative;
+            display: block;
+            transition: all .25s ease;
+        }
+
+
+        /* Transitions */
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li span, .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span, .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li span {
+            -webkit-transition: all 300ms linear 0s;
+            -moz-transition: all 300ms linear 0s;
+            -ms-transition: all 300ms linear 0s;
+            -o-transition: all 300ms linear 0s;
+            transition: all 300ms linear 0s;
+        }
+
+
+        /* Color - Borders */
+
+        /* Color - Colors */
+        .woocommerce .product-loop-sorting .woocommerce-ordering select,
+        .woocommerce .product-layout-controller .product-change-layout li span:before,
+        .woocommerce .product-display-controller .product-change-display li span:before,
+        .woocommerce .product-list-options-controller .product-list-options li span:before {
             color: rgba(var(--wdtHeadAltColorRgb), 0.8);
         }
 
+        .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover,
+        .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li .page-numbers.dots {
+            color: var(--wdtLinkColor);
+        }
 
-        /* #endregion - Default Colors */
+
+        /* #endregion - Product Listing - Loop Sorting */
 
 
         /*--------------------------------------------------------------*/
         /* #region - Accents */
         /*--------------------------------------------------------------*/
 
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:before, .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:after, .woocommerce div.product .woocommerce-tabs ul.tabs li.active a:after, .woocommerce div.product form.cart .variations .reset_variations:before {
-            background-color: var(--wdtPrimaryColor);
+        /* Primary */
+        .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover,
+        .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li .page-numbers.dots {
+            background-color: transparent;
         }
 
-        .woocommerce div.product div.images ol.flex-control-nav li img.flex-active, div[class*="thumb-container"] .swiper-wrapper .swiper-slide.swiper-slide-active img,
-        .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
-        .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li.active a,
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:hover,
-        .woocommerce div.product .summary .product_meta a:hover,
-        .woocommerce div.product .summary form.cart .group_table td label a:hover,
-        .woocommerce div.product .woocommerce-product-rating .woocommerce-review-link:hover,
-        .woocommerce table.cart td.product-name a:not(.button):hover {
-            color: var(--wdtLinkHoverColor);
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span.active,
+        .woocommerce .product-loop-sorting .product-display-controller .product-change-display li span.active,
+        .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li span.active,
+        .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover,
+        .woocommerce nav.woocommerce-pagination ul li span.current, .woocommerce nav.woocommerce-pagination ul li .page-numbers.dots {
+            border-color: var(--wdtPrimaryColor);
         }
 
-        .woocommerce div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li.active a,
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:hover {
+        .woocommerce .product-loop-sorting .product-layout-controller .product-change-layout li span.active:before, .woocommerce .product-loop-sorting .product-display-controller .product-change-display li span.active:before, .woocommerce .product-loop-sorting .product-list-options-controller .product-list-options li span.active:before {
             color: var(--wdtPrimaryColor);
         }
 
-
-        .woocommerce div.product form.cart .variations .reset_variations:hover {
-            color: var(--wdtPrimaryColor);
-        }
-
-        .woocommerce #reviews #comment {
-            height: 120px;
-        }
-
-        /* -------------------------------------- custom style starts --------------------------------------- */
-
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li {
-            margin: 0 clamp(0.625rem, -1.875rem + 5.2083vw, 4.375rem);
-        }
-
-        .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li:first-child {
-            margin-left: 0;
-        }
-
-        /* -------------------------------------- custom style ends ----------------------------------------- */
 
         /* #endregion - Accents */
 
-        /*--------------------------------------------------------------
- 	Responsive
---------------------------------------------------------------*/
 
-        /* Note: Design for a width of 960px */
-        @media only screen and (min-width: 1025px) and (max-width: 1280px) {
-
-            .woocommerce div.product .images .thumbnails .yith_magnifier_gallery li {
-                width: 92px !important;
-            }
-
-            .woocommerce .page-with-sidebar .product .images .thumbnails .yith_magnifier_gallery li,
-            .woocommerce-page .page-with-sidebar .product .images .thumbnails .yith_magnifier_gallery li {
-                width: 67px !important;
-            }
-        }
+        /*--------------------------------------------------------------*/
+        /* #region - Responsive */
+        /*--------------------------------------------------------------*/
 
 
         /*----*****---- << Tablet (Portrait) >> ----*****----*/
@@ -6092,54 +3958,32 @@
         /* Note: Design for a width of 768px */
         @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
-            .woocommerce .page-with-sidebar .product div.images, .woocommerce-page .page-with-sidebar .product div.images,
-            .woocommerce .page-with-sidebar .product div.summary, .woocommerce-page .page-with-sidebar .product div.summary {
-                float: left;
-                width: 100%;
+            .woocommerce .product-loop-sorting {
+                text-align: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
             }
 
-            .woocommerce .page-with-sidebar .product div.summary, .woocommerce-page .page-with-sidebar .product div.summary {
-                margin: 0;
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item, .woocommerce .product-loop-sorting > .product-loop-sorting-item-group {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: auto;
             }
 
-            .woocommerce.single-product .page-with-sidebar .product-thumb-wrapper span.onsale,
-            .woocommerce.single-product .page-with-sidebar .product-thumb-wrapper span.out-of-stock {
-                right: -25px;
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item-group > .product-loop-sorting-item {
+                display: inline-block;
             }
 
-            .woocommerce div.product .images .thumbnails .yith_magnifier_gallery li {
-                width: 71px !important;
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item,
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item:first-child,
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item:last-child {
+                text-align: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
             }
-
-            .woocommerce .page-with-sidebar .product .images .thumbnails .yith_magnifier_gallery li,
-            .woocommerce-page .page-with-sidebar .product .images .thumbnails .yith_magnifier_gallery li {
-                width: 160px !important;
-            }
-
-            .wdt-sticky-content.elementor-widget-accordion {
-                position: inherit !important;
-                margin: 20px -20px 0;
-                left: auto !important;
-                top: auto !important;
-                width: auto !important;
-            }
-
-        }
-
-        /*----*****---- << Tablet >> ----*****----*/
-
-        /* Note: Design for a width of 768px */
-        @media only screen and (min-width: 768px) and (max-width: 1280px) {
-
-            .woocommerce .product form.cart .variations li.zoo-cw-attr-row div.label {
-                margin: 0 0 15px;
-            }
-
-            .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a {
-                font-size: var(--wdtFontSize_H5);
-            }
-
-            /* .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li { margin: 0 20px; } */
 
         }
 
@@ -6149,146 +3993,468 @@
         /* Common Styles for the devices below 767px width */
         @media only screen and (max-width: 767px) {
 
-            .woocommerce div.product div.images, .woocommerce-page div.product div.images,
-            .woocommerce div.product div.summary, .woocommerce-page div.product div.summary {
-                float: left;
-                width: 100%;
-            }
-
-            .woocommerce div.product .woocommerce-tabs ul.tabs:before,
-            .woocommerce div.product .wdt-product-tabs .woocommerce-tabs:before {
-                content: none;
-            }
-
-            .woocommerce div.product .woocommerce-tabs ul.tabs li,
-            .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li {
-                display: block;
-                margin: 0;
-                padding: 0;
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item,
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item:first-child,
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item:last-child {
                 text-align: center;
             }
 
-            .woocommerce div.product .woocommerce-tabs ul.tabs li:not(:last-child),
-            .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li:not(:last-child) {
-                border-style: solid;
-                border-width: 0 0 1px;
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item,
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item-group,
+            .woocommerce .product-loop-sorting > .product-loop-sorting-item-group > .product-loop-sorting-item {
+                display: inline-block;
+                margin: 5px 0;
+                width: 100%;
             }
 
-            .woocommerce div.product .woocommerce-tabs ul.tabs li, .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
-            .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li, .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li.active {
-                border-color: rgba(var(--wdtHeadAltColorRgb), 0.15);
-            }
-
-            .woocommerce div.product .woocommerce-tabs ul.tabs li.active a:after,
-            .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:before,
-            .woocommerce div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li a:after {
-                bottom: -1px;
-            }
-
-            .woocommerce-tabs ul.tabs li a {
-                font-size: 13px;
-            }
-
-            .woocommerce-tabs .panel h2 {
-                font-size: 18px;
-            }
-
-            /* .woocommerce #review_form #respond p.form-submit { text-align: center; } */
-            .woocommerce #review_form #respond p.form-submit input {
+            .woocommerce .product-loop-sorting .woocommerce-ordering {
                 display: inline-block;
                 float: none;
             }
 
-            .woocommerce #review_form #respond p.comment-form-comment {
-                margin-bottom: 0;
-            }
-
-            /* .woocommerce #review_form #respond p.stars span {
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: reverse;
-            -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-        } */
-            .woocommerce div.product form.cart .group_table {
-                border-width: 1px;
-                display: block;
-                position: relative;
-                width: 100%;
-            }
-
-            .woocommerce-page div.product form.cart .group_table {
-                border-top-width: 0 !important;
-            }
-
-            .woocommerce div.product form.cart .group_table thead {
-                display: block;
-                float: left;
-            }
-
-            .woocommerce div.product form.cart .group_table tbody {
-                display: block;
-                overflow-x: auto;
-                position: relative;
-                width: auto;
-                white-space: nowrap;
-            }
-
-            .woocommerce div.product form.cart .group_table td {
-                display: block;
-                min-height: 1.25em;
-            }
-
-
-            .woocommerce table.shop_attributes th, .woocommerce table.shop_attributes td {
-                font-size: 14px;
-            }
-
-            .woocommerce div.product form.cart .group_table td,
-            .woocommerce-page div.product form.cart .group_table td {
-                font-size: 16px;
-                font-weight: normal;
-            }
-
-
-            .woocommerce .cart .button, .woocommerce-page .cart .button,
-            .woocommerce .cart input.button, .woocommerce-page .cart input.button,
-            .woocommerce div.product form.cart .button {
-                display: inline-block;
+            .woocommerce .woocommerce-result-count, .woocommerce .woocommerce-ordering {
                 float: none;
-                margin: 10px 0 0;
-            }
-
-
-            .woocommerce div.product div.images, .woocommerce div.product div.summary {
-                width: 100%;
-            }
-
-            .woocommerce div.product form.cart .group_table td {
-                font-size: 1rem;
-            }
-
-            .woocommerce.single-product .product-thumb-wrapper span.onsale,
-            .woocommerce.single-product .product-thumb-wrapper span.out-of-stock {
-                right: 5px;
-                top: 5px;
-            }
-
-            .woocommerce.single-product .elementor-widget-tabs .elementor-tab-content .elementor-widget-accordion .elementor-accordion .elementor-tab-title {
-                border-width: 0;
-            }
-
-            .woocommerce.single-product .wdt-product-tabs .elementor-section.elementor-section-boxed > .elementor-container {
-                max-width: 100%;
-            }
-
-
-            .woocommerce table.shop_attributes td {
+                display: block;
                 text-align: center;
             }
 
-            .woocommerce .page-with-sidebar div.product .wdt-product-tabs .woocommerce-tabs ul.tabs li {
-                margin: 0;
-                margin-bottom: 20px;
+        }
+
+
+        /* #endregion - Responsive */
+
+
+    </style>
+    <link rel='stylesheet' id='neytri-woo-single-common-css'
+          href='https://neytri.wpengine.com/wp-content/themes/neytri/modules/woocommerce/single/assets/css/common.css?ver=6.2.2'
+          type='text/css' media='all'/>
+    <style id='neytri-woo-cart-notification-inline-css' type='text/css'>
+
+
+        /*--------------------------------------------------------------*/
+        /* #region - Add-to-Cart Notification Widget */
+        /*--------------------------------------------------------------*/
+
+        .wdt-shop-cart-widget.cart-notification-widget, .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-inner,
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content {
+            float: left;
+            width: 100%;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button {
+            font-size: 0;
+            height: 25px;
+            line-height: 0;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            text-align: center;
+            width: 25px;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button:before {
+            content: "\2716";
+            display: block;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 25px;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget {
+            max-width: 500px;
+            position: fixed;
+            bottom: 32px;
+            left: 18px;
+            width: auto;
+            z-index: 999;
+            -webkit-transition: var(--wdtBaseTransition);
+            transition: var(--wdtBaseTransition);
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-inner {
+            padding: 20px;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content > * {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-thumb {
+            line-height: 0;
+            padding: 0 10px;
+            width: 120px;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-info {
+            padding: 5px 10px;
+            text-align: left;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-thumb a,
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-thumb a img {
+            display: block;
+            width: 100%;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-info a {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget.wdt-shop-cart-widget-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        .wdt-shop-cart-widget.cart-notification-widget {
+            background-color: var(--wdtBodyBGColor);
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button:before {
+            color: var(--wdtAccentTxtColor);
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget {
+            -webkit-box-shadow: 0 1px 3px 1px rgba(var(--wdtHeadAltColorRgb), 0.25);
+            box-shadow: 0 1px 3px 1px rgba(var(--wdtHeadAltColorRgb), 0.25);
+        }
+
+        /* #endregion - Add-to-Cart Notification Widget */
+
+
+        /*--------------------------------------------------------------*/
+        /* #region - Add-to-Cart Sidebar Widget */
+        /*--------------------------------------------------------------*/
+
+        .wdt-shop-cart-widget.activate-sidebar-widget {
+            height: 100%;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 350px;
+            z-index: 999992;
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+            -webkit-transition: var(--wdtBaseTransition);
+            transition: var(--wdtBaseTransition);
+        }
+
+        .wdt-shop-cart-widget.activate-sidebar-widget:before {
+            content: "";
+        }
+
+        .wdt-shop-cart-widget.activate-sidebar-widget.wdt-shop-cart-widget-active {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-inner {
+            height: 100%;
+            padding: 45px 0 120px;
+            position: relative;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header {
+            border-width: 0 0 1px;
+            padding-left: 15px;
+            padding-right: 45px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 {
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 45px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 span, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header a {
+            height: 45px;
+            position: absolute;
+            top: 0;
+            text-align: center;
+            width: 45px;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 span {
+            font-size: 18px;
+            right: 0;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a {
+            font-size: 0;
+            line-height: 0;
+            margin-right: 1px;
+            overflow: hidden;
+            right: 100%;
+            text-indent: -9999px;
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a:before {
+            content: "\2716";
+            display: block;
+            font-size: 15px;
+            font-weight: normal;
+            line-height: 45px;
+            text-indent: 0;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"].activate-sidebar-widget:hover .wdt-shop-cart-widget-header h3 a {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content {
+            float: left;
+            width: 100%;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-inner,
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget,
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li {
+            float: left;
+            width: 100%;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget,
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .total {
+            padding: 0 15px;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li {
+            border-width: 1px 0;
+            display: inline;
+            margin: -1px 0 0 !important;
+            padding: 15px 25px 15px 50px;
+            position: relative;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li:first-child {
+            border-top-width: 0;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li:last-child {
+            border-bottom-width: 0;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a:not(.remove) {
+            font-weight: 600;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a img {
+            margin: auto;
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 40px;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove {
+            font-size: 16px;
+            height: 20px;
+            line-height: 20px;
+            margin: auto;
+            position: absolute;
+            bottom: 0;
+            left: auto;
+            right: 0;
+            top: 0 !important;
+            text-align: center;
+            width: 20px;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove:not(:focus) {
+            text-decoration: none;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li:before {
+            content: none !important;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li .quantity {
+            display: table;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer::before {
+            content: "";
+            height: 1px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            width: auto;
+            z-index: -1;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p {
+            height: 50px;
+            line-height: 50px;
+            margin: 0;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.total {
+            padding: 0 15px;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.total strong {
+            float: left;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.total .amount {
+            float: right;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons {
+            display: flex;
+            grid-gap: 1px;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons a {
+            height: 100%;
+            line-height: inherit;
+            margin: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            text-align: center;
+            width: 50%;
+            -webkit-border-radius: 0;
+            border-radius: 0;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart__empty-message {
+            margin: 0;
+            padding: 15px;
+        }
+
+        .wdt-shop-cart-widget-overlay {
+            background-color: rgba(var(--wdtHeadAltColorRgb), 0.7);
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999991;
+            -webkit-transition: opacity .25s ease, visibility 0s ease .25s;
+            transition: opacity .25s ease, visibility 0s ease .25s;
+        }
+
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li {
+            border-style: solid;
+        }
+
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove, .wdt-shop-cart-widget-overlay {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"].activate-sidebar-widget:hover .wdt-shop-cart-widget-header h3 a,
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li:hover a.remove,
+        .wdt-shop-cart-widget.activate-sidebar-widget.wdt-shop-cart-widget-active + .wdt-shop-cart-widget-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        /* Default Color - Colors */
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a:not(.remove):not(:hover),
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.total .amount {
+            color: var(--wdtHeadAltColor);
+        }
+
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a:hover {
+            color: var(--wdtAccentTxtColor);
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove {
+            color: var(--wdtAccentTxtColor) !important;
+        }
+
+
+        /* Default Color - Borders */
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer::before {
+            -webkit-box-shadow: 0 2px 6px 0 rgba(var(--wdtHeadAltColorRgb), 0.5);
+            box-shadow: 0 2px 6px 0 rgba(var(--wdtHeadAltColorRgb), 0.5);
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li {
+            border-color: rgba(var(--wdtHeadAltColorRgb), 0.075);
+        }
+
+
+        /* Default Color - BG */
+        .wdt-shop-cart-widget.activate-sidebar-widget {
+            background-color: #f7f7f7;
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer {
+            background-color: var(--wdtBodyBGColor);
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons a.checkout, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove,
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons a:not(.checkout),
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a, .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .woocommerce-mini-cart-footer p.buttons a:hover, .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button {
+            background-color: var(--wdtHeadAltColor);
+        }
+
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 span {
+            background-color: rgba(var(--wdtBodyBGColorRgb), 0.15);
+        }
+
+        .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-close-button:hover,
+        .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-content .product_list_widget li a.remove:hover {
+            background-color: #9f2124;
+        }
+
+
+        /* #endregion - Add-to-Cart Sidebar Widget */
+
+        .wdt-shop-cart-widget.activate-sidebar-widget .wdt-shop-cart-widget-inner .wdt-shop-cart-widget-header .wdt-shop-cart-widget-close-button {
+            background: transparent;
+        }
+
+
+        /*--------------------------------------------------------------*/
+        /* #region - Responsive */
+        /*--------------------------------------------------------------*/
+
+        /*----*****---- << Mobile (Landscape) >> ----*****----*/
+
+        /* Common Styles for the devices below 767px width */
+        @media only screen and (max-width: 767px) {
+
+            .wdt-shop-cart-widget.cart-notification-widget {
+                margin: auto;
+                bottom: 5px;
+                left: 0;
+                right: 0;
             }
 
         }
@@ -6297,244 +4463,262 @@
         /* Note: Design for a width of 480px */
         @media only screen and (min-width: 480px) and (max-width: 767px) {
 
-            .woocommerce div.product .images .thumbnails .yith_magnifier_gallery li,
-            .woocommerce.single-product .page-with-sidebar .product .images .thumbnails .yith_magnifier_gallery li {
-                width: 133px !important;
-            }
-
-            .woocommerce div.product .woocommerce-tabs ul.tabs li {
-                padding: 0 12px 0 5px;
-            }
-
-            .woocommerce div.product .woocommerce-tabs ul.tabs li a {
-                font-size: 12px;
-            }
-
-            .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta .woocommerce-review__dash {
-                display: none;
-            }
-
-            .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta .woocommerce-review__published-date {
-                display: block;
-            }
-
-            .woocommerce table.shop_attributes td {
-                text-align: left;
+            .wdt-shop-cart-widget.cart-notification-widget {
+                max-width: 420px;
             }
 
         }
-
 
         /* Common Styles for the devices below 479px width */
         @media only screen and (max-width: 479px) {
 
-            .woocommerce div.product.product-type-external .summary a,
-            .woocommerce div.product.product-type-external .summary a.button,
-            .woocommerce div.product.product-type-external .summary button,
-            .woocommerce div.product.product-type-external .summary button.button,
-            .woocommerce div.product.product-type-external .summary .button,
-            .woocommerce div.product.product-type-external .summary .button.alt,
-            .woocommerce div.product.product-type-external .summary .button.disabled,
-            .woocommerce div.product.product-type-external .summary .button[disabled],
-            .woocommerce div.product.product-type-external .summary .button.alt.disabled,
-            .woocommerce div.product.product-type-external .summary .button.alt[disabled] {
+            .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content > * {
+                display: table;
+                margin: auto;
+                text-align: center !important;
+            }
+
+            .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-info {
+                font-size: 11px;
+            }
+
+            .wdt-shop-cart-widget.cart-notification-widget .wdt-shop-cart-widget-content-info a {
                 font-size: 13px;
             }
 
 
-            .woocommerce div.product .woocommerce-tabs .panel {
-                text-align: center;
-            }
-
-            .woocommerce #review_form #respond p {
-                text-align: left;
-            }
-
-            .woocommerce .woocommerce-product-rating .star-rating {
-                margin-top: 2px;
-            }
-
-
-            .woocommerce.single-product div.images .thumbnails.slider .caroufredsel_wrapper {
-                width: 100% !important;
-            }
-
-            .woocommerce #reviews #comments ol.commentlist li img.avatar {
-                display: block;
-                float: none;
-                margin: 0 auto;
-                position: static;
-                text-align: center;
-                width: 60px;
-            }
-
-            .woocommerce #reviews #comments ol.commentlist li .description {
-                margin: 0;
-            }
-
-            .woocommerce #reviews #comments ol.commentlist li .comment-text {
-                margin: 20px 0 0;
-                padding: 0;
-                text-align: center;
-            }
-
-            .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
-                display: inline-block;
-                float: none;
-            }
-
-            .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta .woocommerce-review__dash {
-                display: none;
-            }
-
-            .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta .woocommerce-review__published-date {
-                display: block;
-            }
-
-            .woocommerce #reviews #comments ol.commentlist li .comment-text .star-rating {
-                display: block;
-                float: none;
-                margin: 0 auto;
-            }
-
-            .woocommerce table.shop_attributes tr:not(:last-child) {
-                border-color: rgba(var(--wdtHeadAltColorRgb), 0.15);
-                border-style: solid;
-                border-width: 0 0 1px;
-            }
-
-            .woocommerce table.shop_attributes th, .woocommerce table.shop_attributes td {
-                border-width: 0 !important;
-            }
-
-            .woocommerce table.shop_attributes td {
-                text-align: center !important;
-            }
-
-            .woocommerce table.shop_attributes th, .woocommerce-page table.shop_attributes th,
-            .woocommerce table.shop_attributes td, .woocommerce-page table.shop_attributes td {
-                float: left;
-                max-width: 100%;
-                width: 100%;
-            }
-
-            .woocommerce-cart .cart-collaterals .cart_totals table {
-                border-top-width: 0;
-            }
-
-            .woocommerce table.shop_attributes tr td {
-                border-top-width: 1px !important;
-            }
-
-
-            .woocommerce .product form.cart .variations li.zoo-cw-attr-row div.label {
-                margin: 0 0 15px;
-            }
-
-            .woocommerce .product form.cart .variations li.zoo-cw-attr-row div.label,
-            .woocommerce .product form.cart .variations li.zoo-cw-attr-row div.label label {
-                width: 100%;
-            }
-
-            .woocommerce div.product form.cart .variations .reset_variations:before {
+            .wdt-shop-cart-widget[class*="sidebar"] .wdt-shop-cart-widget-header h3 a {
                 right: 0;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+                -webkit-transform: scale(0);
+                transform: scale(0);
             }
 
-            .woocommerce div.product form.cart .variations .reset_variations:after {
-                margin-left: -5px;
-                margin-right: -5px;
-            }
-
-            .woocommerce #review_form #respond p.stars span,
-            .woocommerce #review_form #respond p.stars a {
-                margin-left: 0;
-                margin-right: 0;
-            }
-
-            .woocommerce .product.product-type-grouped .summary .cart .group_table tr > * {
-                flex-basis: 100%;
-            }
-
-            .woocommerce div.product.product-type-grouped .summary form.cart .group_table tr td.woocommerce-grouped-product-list-item__quantity {
-                order: 1;
-                padding: 0;
-                top: auto;
-            }
-
-            .woocommerce div.product.product-type-grouped .summary form.cart .group_table tr td.woocommerce-grouped-product-list-item__price {
-                order: 0;
-                padding: 0 0 15px;
-            }
-
-
-            /* Custom CSS - Single Product Page */
-            .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-tab-title {
-                display: table;
-                direction: rtl;
-                width: 100%;
-            }
-
-            .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-tab-title > * {
-                display: table-cell;
-                float: none !important;
-                vertical-align: middle;
-            }
-
-            .wdt-accordion-custom-bottomline.elementor-widget-accordion .elementor-accordion .elementor-tab-title .elementor-accordion-icon {
-                font-size: 0.75em;
+            .wdt-shop-cart-widget[class*="sidebar"].activate-sidebar-widget:hover .wdt-shop-cart-widget-header h3 a {
+                -webkit-border-radius: 0;
+                border-radius: 0;
+                -webkit-transform: scale(1);
+                transform: scale(1);
             }
 
         }
-
 
         /*----*****---- << Mobile >> ----*****----*/
 
         /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
         @media only screen and (min-width: 320px) and (max-width: 479px) {
 
-            .woocommerce.single-product .product .images .thumbnails .yith_magnifier_gallery li,
-            .woocommerce.single-product .page-with-sidebar .product .images .thumbnails .yith_magnifier_gallery li {
-                width: 90px !important;
+            .wdt-shop-cart-widget.cart-notification-widget {
+                max-width: 290px;
             }
 
 
-            .woocommerce div.product form.cart .variations td.label {
-                font-size: var(--wdtFontSize_Base);
+            .wdt-shop-cart-widget.activate-sidebar-widget {
+                max-width: 290px;
             }
 
-        }
-
-
-        /*----*****---- << Mobile >> ----*****----*/
-
-        /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-        @media only screen and (max-width: 319px) {
-
-            .woocommerce div.product .product_title {
-                font-size: 20px;
-            }
-
-            .woocommerce #review_form #respond {
-                margin: 30px 0 0;
-            }
-
-            .woocommerce div.product .woocommerce-tabs ul.tabs li a {
-                font-size: 13px;
-                letter-spacing: 0;
-            }
-
-            .woocommerce .product form.cart .variations td {
-                font-size: 12px;
-                text-align: center;
-                width: 100%;
-            }
-
-            .woocommerce.single-product div.product .images .thumbnails .yith_magnifier_gallery li,
-            .woocommerce.single-product .page-with-sidebar div.product .images .thumbnails .yith_magnifier_gallery li {
-                width: 60px !important;
+            .wdt-shop-cart-widget.activate-sidebar-widget {
+                width: 290px;
             }
 
         }
+
+
+        /* #endregion - Responsive */
+
+    </style>
+    <link rel='stylesheet' id='neytri-plus-blog-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/blog/assets/css/blog.css?ver=1.0.2'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='dtplugin-nav-menu-animations-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/menu/assets/css/nav-menu-animations.css?ver=1.0.2'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='dtplugin-nav-menu-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/menu/assets/css/nav-menu.css?ver=1.0.2'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='neytri-pro-advance-field-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/advance-field/assets/css/style.css?ver=1.0.0'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='neytri-pro-blog-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/blog/assets/css/blog.css?ver=1.0.0'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='jquery-select2-css'
+          href='https://neytri.wpengine.com/wp-content/themes/neytri/assets/lib/select2/select2.css?ver=1.0.1'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='neytri-theme-css'
+          href='https://neytri.wpengine.com/wp-content/themes/neytri/assets/css/theme.css?ver=1.0.1' type='text/css'
+          media='all'/>
+    <style id='neytri-admin-inline-css' type='text/css'>
+        .custom_loader {
+            background-color: var(--wdtBodyBGColor);
+        }
+
+        .custom_loader:before {
+            background-color: var(--wdtTertiaryColor);
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.63;
+            color: #808080;
+        }
+
+        a {
+            color: #000000;
+        }
+
+        a:hover {
+            color: #9e9e9e;
+        }
+
+        h1 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 55px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        h2 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 45px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        h3 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 35px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        h4 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        h5 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        h6 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        .main-title-section-wrapper.overlay-wrapper.dark-bg-breadcrumb > .main-title-section-bg, .main-title-section-wrapper.overlay-wrapper > .main-title-section-bg, .main-title-section-wrapper.dark-bg-breadcrumb > .main-title-section-bg, .main-title-section-wrapper > .main-title-section-bg {
+            background-color: var(--wdtTertiaryColor);
+        }
+
+    </style>
+    <link rel='stylesheet' id='google-fonts-1-css'
+          href='https://fonts.googleapis.com/css?family=Jost%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=swap&amp;ver=6.2.2'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='elementor-icons-shared-0-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='elementor-icons-fa-regular-css'
+          href='https://neytri.wpengine.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3'
+          type='text/css' media='all'/>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <script type='text/javascript'
+            src='https://neytri.wpengine.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2'
+            id='wp-polyfill-inert-js'></script>
+    <script type='text/javascript'
+            src='https://neytri.wpengine.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11'
+            id='regenerator-runtime-js'></script>
+    <script type='text/javascript'
+            src='https://neytri.wpengine.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0'
+            id='wp-polyfill-js'></script>
+    <script type='text/javascript'
+            src='https://neytri.wpengine.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5'
+            id='wp-hooks-js'></script>
+    <script type='text/javascript' src='https://stats.wp.com/w.js?ver=202331' id='woo-tracks-js'></script>
+    <script type='text/javascript' src='https://neytri.wpengine.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4'
+            id='jquery-core-js'></script>
+    <script type='text/javascript'
+            src='https://neytri.wpengine.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0'
+            id='jquery-migrate-js'></script>
+    <link rel="https://api.w.org/" href="https://neytri.wpengine.com/wp-json/"/>
+    <link rel="alternate" type="application/json" href="https://neytri.wpengine.com/wp-json/wp/v2/product/858"/>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://neytri.wpengine.com/xmlrpc.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+          href="https://neytri.wpengine.com/wp-includes/wlwmanifest.xml"/>
+    <link rel="canonical" href="https://neytri.wpengine.com/product/summer-suit/"/>
+    <link rel='shortlink' href='https://neytri.wpengine.com/?p=858'/>
+    <link rel="alternate" type="application/json+oembed"
+          href="https://neytri.wpengine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fneytri.wpengine.com%2Fproduct%2Fsummer-suit%2F"/>
+    <link rel="alternate" type="text/xml+oembed"
+          href="https://neytri.wpengine.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fneytri.wpengine.com%2Fproduct%2Fsummer-suit%2F&amp;format=xml"/>
+    <noscript>
+        <style>.woocommerce-product-gallery {
+                opacity: 1 !important;
+            }</style>
+    </noscript>
+    <meta name="generator"
+          content="Elementor 3.14.1; features: e_optimized_assets_loading, e_optimized_css_loading, a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+    <link rel="icon" href="https://neytri.wpengine.com/wp-content/uploads/2023/06/Fav-Icon.png" sizes="32x32"/>
+    <link rel="icon" href="https://neytri.wpengine.com/wp-content/uploads/2023/06/Fav-Icon.png" sizes="192x192"/>
+    <link rel="apple-touch-icon" href="https://neytri.wpengine.com/wp-content/uploads/2023/06/Fav-Icon.png"/>
+    <meta name="msapplication-TileImage" content="https://neytri.wpengine.com/wp-content/uploads/2023/06/Fav-Icon.png"/>
+    <script>
+        var woocs_is_mobile = 0;
+        var woocs_special_ajax_mode = 0;
+        var woocs_drop_down_view = "ddslick";
+        var woocs_current_currency = {
+            "name": "USD",
+            "rate": 1,
+            "symbol": "&#36;",
+            "position": "left",
+            "is_etalon": 1,
+            "hide_cents": 0,
+            "hide_on_front": 0,
+            "rate_plus": "",
+            "decimals": 2,
+            "separators": "0",
+            "description": "USA dollar",
+            "flag": "https:\/\/neytri.wpengine.com\/wp-content\/plugins\/woocommerce-currency-switcher\/img\/no_flag.png"
+        };
+        var woocs_default_currency = {
+            "name": "USD",
+            "rate": 1,
+            "symbol": "&#36;",
+            "position": "left",
+            "is_etalon": 1,
+            "hide_cents": 0,
+            "hide_on_front": 0,
+            "rate_plus": "",
+            "decimals": 2,
+            "separators": "0",
+            "description": "USA dollar",
+            "flag": "https:\/\/neytri.wpengine.com\/wp-content\/plugins\/woocommerce-currency-switcher\/img\/no_flag.png"
+        };
+        var woocs_redraw_cart = 1;
+        var woocs_array_of_get = '{}';
+
+        woocs_array_no_cents = '["JPY","TWD"]';
+
+        var woocs_ajaxurl = "https://neytri.wpengine.com/wp-admin/admin-ajax.php";
+        var woocs_lang_loading = "loading";
+        var woocs_shop_is_cached = 0;
+    </script>
+    <style id='neytri-woo-non-archive-inline-css' type='text/css'>
 
 
         /*--------------------------------------------------------------*/
@@ -7904,7 +6088,7 @@
 </head>
 
 <body
-    class="page-template page-template-elementor_header_footer page page-id-500 wp-custom-logo theme-neytri has-go-to-top neytri-plus-1.0.2 neytri-pro-1.0.0 woocommerce-no-js woo-variation-swatches wvs-behavior-blur-no-cross wvs-theme-neytri wvs-show-label wvs-tooltip elementor-default elementor-template-full-width elementor-kit-12 elementor-page elementor-page-500 currency-usd">
+    class="product-template-default single single-product postid-858 wp-custom-logo theme-neytri has-go-to-top neytri-plus-1.0.2 neytri-pro-1.0.0 woocommerce woocommerce-page woocommerce-no-js woo-variation-swatches wvs-behavior-blur-no-cross wvs-theme-neytri wvs-show-label wvs-tooltip elementor-default elementor-kit-12 elementor-page elementor-page-858 currency-usd">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
      style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
     <defs>
@@ -8054,8 +6238,8 @@
             <!-- **Header** -->
             <header id="header">
                 <div class="wdt-elementor-container-fluid">
-                    <div id="header-214" class="wdt-header-tpl header-214">
-                        <div data-elementor-type="wp-post" data-elementor-id="214" class="elementor elementor-214">
+                    <div id="header-213" class="wdt-header-tpl header-213">
+                        <div data-elementor-type="wp-post" data-elementor-id="213" class="elementor elementor-213">
                             <div class="elementor-inner">
                                 <div class="elementor-section-wrap">
                                     <section
@@ -8085,8 +6269,8 @@
                                                                                 class="elementor-column-wrap elementor-element-populated">
                                                                                 <div class="elementor-widget-wrap">
                                                                                     <div
-                                                                                        class="elementor-element elementor-element-5ecad67 elementor-widget__width-auto wdt-custom-currency wdt-custom-currency-white-clr elementor-widget elementor-widget-shortcode"
-                                                                                        data-id="5ecad67"
+                                                                                        class="elementor-element elementor-element-ecfe041 elementor-widget__width-auto wdt-custom-currency wdt-custom-currency-white-clr elementor-widget elementor-widget-shortcode"
+                                                                                        data-id="ecfe041"
                                                                                         data-element_type="widget"
                                                                                         data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
                                                                                         data-widget_type="shortcode.default">
@@ -8119,6 +6303,16 @@
                                                                                                             data-description="USA dollar">
                                                                                                             USD, &#036;
                                                                                                         </option>
+
+
+                                                                                                        <option
+                                                                                                            class="woocs_option_img_EUR"
+                                                                                                            value="EUR"
+                                                                                                            data-imagesrc="https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/img/no_flag.png"
+                                                                                                            data-icon="https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/img/no_flag.png"
+                                                                                                            data-description="European Euro">
+                                                                                                            EUR, &euro;
+                                                                                                        </option>
                                                                                                     </select>
                                                                                                     <div
                                                                                                         class="woocs_display_none"
@@ -8147,10 +6341,41 @@
                                                                                         data-widget_type="text-editor.default">
                                                                                         <div
                                                                                             class="elementor-widget-container">
+                                                                                            <style>/*! elementor - v3.14.0 - 26-06-2023 */
+                                                                                                .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+                                                                                                    background-color: #69727d;
+                                                                                                    color: #fff
+                                                                                                }
+
+                                                                                                .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
+                                                                                                    color: #69727d;
+                                                                                                    border: 3px solid;
+                                                                                                    background-color: transparent
+                                                                                                }
+
+                                                                                                .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
+                                                                                                    margin-top: 8px
+                                                                                                }
+
+                                                                                                .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
+                                                                                                    width: 1em;
+                                                                                                    height: 1em
+                                                                                                }
+
+                                                                                                .elementor-widget-text-editor .elementor-drop-cap {
+                                                                                                    float: left;
+                                                                                                    text-align: center;
+                                                                                                    line-height: 1;
+                                                                                                    font-size: 50px
+                                                                                                }
+
+                                                                                                .elementor-widget-text-editor .elementor-drop-cap-letter {
+                                                                                                    display: inline-block
+                                                                                                }</style>
                                                                                             <div
                                                                                                 class="elementor-text-editor elementor-clearfix">
                                                                                                 <p>Free Shipping on
-                                                                                                    Orders over $150</p>
+                                                                                                    Orders over $100</p>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -8203,38 +6428,92 @@
                                                     <div class="elementor-column-wrap elementor-element-populated">
                                                         <div class="elementor-widget-wrap">
                                                             <section
-                                                                class="elementor-section elementor-inner-section elementor-element elementor-element-d266a08 elementor-section-content-middle wdt-section-wrap-col elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                                                data-id="d266a08" data-element_type="section"
+                                                                class="elementor-section elementor-inner-section elementor-element elementor-element-e638496 elementor-section-content-middle wdt-section-wrap-col elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                                                data-id="e638496" data-element_type="section"
                                                                 data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
                                                                 <div
                                                                     class="elementor-container elementor-column-gap-no">
                                                                     <div class="elementor-row">
                                                                         <div
-                                                                            class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-345dffa elementor-hidden-tablet_extra"
-                                                                            data-id="345dffa"
+                                                                            class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-a4f2222 elementor-hidden-mobile_extra elementor-hidden-mobile"
+                                                                            data-id="a4f2222"
                                                                             data-element_type="column">
                                                                             <div
                                                                                 class="elementor-column-wrap elementor-element-populated">
                                                                                 <div class="elementor-widget-wrap">
                                                                                     <div
-                                                                                        class="elementor-element elementor-element-f4f0c31 elementor-widget elementor-widget-wdt-header-menu"
-                                                                                        data-id="f4f0c31"
+                                                                                        class="elementor-element elementor-element-7d9a412 wdt-custom-head-search-box elementor-widget elementor-widget-wdt-header-icons"
+                                                                                        data-id="7d9a412"
+                                                                                        data-element_type="widget"
+                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                                        data-widget_type="wdt-header-icons.default">
+                                                                                        <div
+                                                                                            class="elementor-widget-container">
+                                                                                            <div
+                                                                                                class="wdt-header-icons-list">
+                                                                                                <div
+                                                                                                    class="wdt-header-icons-list-item search-item search-default">
+                                                                                                    <div
+                                                                                                        class="wdt-search-menu-icon">
+                                                                                                        <a href="javascript:void(0)"
+                                                                                                           class="wdt-search-icon"><span><i
+                                                                                                                    aria-hidden="true"
+                                                                                                                    class="fas fa-search"></i></span></a>
+                                                                                                        <div
+                                                                                                            class="wdt-search-form-container show">
+                                                                                                            <form
+                                                                                                                method="get"
+                                                                                                                id="searchform"
+                                                                                                                action="https://neytri.wpengine.com/">
+                                                                                                                <input
+                                                                                                                    id="s"
+                                                                                                                    name="s"
+                                                                                                                    type="text"
+                                                                                                                    value=""
+                                                                                                                    placeholder="Search Products"
+                                                                                                                    class="text_input"/>
+                                                                                                                <ul class="quick_search_results"></ul>
+                                                                                                                <input
+                                                                                                                    name="submit"
+                                                                                                                    type="submit"
+                                                                                                                    value="Go"/>
+                                                                                                            </form>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div
+                                                                            class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-e986379 elementor-hidden-tablet_extra elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile"
+                                                                            data-id="e986379"
+                                                                            data-element_type="column">
+                                                                            <div
+                                                                                class="elementor-column-wrap elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div
+                                                                                        class="elementor-element elementor-element-877feeb elementor-widget elementor-widget-wdt-header-menu"
+                                                                                        data-id="877feeb"
                                                                                         data-element_type="widget"
                                                                                         data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
                                                                                         data-widget_type="wdt-header-menu.default">
                                                                                         <div
                                                                                             class="elementor-widget-container">
                                                                                             <div class="wdt-header-menu"
-                                                                                                 data-menu="20">
+                                                                                                 data-menu="18">
                                                                                                 <div
                                                                                                     class="menu-container">
-                                                                                                    <ul id="menu-main-menu-2"
+                                                                                                    <ul id="menu-home-1-left-menu"
                                                                                                         class="wdt-primary-nav "
-                                                                                                        data-menu="20">
+                                                                                                        data-menu="18">
                                                                                                         <li class="close-nav">
                                                                                                             <a href="javascript:void(0);"></a>
                                                                                                         </li>
-                                                                                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children has-mega-menu menu-item-207 menu-item-depth-0">
+                                                                                                        <li id="menu-item-194"
+                                                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children has-mega-menu menu-item-194 menu-item-depth-0">
                                                                                                             <a href="https://neytri.wpengine.com/"><span
                                                                                                                     data-text="Home">Home</span></a>
                                                                                                             <ul class="sub-menu is-hidden">
@@ -8245,7 +6524,8 @@
                                                                                                                     <a href="javascript:void(0);"></a>
                                                                                                                 </li>
                                                                                                                 <li class="see-all"></li>
-                                                                                                                <li class="menu-item menu-item-type-post_type menu-item-object-wdt_mega_menus menu-item-551 menu-item-depth-1">
+                                                                                                                <li id="menu-item-564"
+                                                                                                                    class="menu-item menu-item-type-post_type menu-item-object-wdt_mega_menus menu-item-564 menu-item-depth-1">
                                                                                                                     <div
                                                                                                                         data-elementor-type="wp-post"
                                                                                                                         data-elementor-id="538"
@@ -8331,7 +6611,7 @@
                                                                                                                                                                                         class="wdt-content-image-wrapper ">
                                                                                                                                                                                         <div
                                                                                                                                                                                             class="wdt-content-image">
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-2/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-2/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow"><img
                                                                                                                                                                                                     width="473"
@@ -8348,7 +6628,7 @@
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="wdt-content-title">
                                                                                                                                                                                         <h5>
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-2/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-2/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow">Trending
                                                                                                                                                                                                 Apparels</a>
@@ -8367,7 +6647,7 @@
                                                                                                                                                                                         class="wdt-content-image-wrapper ">
                                                                                                                                                                                         <div
                                                                                                                                                                                             class="wdt-content-image">
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-3/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-3/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow"><img
                                                                                                                                                                                                     width="473"
@@ -8384,7 +6664,7 @@
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="wdt-content-title">
                                                                                                                                                                                         <h5>
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-3/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-3/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow">Celebrity
                                                                                                                                                                                                 Attires</a>
@@ -8403,7 +6683,7 @@
                                                                                                                                                                                         class="wdt-content-image-wrapper ">
                                                                                                                                                                                         <div
                                                                                                                                                                                             class="wdt-content-image">
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-4/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-4/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow"><img
                                                                                                                                                                                                     width="473"
@@ -8420,7 +6700,7 @@
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="wdt-content-title">
                                                                                                                                                                                         <h5>
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-4/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-4/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow">Branded
                                                                                                                                                                                                 Clothes</a>
@@ -8439,7 +6719,7 @@
                                                                                                                                                                                         class="wdt-content-image-wrapper ">
                                                                                                                                                                                         <div
                                                                                                                                                                                             class="wdt-content-image">
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-5/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-5/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow"><img
                                                                                                                                                                                                     width="473"
@@ -8456,7 +6736,7 @@
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="wdt-content-title">
                                                                                                                                                                                         <h5>
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-5/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-5/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow">Jean
                                                                                                                                                                                                 Togs</a>
@@ -8493,7 +6773,7 @@
                                                                                                                                                                                         class="wdt-content-image-wrapper ">
                                                                                                                                                                                         <div
                                                                                                                                                                                             class="wdt-content-image">
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-6/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-6/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow"><img
                                                                                                                                                                                                     width="473"
@@ -8510,7 +6790,7 @@
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="wdt-content-title">
                                                                                                                                                                                         <h5>
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-6/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-6/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow">Stylish
                                                                                                                                                                                                 Dress</a>
@@ -8529,7 +6809,7 @@
                                                                                                                                                                                         class="wdt-content-image-wrapper ">
                                                                                                                                                                                         <div
                                                                                                                                                                                             class="wdt-content-image">
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-7/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-7/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow"><img
                                                                                                                                                                                                     width="473"
@@ -8546,7 +6826,7 @@
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="wdt-content-title">
                                                                                                                                                                                         <h5>
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-7/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-7/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow">Leisure
                                                                                                                                                                                                 Wear</a>
@@ -8565,7 +6845,7 @@
                                                                                                                                                                                         class="wdt-content-image-wrapper ">
                                                                                                                                                                                         <div
                                                                                                                                                                                             class="wdt-content-image">
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-8/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-8/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow"><img
                                                                                                                                                                                                     width="473"
@@ -8582,7 +6862,7 @@
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="wdt-content-title">
                                                                                                                                                                                         <h5>
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-8/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-8/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow">Yoga
                                                                                                                                                                                                 &amp;
@@ -8602,7 +6882,7 @@
                                                                                                                                                                                         class="wdt-content-image-wrapper ">
                                                                                                                                                                                         <div
                                                                                                                                                                                             class="wdt-content-image">
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-9/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-9/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow"><img
                                                                                                                                                                                                     width="473"
@@ -8619,7 +6899,7 @@
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="wdt-content-title">
                                                                                                                                                                                         <h5>
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-9/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-9/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow">Kids
                                                                                                                                                                                                 Fashion</a>
@@ -8638,7 +6918,7 @@
                                                                                                                                                                                         class="wdt-content-image-wrapper ">
                                                                                                                                                                                         <div
                                                                                                                                                                                             class="wdt-content-image">
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-10/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-10/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow"><img
                                                                                                                                                                                                     width="473"
@@ -8655,7 +6935,7 @@
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="wdt-content-title">
                                                                                                                                                                                         <h5>
-                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-10/home.blade.php"
+                                                                                                                                                                                            <a href="https://neytri.wpengine.com/home-10/"
                                                                                                                                                                                                target="_blank"
                                                                                                                                                                                                rel="nofollow">Party
                                                                                                                                                                                                 Wear</a>
@@ -8680,7 +6960,8 @@
                                                                                                                 </li>
                                                                                                             </ul>
                                                                                                         </li>
-                                                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-mega-menu menu-item-1556 menu-item-depth-0">
+                                                                                                        <li id="menu-item-1600"
+                                                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-mega-menu menu-item-1600 menu-item-depth-0">
                                                                                                             <a href="https://neytri.wpengine.com/my-shop/"><span
                                                                                                                     data-text="Shop">Shop</span><label
                                                                                                                     class="menu-custom-label menu-custom-label-green"><span>Sale</span></label></a>
@@ -8692,7 +6973,8 @@
                                                                                                                     <a href="javascript:void(0);"></a>
                                                                                                                 </li>
                                                                                                                 <li class="see-all"></li>
-                                                                                                                <li class="menu-item menu-item-type-post_type menu-item-object-wdt_mega_menus menu-item-1599 menu-item-depth-1">
+                                                                                                                <li id="menu-item-1531"
+                                                                                                                    class="menu-item menu-item-type-post_type menu-item-object-wdt_mega_menus menu-item-1531 menu-item-depth-1">
                                                                                                                     <div
                                                                                                                         data-elementor-type="wp-post"
                                                                                                                         data-elementor-id="1529"
@@ -8850,57 +7132,6 @@
                                                                                                                                                                                     data-widget_type="icon-list.default">
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="elementor-widget-container">
-                                                                                                                                                                                        <ul class="elementor-icon-list-items">
-                                                                                                                                                                                            <li class="elementor-icon-list-item">
-                                                                                                                                                                                                <a href="https://neytri.wpengine.com/my-shop/">
-
-                                                                                                                                                                                                    <span
-                                                                                                                                                                                                        class="elementor-icon-list-text">My Shop</span>
-                                                                                                                                                                                                </a>
-                                                                                                                                                                                            </li>
-                                                                                                                                                                                            <li class="elementor-icon-list-item">
-                                                                                                                                                                                                <a href="https://neytri.wpengine.com/shop-left-sidebar/">
-
-                                                                                                                                                                                                    <span
-                                                                                                                                                                                                        class="elementor-icon-list-text">Left Sidebar</span>
-                                                                                                                                                                                                </a>
-                                                                                                                                                                                            </li>
-                                                                                                                                                                                            <li class="elementor-icon-list-item">
-                                                                                                                                                                                                <a href="https://neytri.wpengine.com/shop-right-sidebar/">
-
-                                                                                                                                                                                                    <span
-                                                                                                                                                                                                        class="elementor-icon-list-text">Right Sidebar</span>
-                                                                                                                                                                                                </a>
-                                                                                                                                                                                            </li>
-                                                                                                                                                                                            <li class="elementor-icon-list-item">
-                                                                                                                                                                                                <a href="https://neytri.wpengine.com/my-account/">
-
-                                                                                                                                                                                                    <span
-                                                                                                                                                                                                        class="elementor-icon-list-text">My Account</span>
-                                                                                                                                                                                                </a>
-                                                                                                                                                                                            </li>
-                                                                                                                                                                                            <li class="elementor-icon-list-item">
-                                                                                                                                                                                                <a href="https://neytri.wpengine.com/cart/">
-
-                                                                                                                                                                                                    <span
-                                                                                                                                                                                                        class="elementor-icon-list-text">My Cart</span>
-                                                                                                                                                                                                </a>
-                                                                                                                                                                                            </li>
-                                                                                                                                                                                            <li class="elementor-icon-list-item">
-                                                                                                                                                                                                <a href="https://neytri.wpengine.com/wishlist/">
-
-                                                                                                                                                                                                    <span
-                                                                                                                                                                                                        class="elementor-icon-list-text">My Wishlist</span>
-                                                                                                                                                                                                </a>
-                                                                                                                                                                                            </li>
-                                                                                                                                                                                            <li class="elementor-icon-list-item">
-                                                                                                                                                                                                <a href="https://neytri.wpengine.com/checkout/">
-
-                                                                                                                                                                                                    <span
-                                                                                                                                                                                                        class="elementor-icon-list-text">Checkout</span>
-                                                                                                                                                                                                </a>
-                                                                                                                                                                                            </li>
-                                                                                                                                                                                        </ul>
                                                                                                                                                                                     </div>
                                                                                                                                                                                 </div>
                                                                                                                                                                             </div>
@@ -9222,7 +7453,11 @@
                                                                                                                 </li>
                                                                                                             </ul>
                                                                                                         </li>
-                                                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-mega-menu menu-item-209 menu-item-depth-0">
+                                                                                                        <li id="menu-item-196"
+                                                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-mega-menu menu-item-196 menu-item-depth-0">
+                                                                                                            <a href="#"><span
+                                                                                                                    data-text="Products">Products</span><label
+                                                                                                                    class="menu-custom-label menu-custom-label-red"><span>New</span></label></a>
                                                                                                             <ul class="sub-menu is-hidden">
                                                                                                                 <li class="close-nav">
                                                                                                                     <a href="javascript:void(0);"></a>
@@ -9231,7 +7466,8 @@
                                                                                                                     <a href="javascript:void(0);"></a>
                                                                                                                 </li>
                                                                                                                 <li class="see-all"></li>
-                                                                                                                <li class="menu-item menu-item-type-post_type menu-item-object-wdt_mega_menus menu-item-644 menu-item-depth-1">
+                                                                                                                <li id="menu-item-645"
+                                                                                                                    class="menu-item menu-item-type-post_type menu-item-object-wdt_mega_menus menu-item-645 menu-item-depth-1">
                                                                                                                     <div
                                                                                                                         data-elementor-type="wp-post"
                                                                                                                         data-elementor-id="639"
@@ -9288,6 +7524,81 @@
                                                                                                                                                                                             Layouts</h6>
                                                                                                                                                                                     </div>
                                                                                                                                                                                 </div>
+                                                                                                                                                                                <div
+                                                                                                                                                                                    class="elementor-element elementor-element-1225516 elementor-list-item-link-inline wdt-custom-shop-megamenu-list elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list"
+                                                                                                                                                                                    data-id="1225516"
+                                                                                                                                                                                    data-element_type="widget"
+                                                                                                                                                                                    data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                                                                                                                                    data-widget_type="icon-list.default">
+                                                                                                                                                                                    <div
+                                                                                                                                                                                        class="elementor-widget-container">
+                                                                                                                                                                                        <ul class="elementor-icon-list-items">
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/t-short-denim-jacket/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Left Sidebar</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/backpacks/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Right Sidebar</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/dress-pants/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Thumbnails Left</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/hoodies-dress/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Thumbnails Right</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/t-shorts-dress/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Thumbnails Bottom</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/jacket/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Gallery Grid</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/accessories/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Sticky Info</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/womens-pleated-pant/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Gallery Center</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/tab-style/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Tabs Style</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                        </ul>
+                                                                                                                                                                                    </div>
+                                                                                                                                                                                </div>
                                                                                                                                                                             </div>
                                                                                                                                                                         </div>
                                                                                                                                                                     </div>
@@ -9321,6 +7632,66 @@
                                                                                                                                                                                     data-widget_type="icon-list.default">
                                                                                                                                                                                     <div
                                                                                                                                                                                         class="elementor-widget-container">
+                                                                                                                                                                                        <ul class="elementor-icon-list-items">
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/toggle-style/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Toggle Style</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/accordion-style/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Accordion Style</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/accordion-bottom-summery/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Accordion Bottom Summary <span
+                                                                                                                                                                                                            class="wdt-custom-label red"> New </span></span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/accordion-style/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Accordion After Summary</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/dress-pants/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Simple Product</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/t-shorts-dress/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Product Variable</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/product-group/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Product Group <span
+                                                                                                                                                                                                            class="wdt-custom-label green"> Sale </span></span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                            <li class="elementor-icon-list-item">
+                                                                                                                                                                                                <a href="https://neytri.wpengine.com/product/leather-hobo-bag/">
+
+                                                                                                                                                                                                    <span
+                                                                                                                                                                                                        class="elementor-icon-list-text">Product External/Affiliate</span>
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                            </li>
+                                                                                                                                                                                        </ul>
                                                                                                                                                                                     </div>
                                                                                                                                                                                 </div>
                                                                                                                                                                             </div>
@@ -9403,11 +7774,8 @@
                                                                                                                                                                                                                                 <div
                                                                                                                                                                                                                                     class="yith-wcwl-add-to-wishlist add-to-wishlist-438  wishlist-fragment on-first-load"
                                                                                                                                                                                                                                     data-fragment-ref="438"
-                                                                                                                                                                                                                                    data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:&quot;438&quot;,&quot;parent_product_id&quot;:438,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in your wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;fa-heart-o&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}"
+                                                                                                                                                                                                                                    data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:true,&quot;show_exists&quot;:false,&quot;product_id&quot;:&quot;438&quot;,&quot;parent_product_id&quot;:438,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:true,&quot;browse_wishlist_text&quot;:&quot;Browse wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in your wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;fa-heart-o&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}"
                                                                                                                                                                                                                                 >
-
-
-                                                                                                                                                                                                                                    <!-- COUNT TEXT -->
 
                                                                                                                                                                                                                                 </div>
                                                                                                                                                                                                                             </div>
@@ -9450,7 +7818,7 @@
                                                                                                                                                                                                                         class="price"><span
                                                                                                                                                                                                                             class="woocs_price_code"
                                                                                                                                                                                                                             data-currency=""
-                                                                                                                                                                                                                            data-redraw-id="64a17b2414beb"
+                                                                                                                                                                                                                            data-redraw-id="64cd006308331"
                                                                                                                                                                                                                             data-product-id="438"><span
                                                                                                                                                                                                                                 class="woocommerce-Price-amount amount"><bdi><span
                                                                                                                                                                                                                                         class="woocommerce-Price-currencySymbol">&#36;</span>26.00</bdi></span> &ndash; <span
@@ -9504,25 +7872,6 @@
                                                                                                                                                                                                                 <div
                                                                                                                                                                                                                     class="product-thumb-content">
                                                                                                                                                                                                                     <div
-                                                                                                                                                                                                                        class="product-buttons-wrapper product-icons">
-                                                                                                                                                                                                                        <div
-                                                                                                                                                                                                                            class="wc_inline_buttons">
-                                                                                                                                                                                                                            <div
-                                                                                                                                                                                                                                class="wcwl_btn_wrapper wc_btn_inline"
-                                                                                                                                                                                                                                data-tooltip="Wishlist">
-                                                                                                                                                                                                                                <div
-                                                                                                                                                                                                                                    class="yith-wcwl-add-to-wishlist add-to-wishlist-439  wishlist-fragment on-first-load"
-                                                                                                                                                                                                                                    data-fragment-ref="439"
-                                                                                                                                                                                                                                    data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:&quot;439&quot;,&quot;parent_product_id&quot;:439,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in your wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;fa-heart-o&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}"
-                                                                                                                                                                                                                                >
-
-                                                                                                                                                                                                                                    <!-- COUNT TEXT -->
-
-                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                    <div
                                                                                                                                                                                                                         class="product-buttons-wrapper product-button">
                                                                                                                                                                                                                         <div
                                                                                                                                                                                                                             class="wc_inline_buttons">
@@ -9558,7 +7907,7 @@
                                                                                                                                                                                                                         class="price"><span
                                                                                                                                                                                                                             class="woocs_price_code"
                                                                                                                                                                                                                             data-currency=""
-                                                                                                                                                                                                                            data-redraw-id="64a17b2420fc1"
+                                                                                                                                                                                                                            data-redraw-id="64cd00630bfde"
                                                                                                                                                                                                                             data-product-id="439"><span
                                                                                                                                                                                                                                 class="woocommerce-Price-amount amount"><bdi><span
                                                                                                                                                                                                                                         class="woocommerce-Price-currencySymbol">&#36;</span>26.00</bdi></span> &ndash; <span
@@ -9637,7 +7986,84 @@
                                                                                                                 </li>
                                                                                                             </ul>
                                                                                                         </li>
-                                                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-210 menu-item-depth-0">
+                                                                                                    </ul>
+                                                                                                    <div
+                                                                                                        class="sub-menu-overlay"></div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="mobile-nav-container mobile-nav-offcanvas-right"
+                                                                                                    data-menu="18"><a
+                                                                                                        href="#"
+                                                                                                        class="menu-trigger menu-trigger-icon"
+                                                                                                        data-menu="18"><i></i><span>Menu</span></a>
+                                                                                                    <div
+                                                                                                        class="mobile-menu"
+                                                                                                        data-menu="18"></div>
+                                                                                                    <div
+                                                                                                        class="overlay"></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div
+                                                                            class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-94cd841"
+                                                                            data-id="94cd841"
+                                                                            data-element_type="column">
+                                                                            <div
+                                                                                class="elementor-column-wrap elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div
+                                                                                        class="elementor-element elementor-element-ffa7bc2 elementor-align-center elementor-mobile_extra-align-left elementor-widget elementor-widget-wdt-logo"
+                                                                                        data-id="ffa7bc2"
+                                                                                        data-element_type="widget"
+                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                                        data-widget_type="wdt-logo.default">
+                                                                                        <div
+                                                                                            class="elementor-widget-container">
+                                                                                            <div id="neytri-ffa7bc2"
+                                                                                                 class="wdt-logo-container">
+                                                                                                <a href="{{ route('home') }}"
+                                                                                                   rel="home"><img
+                                                                                                        src="https://neytri.wpengine.com/wp-content/uploads/2023/05/Logo.svg"
+                                                                                                        alt="Neytri Site"
+                                                                                                        width="79"
+                                                                                                        height="28"/></a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div
+                                                                            class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-d8f79e9 elementor-hidden-tablet_extra elementor-hidden-tablet elementor-hidden-mobile_extra elementor-hidden-mobile"
+                                                                            data-id="d8f79e9"
+                                                                            data-element_type="column">
+                                                                            <div
+                                                                                class="elementor-column-wrap elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div
+                                                                                        class="elementor-element elementor-element-065dd6a elementor-widget elementor-widget-wdt-header-menu"
+                                                                                        data-id="065dd6a"
+                                                                                        data-element_type="widget"
+                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                                        data-widget_type="wdt-header-menu.default">
+                                                                                        <div
+                                                                                            class="elementor-widget-container">
+                                                                                            <div class="wdt-header-menu"
+                                                                                                 data-menu="19">
+                                                                                                <div
+                                                                                                    class="menu-container">
+                                                                                                    <ul id="menu-home-2-right-menu"
+                                                                                                        class="wdt-primary-nav "
+                                                                                                        data-menu="19">
+                                                                                                        <li class="close-nav">
+                                                                                                            <a href="javascript:void(0);"></a>
+                                                                                                        </li>
+                                                                                                        <li id="menu-item-197"
+                                                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-197 menu-item-depth-0">
                                                                                                             <a href="#"><span
                                                                                                                     data-text="Pages">Pages</span></a>
                                                                                                             <ul class="sub-menu is-hidden">
@@ -9648,21 +8074,25 @@
                                                                                                                     <a href="javascript:void(0);"></a>
                                                                                                                 </li>
                                                                                                                 <li class="see-all"></li>
-                                                                                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-569 menu-item-depth-1">
+                                                                                                                <li id="menu-item-578"
+                                                                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-578 menu-item-depth-1">
                                                                                                                     <a href="https://neytri.wpengine.com/about/"><span
                                                                                                                             data-text="About">About</span></a>
                                                                                                                 </li>
-                                                                                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-571 menu-item-depth-1">
+                                                                                                                <li id="menu-item-580"
+                                                                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-580 menu-item-depth-1">
                                                                                                                     <a href="https://neytri.wpengine.com/faq/"><span
                                                                                                                             data-text="Faq">Faq</span></a>
                                                                                                                 </li>
-                                                                                                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-568 menu-item-depth-1">
+                                                                                                                <li id="menu-item-577"
+                                                                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577 menu-item-depth-1">
                                                                                                                     <a href="https://neytri.wpengine.com/404-2/"><span
                                                                                                                             data-text="404">404</span></a>
                                                                                                                 </li>
                                                                                                             </ul>
                                                                                                         </li>
-                                                                                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-mega-menu menu-item-211 menu-item-depth-0">
+                                                                                                        <li id="menu-item-198"
+                                                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-mega-menu menu-item-198 menu-item-depth-0">
                                                                                                             <a href="https://neytri.wpengine.com/blog/"><span
                                                                                                                     data-text="Blog">Blog</span></a>
                                                                                                             <ul class="sub-menu is-hidden">
@@ -9673,7 +8103,8 @@
                                                                                                                     <a href="javascript:void(0);"></a>
                                                                                                                 </li>
                                                                                                                 <li class="see-all"></li>
-                                                                                                                <li class="menu-item menu-item-type-post_type menu-item-object-wdt_mega_menus menu-item-1489 menu-item-depth-1">
+                                                                                                                <li id="menu-item-1490"
+                                                                                                                    class="menu-item menu-item-type-post_type menu-item-object-wdt_mega_menus menu-item-1490 menu-item-depth-1">
                                                                                                                     <div
                                                                                                                         data-elementor-type="wp-post"
                                                                                                                         data-elementor-id="1488"
@@ -10185,7 +8616,8 @@
                                                                                                                 </li>
                                                                                                             </ul>
                                                                                                         </li>
-                                                                                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-570 menu-item-depth-0">
+                                                                                                        <li id="menu-item-586"
+                                                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586 menu-item-depth-0">
                                                                                                             <a href="https://neytri.wpengine.com/contact/"><span
                                                                                                                     data-text="Contact">Contact</span></a>
                                                                                                         </li>
@@ -10195,13 +8627,13 @@
                                                                                                 </div>
                                                                                                 <div
                                                                                                     class="mobile-nav-container mobile-nav-offcanvas-right"
-                                                                                                    data-menu="20"><a
+                                                                                                    data-menu="19"><a
                                                                                                         href="#"
                                                                                                         class="menu-trigger menu-trigger-icon"
-                                                                                                        data-menu="20"><i></i><span>Menu</span></a>
+                                                                                                        data-menu="19"><i></i><span>Menu</span></a>
                                                                                                     <div
                                                                                                         class="mobile-menu"
-                                                                                                        data-menu="20"></div>
+                                                                                                        data-menu="19"></div>
                                                                                                     <div
                                                                                                         class="overlay"></div>
                                                                                                 </div>
@@ -10212,119 +8644,57 @@
                                                                             </div>
                                                                         </div>
                                                                         <div
-                                                                            class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5b14809"
-                                                                            data-id="5b14809"
+                                                                            class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-46aac00"
+                                                                            data-id="46aac00"
                                                                             data-element_type="column">
                                                                             <div
                                                                                 class="elementor-column-wrap elementor-element-populated">
                                                                                 <div class="elementor-widget-wrap">
                                                                                     <div
-                                                                                        class="elementor-element elementor-element-0c55b4e elementor-widget elementor-widget-wdt-logo"
-                                                                                        data-id="0c55b4e"
+                                                                                        class="elementor-element elementor-element-ab0ca04 elementor-align-right wdt-custom-header-icons elementor-widget-tablet_extra__width-auto elementor-widget elementor-widget-wdt-header-icons"
+                                                                                        data-id="ab0ca04"
                                                                                         data-element_type="widget"
                                                                                         data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                        data-widget_type="wdt-logo.default">
-                                                                                        <div
-                                                                                            class="elementor-widget-container">
-                                                                                            <div id="neytri-0c55b4e"
-                                                                                                 class="wdt-logo-container">
-                                                                                                <a href="https://neytri.wpengine.com/"
-                                                                                                   rel="home"><img
-                                                                                                        src="https://neytri.wpengine.com/wp-content/uploads/2023/05/Logo.svg"
-                                                                                                        alt="Neytri Site"
-                                                                                                        width="79"
-                                                                                                        height="28"/></a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div
-                                                                            class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-4ff8f17"
-                                                                            data-id="4ff8f17"
-                                                                            data-element_type="column">
-                                                                            <div
-                                                                                class="elementor-column-wrap elementor-element-populated">
-                                                                                <div class="elementor-widget-wrap">
-                                                                                    <div
-                                                                                        class="elementor-element elementor-element-c8f7344 elementor-align-right wdt-custom-header-icons elementor-widget-tablet_extra__width-auto e-transform elementor-widget elementor-widget-wdt-header-icons"
-                                                                                        data-id="c8f7344"
-                                                                                        data-element_type="widget"
-                                                                                        data-settings="{&quot;_transform_translateX_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;wdt_animation_effect&quot;:&quot;none&quot;,&quot;_transform_translateX_effect_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateX_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_translateY_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
                                                                                         data-widget_type="wdt-header-icons.default">
                                                                                         <div
                                                                                             class="elementor-widget-container">
-                                                                                            <div class="woocommerce">
+                                                                                            <div
+                                                                                                class="wdt-header-icons-list">
                                                                                                 <div
-                                                                                                    class="wdt-header-icons-list">
+                                                                                                    class="wdt-header-icons-list-item cart-item">
                                                                                                     <div
-                                                                                                        class="wdt-header-icons-list-item search-item search-overlay">
-                                                                                                        <div
-                                                                                                            class="wdt-search-menu-icon">
-                                                                                                            <a href="javascript:void(0)"
-                                                                                                               class="wdt-search-icon"><span><i><svg
-                                                                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                                                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                                            x="0px"
-                                                                                                                            y="0px"
-                                                                                                                            viewBox="0 0 100 100"
-                                                                                                                            style="enable-background:new 0 0 100 100;"
-                                                                                                                            xml:space="preserve">                        <g>                        	<g>                        		<path
-                                                                                                                                        d="M42.334,82.668C20.094,82.668,2,64.574,2,42.334S20.094,2,42.334,2c22.239,0,40.333,18.094,40.333,40.334                           S64.573,82.668,42.334,82.668z M42.334,11.116c-17.214,0-31.218,14.004-31.218,31.218S25.12,73.552,42.334,73.552                           c17.213,0,31.217-14.004,31.217-31.218S59.547,11.116,42.334,11.116z"></path>                        	</g>                        	<g>                        		<path
-                                                                                                                                        d="M93.442,98c-1.166,0-2.333-0.445-3.223-1.335L64.666,71.111c-1.78-1.779-1.78-4.666,0-6.445                           c1.778-1.78,4.667-1.78,6.445,0l25.554,25.554c1.78,1.779,1.78,4.666,0,6.445C95.776,97.555,94.608,98,93.442,98z"></path>                        	</g>                        </g>                      </svg></i></span></a>
-                                                                                                            <div
-                                                                                                                class="wdt-search-form-container">
-                                                                                                                <form
-                                                                                                                    method="get"
-                                                                                                                    id="searchform"
-                                                                                                                    action="https://neytri.wpengine.com/">
-                                                                                                                    <input
-                                                                                                                        id="s"
-                                                                                                                        name="s"
-                                                                                                                        type="text"
-                                                                                                                        value=""
-                                                                                                                        placeholder="Search Products"
-                                                                                                                        class="text_input"/>
-                                                                                                                    <ul class="quick_search_results"></ul>
-                                                                                                                    <input
-                                                                                                                        name="submit"
-                                                                                                                        type="submit"
-                                                                                                                        value="Go"/>
-                                                                                                                </form>
-                                                                                                                <div
-                                                                                                                    class="wdt-search-form-close"></div>
-                                                                                                            </div>
-                                                                                                        </div>
+                                                                                                        class="wdt-shop-menu-icon">
+                                                                                                        <a href="https://neytri.wpengine.com/cart/"><span
+                                                                                                                class="wdt-shop-menu-icon-wrapper"><span
+                                                                                                                    class="wdt-shop-menu-cart-inner"><span
+                                                                                                                        class="wdt-shop-menu-cart-icon"><i><svg
+                                                                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                                                                                x="0px"
+                                                                                                                                y="0px"
+                                                                                                                                viewBox="0 0 13.2 16.5"
+                                                                                                                                style="enable-background:new 0 0 13.2 16.5;"
+                                                                                                                                xml:space="preserve"><path
+                                                                                                                                    d="M12.4,4.9c-0.1-0.8-0.7-1.4-1.6-1.4H9.9v-1C9.9,1.1,8.8,0,7.4,0H5.7C4.4,0,3.2,1.1,3.2,2.5v1H2.4c-0.8,0-1.5,0.6-1.6,1.4 l-0.8,9c0,0.1,0,0.1,0,0.2c0,1.3,1.1,2.4,2.4,2.4c0,0,0,0,0,0h8.3c0.1,0,0.1,0,0.2,0c0.6,0,1.2-0.3,1.7-0.8c0.4-0.5,0.6-1.1,0.6-1.8 L12.4,4.9z M4.7,2.5c0-0.5,0.4-1,1-1h1.7c0.5,0,1,0.4,1,1v1H4.7V2.5z M11.4,14.7C11.3,14.9,11,15,10.8,15l-0.1,0c0,0,0,0,0,0H2.4 c-0.5,0-0.9-0.4-0.9-1l0.8-9c0,0,0-0.1,0.1-0.1c0,0,0,0,0,0h0.9v1.8c0,0.4,0.3,0.8,0.8,0.8s0.8-0.3,0.8-0.8V5h3.7v1.8 c0,0.4,0.3,0.8,0.8,0.8s0.8-0.3,0.8-0.8V5h0.9c0,0,0,0,0,0c0,0,0.1,0,0.1,0.1l0.8,9C11.7,14.3,11.6,14.5,11.4,14.7z"></path></svg></i></span><span
+                                                                                                                        class="wdt-shop-menu-cart-number">0</span></span><span
+                                                                                                                    class="wdt-shop-menu-cart-totals"></span></span></a>
                                                                                                     </div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="wdt-header-icons-list-item user-authlink-item">
                                                                                                     <div
-                                                                                                        class="wdt-header-icons-list-item cart-item">
-                                                                                                        <div
-                                                                                                            class="wdt-shop-menu-icon">
-                                                                                                            <a href="https://neytri.wpengine.com/cart/"><span
-                                                                                                                    class="wdt-shop-menu-icon-wrapper"><span
-                                                                                                                        class="wdt-shop-menu-cart-inner"><span
-                                                                                                                            class="wdt-shop-menu-cart-icon"><i><svg
-                                                                                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                                                    x="0px"
-                                                                                                                                    y="0px"
-                                                                                                                                    viewBox="0 0 13.2 16.5"
-                                                                                                                                    style="enable-background:new 0 0 13.2 16.5;"
-                                                                                                                                    xml:space="preserve"><path
-                                                                                                                                        d="M12.4,4.9c-0.1-0.8-0.7-1.4-1.6-1.4H9.9v-1C9.9,1.1,8.8,0,7.4,0H5.7C4.4,0,3.2,1.1,3.2,2.5v1H2.4c-0.8,0-1.5,0.6-1.6,1.4 l-0.8,9c0,0.1,0,0.1,0,0.2c0,1.3,1.1,2.4,2.4,2.4c0,0,0,0,0,0h8.3c0.1,0,0.1,0,0.2,0c0.6,0,1.2-0.3,1.7-0.8c0.4-0.5,0.6-1.1,0.6-1.8 L12.4,4.9z M4.7,2.5c0-0.5,0.4-1,1-1h1.7c0.5,0,1,0.4,1,1v1H4.7V2.5z M11.4,14.7C11.3,14.9,11,15,10.8,15l-0.1,0c0,0,0,0,0,0H2.4 c-0.5,0-0.9-0.4-0.9-1l0.8-9c0,0,0-0.1,0.1-0.1c0,0,0,0,0,0h0.9v1.8c0,0.4,0.3,0.8,0.8,0.8s0.8-0.3,0.8-0.8V5h3.7v1.8 c0,0.4,0.3,0.8,0.8,0.8s0.8-0.3,0.8-0.8V5h0.9c0,0,0,0,0,0c0,0,0.1,0,0.1,0.1l0.8,9C11.7,14.3,11.6,14.5,11.4,14.7z"></path></svg></i></span><span
-                                                                                                                            class="wdt-shop-menu-cart-number">0</span></span><span
-                                                                                                                        class="wdt-shop-menu-cart-totals"></span></span></a>
-                                                                                                            <div
-                                                                                                                class="wdt-shop-menu-cart-content-wrapper">
-                                                                                                                <div
-                                                                                                                    class="wdt-shop-menu-cart-content">
-                                                                                                                    No
-                                                                                                                    products
-                                                                                                                    added!
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
+                                                                                                        class="wdt-user-authlink-menu-icon">
+                                                                                                        <a href="https://neytri.wpengine.com/wp-login.php?redirect_to=https%3A%2F%2Fneytri.wpengine.com%2Fproduct%2Fsummer-suit%2F"><span><i><svg
+                                                                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                                                                        x="0px"
+                                                                                                                        y="0px"
+                                                                                                                        viewBox="0 0 16.5 16.5"
+                                                                                                                        style="enable-background:new 0 0 16.5 16.5;"
+                                                                                                                        xml:space="preserve">	<path
+                                                                                                                            d="M16.5,8.3c0-4.5-3.7-8.3-8.3-8.3S0,3.7,0,8.3c0,2.9,1.5,5.4,3.7,6.9c0,0,0,0,0,0c1.3,0.8,2.8,1.3,4.5,1.3  c1.7,0,3.2-0.5,4.5-1.3c0,0,0,0,0,0C15,13.7,16.5,11.1,16.5,8.3z M1.5,8.3c0-3.7,3-6.8,6.8-6.8c3.7,0,6.8,3,6.8,6.8  c0,2-0.8,3.7-2.2,4.9c-0.6-1.7-2.2-3-4.1-3.2c-1.3-0.1-2.6,0.3-3.6,1.1c-0.7,0.6-1.2,1.3-1.5,2.1C2.3,12,1.5,10.2,1.5,8.3z   M4.9,14.1c0.2-0.7,0.6-1.4,1.1-1.9c0.7-0.6,1.6-0.8,2.5-0.8c1.5,0.1,2.6,1.2,3,2.6c-1,0.6-2.1,0.9-3.3,0.9C7,15,5.9,14.7,4.9,14.1  z"></path>	<path
+                                                                                                                            d="M8.3,8.2c1.3,0,2.4-1.1,2.4-2.4S9.6,3.3,8.3,3.3c-1.3,0-2.4,1.1-2.4,2.4S6.9,8.2,8.3,8.2z M8.3,4.8c0.5,0,0.9,0.4,0.9,0.9  S8.8,6.7,8.3,6.7S7.3,6.3,7.3,5.8S7.7,4.8,8.3,4.8z"></path></svg></i><span
+                                                                                                                    class="icotype-label">Log In</span></span></a>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
@@ -10354,7 +8724,19 @@
             <!-- ** Slider End ** -->
 
             <!-- ** Breadcrumb ** -->
-            <!-- ** Breadcrumb End ** -->
+            <section class="main-title-section-wrapper ">
+                <div class="main-title-section-container">
+                    <div class="container">
+                        <div class="main-title-section"><h1>Shop</h1></div>
+                        <div class="breadcrumb"><a href="{{ route('home') }}">Home</a><span
+                                class="breadcrumb-default-delimiter"></span><a
+                                href="">{{ $product->cate_name }}</a><span
+                                class="breadcrumb-default-delimiter"></span><span class="current">{{ $product->name }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-title-section-bg"></div>
+            </section>                <!-- ** Breadcrumb End ** -->
 
         </div><!-- ** Header Wrapper - End ** -->
 
@@ -10363,343 +8745,220 @@
 
 
             <!-- ** Container ** -->
-            <div class="wdt-elementor-container-fluid">
-                <div data-elementor-type="wp-page" data-elementor-id="500" class="elementor elementor-500">
-                    <div class="elementor-inner">
-                        <div class="elementor-section-wrap">
-                            <section
-                                class="elementor-section elementor-top-section elementor-element elementor-element-4b53332 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                                data-id="4b53332" data-element_type="section"
-                                data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
-                                <div class="elementor-container elementor-column-gap-no">
-                                    <div class="elementor-row">
-                                        <div
-                                            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-73fdaf8"
-                                            data-id="73fdaf8" data-element_type="column">
-                                            <div class="elementor-column-wrap elementor-element-populated">
-                                                <div class="elementor-widget-wrap">
-                                                    <div
-                                                        class="elementor-element elementor-element-11bbee5 wdt-custom-slider-3-advanced-carousel center elementor-widget elementor-widget-wdt-advanced-carousel"
-                                                        data-id="11bbee5" data-element_type="widget"
-                                                        data-settings="{&quot;slides_to_show_opts&quot;:&quot;1&quot;,&quot;slides_to_show_opts_laptop&quot;:&quot;1&quot;,&quot;slides_to_show_opts_tablet_extra&quot;:&quot;1&quot;,&quot;slides_to_show_opts_tablet&quot;:&quot;1&quot;,&quot;carousel_dots_default_normal_background_background&quot;:&quot;classic&quot;,&quot;carousel_dots_default_hover_background_background&quot;:&quot;classic&quot;,&quot;gap&quot;:{&quot;unit&quot;:&quot;dpt&quot;,&quot;size&quot;:0,&quot;sizes&quot;:[]},&quot;effect&quot;:&quot;fade&quot;,&quot;direction&quot;:&quot;horizontal&quot;,&quot;slides_to_show_opts_mobile_extra&quot;:1,&quot;slides_to_show_opts_mobile&quot;:1,&quot;slides_to_scroll_opts&quot;:&quot;single&quot;,&quot;pagination&quot;:&quot;bullets&quot;,&quot;speed&quot;:300,&quot;gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;loop&quot;:&quot;yes&quot;,&quot;centered_slides&quot;:&quot;no&quot;,&quot;carousel_arrows_prev_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                        data-widget_type="wdt-advanced-carousel.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div
-                                                                class="wdt-advanced-carousel-holder wdt-content-item-holder wdt-carousel-holder wdt-rc-template-default"
-                                                                id="wdt-advanced-carousel-11bbee5" data-id="11bbee5"
-                                                                data-settings="">
-                                                                <div class="wdt-advanced-carousel-container swiper"
-                                                                     data-settings="{&quot;direction&quot;:&quot;horizontal&quot;,&quot;effect&quot;:&quot;fade&quot;,&quot;slides_to_show&quot;:&quot;1&quot;,&quot;slides_to_scroll&quot;:1,&quot;arrows&quot;:&quot;&quot;,&quot;pagination&quot;:&quot;bullets&quot;,&quot;speed&quot;:300,&quot;autoplay&quot;:&quot;&quot;,&quot;autoplay_speed&quot;:null,&quot;loop&quot;:&quot;yes&quot;,&quot;centered_slides&quot;:&quot;no&quot;,&quot;pause_on_interaction&quot;:null,&quot;overflow_type&quot;:&quot;&quot;,&quot;overflow_opacity&quot;:&quot;&quot;,&quot;unequal_height_compatability&quot;:null,&quot;gap&quot;:0,&quot;responsive&quot;:[{&quot;breakpoint&quot;:319,&quot;toshow&quot;:1,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:480,&quot;toshow&quot;:1,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:768,&quot;toshow&quot;:1,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:1025,&quot;toshow&quot;:1,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:1281,&quot;toshow&quot;:1,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:1541,&quot;toshow&quot;:1,&quot;toscroll&quot;:1}],&quot;space_between_gaps&quot;:{&quot;desktop&quot;:0,&quot;mobile&quot;:0,&quot;mobile_extra&quot;:0,&quot;tablet&quot;:0,&quot;tablet_extra&quot;:0,&quot;laptop&quot;:0}}"
-                                                                     id="wdt-advanced-carousel-swiper-11bbee5">
-                                                                    <div
-                                                                        class="wdt-advanced-carousel-wrapper swiper-wrapper">
-                                                                        <div class="swiper-slide">
-                                                                            <div class="wdt-content-item">
-                                                                                <style>.elementor-343 .elementor-element.elementor-element-8792d93 > .elementor-container {
-                                                                                        max-width: 1640px;
-                                                                                        min-height: 840px;
-                                                                                    }
+            <div class="container">
 
-                                                                                    .elementor-343 .elementor-element.elementor-element-8792d93 > .elementor-background-overlay {
-                                                                                        background-image: url("https://neytri.wpengine.com/wp-content/uploads/2023/05/Home-3-Slider-1.jpg");
-                                                                                        background-position: center center;
-                                                                                        background-repeat: no-repeat;
-                                                                                        background-size: cover;
-                                                                                        opacity: 1;
-                                                                                    }
+                <!-- ** Primary ** -->
+                <section id="primary" class="content-full-width">
 
-                                                                                    .elementor-343 .elementor-element.elementor-element-8792d93 {
-                                                                                        padding: 0px 30px 0px 30px;
-                                                                                    }
 
-                                                                                    .elementor-343 .elementor-element.elementor-element-e356711 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute) {
-                                                                                        margin-bottom: 0px;
-                                                                                    }
-
-                                                                                    .elementor-343 .elementor-element.elementor-element-71d6983 .wdt-heading-holder, .elementor-343 .elementor-element.elementor-element-71d6983 .wdt-heading-holder > .wdt-heading-separator-wrapper .wdt-heading-separator, .elementor-343 .elementor-element.elementor-element-71d6983 .wdt-heading-holder > .wdt-heading-title-wrapper .wdt-heading-title, .elementor-343 .elementor-element.elementor-element-71d6983 .wdt-heading-holder > .wdt-heading-subtitle-wrapper .wdt-heading-subtitle {
-                                                                                        text-align: start;
-                                                                                        justify-content: start;
-                                                                                        justify-items: start;
-                                                                                    }
-
-                                                                                    .elementor-343 .elementor-element.elementor-element-71d6983 .wdt-heading-holder .wdt-heading-title-wrapper .wdt-heading-title {
-                                                                                        align-items: center;
-                                                                                        color: var(--e-global-color-primary);
-                                                                                    }
-
-                                                                                    .elementor-343 .elementor-element.elementor-element-71d6983 .wdt-heading-holder .wdt-heading-subtitle-wrapper .wdt-heading-subtitle {
-                                                                                        align-items: center;
-                                                                                    }
-
-                                                                                    .elementor-343 .elementor-element.elementor-element-71d6983 .wdt-heading-holder .wdt-heading-content-wrapper {
-                                                                                        color: var(--e-global-color-primary);
-                                                                                    }
-
-                                                                                    .elementor-343 .elementor-element.elementor-element-71d6983 > .elementor-widget-container {
-                                                                                        padding: 0px 0px 30px 0px;
-                                                                                    }
-
-                                                                                    .elementor-343 .elementor-element.elementor-element-71d6983 {
-                                                                                        width: var(--container-widget-width, 680px);
-                                                                                        max-width: 680px;
-                                                                                        --container-widget-width: 680px;
-                                                                                        --container-widget-flex-grow: 0;
-                                                                                    }
-
-                                                                                    .elementor-343 .elementor-element.elementor-element-fe2a08c {
-                                                                                        text-align: left;
-                                                                                        width: var(--container-widget-width, 600px);
-                                                                                        max-width: 600px;
-                                                                                        --container-widget-width: 600px;
-                                                                                        --container-widget-flex-grow: 0;
-                                                                                    }
-
-                                                                                    .elementor-343 .elementor-element.elementor-element-fe2a08c > .elementor-widget-container {
-                                                                                        padding: 0px 0px 50px 0px;
-                                                                                    }
-
-                                                                                    .elementor-343 .elementor-element.elementor-element-1fc7b33 .elementor-widget-container {
-                                                                                        text-align: start;
-                                                                                        justify-content: start;
-                                                                                        justify-items: start;
-                                                                                    }</style>
-                                                                                <div data-elementor-type="page"
-                                                                                     data-elementor-id="343"
-                                                                                     class="elementor elementor-343">
-                                                                                    <div class="elementor-inner">
+                    <div class="woocommerce-notices-wrapper"></div>
+                    <div id="product-858"
+                         class="product-grid-view product type-product post-858 status-publish first instock product_cat-dress product_cat-hat product_cat-jean product_cat-scarf product_cat-shirt product_cat-sunglasses product_tag-accessories product_tag-footwear product_tag-kids product_tag-men product_tag-white-bg product_tag-women has-post-thumbnail shipping-taxable purchasable product-type-variable">
+                        <div data-elementor-type="wp-post" data-elementor-id="858" class="elementor elementor-858">
+                            <div class="elementor-inner">
+                                <div class="elementor-section-wrap">
+                                    <section
+                                        class="elementor-section elementor-top-section elementor-element elementor-element-e5ba3a0 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                        data-id="e5ba3a0" data-element_type="section"
+                                        data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-row">
+                                                <div
+                                                    class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d625801"
+                                                    data-id="d625801" data-element_type="column">
+                                                    <div class="elementor-column-wrap elementor-element-populated">
+                                                        <div class="elementor-widget-wrap">
+                                                            <section
+                                                                class="elementor-section elementor-inner-section elementor-element elementor-element-f0a33ed elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                                                data-id="f0a33ed" data-element_type="section"
+                                                                data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
+                                                                <div
+                                                                    class="elementor-container elementor-column-gap-no">
+                                                                    <div class="elementor-row">
+                                                                        <div
+                                                                            class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-ebb420b"
+                                                                            data-id="ebb420b"
+                                                                            data-element_type="column">
+                                                                            <div
+                                                                                class="elementor-column-wrap elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div
+                                                                                        class="elementor-element elementor-element-53c1c03 elementor-widget elementor-widget-wdt-shop-product-single-images-carousel"
+                                                                                        data-id="53c1c03"
+                                                                                        data-element_type="widget"
+                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                                        data-widget_type="wdt-shop-product-single-images-carousel.default">
                                                                                         <div
-                                                                                            class="elementor-section-wrap">
-                                                                                            <section
-                                                                                                class="elementor-section elementor-top-section elementor-element elementor-element-8792d93 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle"
-                                                                                                data-id="8792d93"
-                                                                                                data-element_type="section"
-                                                                                                data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
+                                                                                            class="elementor-widget-container">
+                                                                                            <div
+                                                                                                class="wdt-product-image-gallery-holder   ">
                                                                                                 <div
-                                                                                                    class="elementor-background-overlay"></div>
-                                                                                                <div
-                                                                                                    class="elementor-container elementor-column-gap-no">
+                                                                                                    class="wdt-product-image-gallery-container swiper-container"
+                                                                                                    data-carouseleffect=""
+                                                                                                    data-carouselslidesperview="1"
+                                                                                                    data-carouselloopmode="true"
+                                                                                                    data-carouselmousewheelcontrol=""
+                                                                                                    data-carouselverticaldirection=""
+                                                                                                    data-carouselbulletpagination=""
+                                                                                                    data-carouselthumbnailpagination=""
+                                                                                                    data-carouselthumbnailposition=""
+                                                                                                    data-carouselslidesperviewthumbnail="4"
+                                                                                                    data-carouselarrowpagination=""
+                                                                                                    data-carouselscrollbar=""
+                                                                                                    data-carouselspacebetween="">
                                                                                                     <div
-                                                                                                        class="elementor-row">
+                                                                                                        class="wdt-product-image-gallery swiper-wrapper">
                                                                                                         <div
-                                                                                                            class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-e356711"
-                                                                                                            data-id="e356711"
-                                                                                                            data-element_type="column">
-                                                                                                            <div
-                                                                                                                class="elementor-column-wrap elementor-element-populated">
-                                                                                                                <div
-                                                                                                                    class="elementor-widget-wrap">
-                                                                                                                    <div
-                                                                                                                        class="elementor-element elementor-element-71d6983 wdt-custom-slider-medium-heading start elementor-widget__width-initial elementor-widget elementor-widget-wdt-heading"
-                                                                                                                        data-id="71d6983"
-                                                                                                                        data-element_type="widget"
-                                                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                                                        data-widget_type="wdt-heading.default">
-                                                                                                                        <div
-                                                                                                                            class="elementor-widget-container">
-                                                                                                                            <div
-                                                                                                                                class="wdt-heading-holder "
-                                                                                                                                id="wdt-heading-71d6983">
-                                                                                                                                <h1 class="wdt-heading-title-wrapper wdt-heading-align-center wdt-heading-deco-wrapper">
-                                                                                                                                    <span
-                                                                                                                                        class="wdt-heading-title">A pair of trousers and a t-shirt that you need</span>
-                                                                                                                                </h1>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                    <div
-                                                                                                                        class="elementor-element elementor-element-1fc7b33 wdt-custom-common-button start elementor-widget elementor-widget-wdt-button"
-                                                                                                                        data-id="1fc7b33"
-                                                                                                                        data-element_type="widget"
-                                                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                                                        data-widget_type="wdt-button.default">
-                                                                                                                        <div
-                                                                                                                            class="elementor-widget-container">
-                                                                                                                            <div
-                                                                                                                                class="wdt-button-holder wdt-template-filled wdt-button-link wdt-button-style-default wdt-button-size-nm wdt-animation- wdt-button-icon-after"
-                                                                                                                                id="wdt-button-1fc7b33">
-                                                                                                                                <a class="wdt-button"
-                                                                                                                                   href="#">
-                                                                                                                                    <div
-                                                                                                                                        class="wdt-button-text">
-                                                                                                                                        <span>Shop Collection</span>
-                                                                                                                                    </div>
-                                                                                                                                </a>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <div
-                                                                                                            class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7de482f"
-                                                                                                            data-id="7de482f"
-                                                                                                            data-element_type="column">
-                                                                                                            <div
-                                                                                                                class="elementor-column-wrap">
-                                                                                                                <div
-                                                                                                                    class="elementor-widget-wrap">
-                                                                                                                </div>
-                                                                                                            </div>
+                                                                                                            class="wdt-product-image swiper-slide">
+                                                                                                            <img
+                                                                                                                width="1000"
+                                                                                                                height="1329"
+                                                                                                                src="../../{{ $product->img }}"
+                                                                                                                class="wp-post-image"
+                                                                                                                alt=""
+                                                                                                                decoding="async"
+                                                                                                                loading="lazy"
+                                                                                                                title="39.1"
+                                                                                                                data-caption=""
+                                                                                                                data-src="https://neytri.wpengine.com/wp-content/uploads/2023/06/39.1.jpg"
+                                                                                                                data-large_image="https://neytri.wpengine.com/wp-content/uploads/2023/06/39.1.jpg"
+                                                                                                                data-large_image_width="1216"
+                                                                                                                data-large_image_height="1616"
+                                                                                                                sizes="(max-width: 1000px) 100vw, 1000px"/>
                                                                                                         </div>
                                                                                                     </div>
+                                                                                                    <div
+                                                                                                        class="wdt-product-image-gallery-pagination-holder"></div>
                                                                                                 </div>
-                                                                                            </section>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="swiper-slide">
-                                                                            <div class="wdt-content-item">
-                                                                                <style>.elementor-347 .elementor-element.elementor-element-8792d93 > .elementor-container {
-                                                                                        max-width: 1640px;
-                                                                                        min-height: 840px;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-8792d93 > .elementor-background-overlay {
-                                                                                        background-image: url("https://neytri.wpengine.com/wp-content/uploads/2023/05/Home-3-Slider-2.jpg");
-                                                                                        background-position: center center;
-                                                                                        background-repeat: no-repeat;
-                                                                                        background-size: cover;
-                                                                                        opacity: 1;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-8792d93 {
-                                                                                        padding: 0px 30px 0px 30px;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-e356711 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial):not(:last-child):not(.elementor-absolute) {
-                                                                                        margin-bottom: 0px;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-71d6983 .wdt-heading-holder, .elementor-347 .elementor-element.elementor-element-71d6983 .wdt-heading-holder > .wdt-heading-separator-wrapper .wdt-heading-separator, .elementor-347 .elementor-element.elementor-element-71d6983 .wdt-heading-holder > .wdt-heading-title-wrapper .wdt-heading-title, .elementor-347 .elementor-element.elementor-element-71d6983 .wdt-heading-holder > .wdt-heading-subtitle-wrapper .wdt-heading-subtitle {
-                                                                                        text-align: start;
-                                                                                        justify-content: start;
-                                                                                        justify-items: start;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-71d6983 .wdt-heading-holder .wdt-heading-title-wrapper .wdt-heading-title {
-                                                                                        align-items: center;
-                                                                                        color: var(--e-global-color-primary);
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-71d6983 .wdt-heading-holder .wdt-heading-subtitle-wrapper .wdt-heading-subtitle {
-                                                                                        align-items: center;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-71d6983 .wdt-heading-holder .wdt-heading-content-wrapper {
-                                                                                        color: var(--e-global-color-primary);
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-71d6983 > .elementor-widget-container {
-                                                                                        padding: 0px 0px 30px 0px;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-71d6983 {
-                                                                                        width: var(--container-widget-width, 680px);
-                                                                                        max-width: 680px;
-                                                                                        --container-widget-width: 680px;
-                                                                                        --container-widget-flex-grow: 0;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-fe2a08c {
-                                                                                        text-align: left;
-                                                                                        width: var(--container-widget-width, 600px);
-                                                                                        max-width: 600px;
-                                                                                        --container-widget-width: 600px;
-                                                                                        --container-widget-flex-grow: 0;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-fe2a08c > .elementor-widget-container {
-                                                                                        padding: 0px 0px 50px 0px;
-                                                                                    }
-
-                                                                                    .elementor-347 .elementor-element.elementor-element-1fc7b33 .elementor-widget-container {
-                                                                                        text-align: start;
-                                                                                        justify-content: start;
-                                                                                        justify-items: start;
-                                                                                    }</style>
-                                                                                <div data-elementor-type="page"
-                                                                                     data-elementor-id="347"
-                                                                                     class="elementor elementor-347">
-                                                                                    <div class="elementor-inner">
+                                                                        <div
+                                                                            class="wdt-sticky-column elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-516258f"
+                                                                            data-wdt-settings="{&quot;id&quot;:&quot;516258f&quot;,&quot;sticky&quot;:true,&quot;topSpacing&quot;:50,&quot;bottomSpacing&quot;:50,&quot;stickyOn&quot;:[&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet_extra&quot;],&quot;overflowHidden&quot;:false}"
+                                                                            data-id="516258f"
+                                                                            data-element_type="column">
+                                                                            <div
+                                                                                class="elementor-column-wrap elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div
+                                                                                        class="elementor-element elementor-element-8995e05 elementor-widget__width-initial elementor-widget elementor-widget-wdt-shop-product-single-summary"
+                                                                                        data-id="8995e05"
+                                                                                        data-element_type="widget"
+                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                                        data-widget_type="wdt-shop-product-single-summary.default">
                                                                                         <div
-                                                                                            class="elementor-section-wrap">
-                                                                                            <section
-                                                                                                class="elementor-section elementor-top-section elementor-element elementor-element-8792d93 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle"
-                                                                                                data-id="8792d93"
-                                                                                                data-element_type="section"
-                                                                                                data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
+                                                                                            class="elementor-widget-container">
+                                                                                            <div
+                                                                                                class="wdt-product-summary summary entry-summary  ">
                                                                                                 <div
-                                                                                                    class="elementor-background-overlay"></div>
+                                                                                                    class="wdt-single-product-title">
+                                                                                                    <h2 class="product_title entry-title">{{ $product->name }}</h2>
+                                                                                                </div>
                                                                                                 <div
-                                                                                                    class="elementor-container elementor-column-gap-no">
+                                                                                                    class="wdt-single-product-price">
+                                                                                                    <p class="price">
+                                                                                                        <span
+                                                                                                            class="woocs_price_code"
+                                                                                                            data-currency=""
+                                                                                                            data-redraw-id="64cd0063836d5"
+                                                                                                            data-product-id="858"><span
+                                                                                                                class="woocommerce-Price-amount amount"><bdi><span
+                                                                                                                        class="woocommerce-Price-currencySymbol">&#36;</span>{{ $product->price }}</bdi></span>
+                                                                                                </div>
+                                                                                                <div class="wdt-single-product-price">
+                                                                                                    <span>
+                                                                                                        Kho: {{ $product->quantity }}
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="product-buttons-wrapper product-button style-simple   ">
                                                                                                     <div
-                                                                                                        class="elementor-row">
+                                                                                                        class="">
                                                                                                         <div
-                                                                                                            class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-e356711"
-                                                                                                            data-id="e356711"
-                                                                                                            data-element_type="column">
+                                                                                                            class="wcwl_btn_wrapper wc_btn_inline"
+                                                                                                            data-tooltip="Wishlist">
                                                                                                             <div
-                                                                                                                class="elementor-column-wrap elementor-element-populated">
-                                                                                                                <div
-                                                                                                                    class="elementor-widget-wrap">
-                                                                                                                    <div
-                                                                                                                        class="elementor-element elementor-element-71d6983 wdt-custom-slider-medium-heading start elementor-widget__width-initial elementor-widget elementor-widget-wdt-heading"
-                                                                                                                        data-id="71d6983"
-                                                                                                                        data-element_type="widget"
-                                                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                                                        data-widget_type="wdt-heading.default">
-                                                                                                                        <div
-                                                                                                                            class="elementor-widget-container">
-                                                                                                                            <div
-                                                                                                                                class="wdt-heading-holder "
-                                                                                                                                id="wdt-heading-71d6983">
-                                                                                                                                <h1 class="wdt-heading-title-wrapper wdt-heading-align-center wdt-heading-deco-wrapper">
-                                                                                                                                    <span
-                                                                                                                                        class="wdt-heading-title">Extraordinary youth vegan leather trousers</span>
-                                                                                                                                </h1>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                    <div
-                                                                                                                        class="elementor-element elementor-element-1fc7b33 wdt-custom-common-button start elementor-widget elementor-widget-wdt-button"
-                                                                                                                        data-id="1fc7b33"
-                                                                                                                        data-element_type="widget"
-                                                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                                                        data-widget_type="wdt-button.default">
-                                                                                                                        <div
-                                                                                                                            class="elementor-widget-container">
-                                                                                                                            <div
-                                                                                                                                class="wdt-button-holder wdt-template-filled wdt-button-link wdt-button-style-default wdt-button-size-nm wdt-animation- wdt-button-icon-after"
-                                                                                                                                id="wdt-button-1fc7b33">
-                                                                                                                                <a class="wdt-button"
-                                                                                                                                   href="#">
-                                                                                                                                    <div
-                                                                                                                                        class="wdt-button-text">
-                                                                                                                                        <span>Shop Collection</span>
-                                                                                                                                    </div>
-                                                                                                                                </a>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <div
-                                                                                                            class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7de482f"
-                                                                                                            data-id="7de482f"
-                                                                                                            data-element_type="column">
-                                                                                                            <div
-                                                                                                                class="elementor-column-wrap">
-                                                                                                                <div
-                                                                                                                    class="elementor-widget-wrap">
-                                                                                                                </div>
+                                                                                                                class="yith-wcwl-add-to-wishlist add-to-wishlist-858  wishlist-fragment on-first-load"
+                                                                                                                data-fragment-ref="858"
+                                                                                                                data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:true,&quot;show_exists&quot;:false,&quot;product_id&quot;:&quot;858&quot;,&quot;parent_product_id&quot;:858,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:true,&quot;browse_wishlist_text&quot;:&quot;Browse wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in your wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;fa-heart-o&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}"
+                                                                                                            >
                                                                                                             </div>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                            </section>
+                                                                                                <div
+                                                                                                    class="product-buttons-wrapper product-button product-button-cart  ">
+                                                                                                    <div
+                                                                                                        class="wc_inline_buttons">
+                                                                                                        <div
+                                                                                                            class="wcwl_btn_wrapper wc_btn_inline">
+                                                                                                            <form
+                                                                                                                class="variations_form cart"
+                                                                                                                action="https://neytri.wpengine.com/product/summer-suit/"
+                                                                                                                method="post"
+                                                                                                                enctype='multipart/form-data'
+                                                                                                                data-product_id="858"
+                                                                                                                data-product_variations="[{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;green&quot;,&quot;attribute_pa_size&quot;:&quot;s&quot;},&quot;availability_html&quot;:&quot;&lt;p class=\&quot;stock in-stock\&quot;&gt;10 in stock&lt;\/p&gt;\n&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;12&quot;,&quot;width&quot;:&quot;10&quot;,&quot;height&quot;:&quot;8&quot;},&quot;dimensions_html&quot;:&quot;12 &amp;times; 10 &amp;times; 8 cm&quot;,&quot;display_price&quot;:8,&quot;display_regular_price&quot;:8,&quot;image&quot;:{&quot;title&quot;:&quot;39.1&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1.jpg&quot;,&quot;alt&quot;:&quot;39.1&quot;,&quot;src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1-1000x1329.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1-1000x1329.jpg 1000w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1-226x300.jpg 226w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1-771x1024.jpg 771w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1-768x1021.jpg 768w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1-1156x1536.jpg 1156w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1.jpg 1216w&quot;,&quot;sizes&quot;:&quot;(max-width: 1000px) 100vw, 1000px&quot;,&quot;full_src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1.jpg&quot;,&quot;full_src_w&quot;:1216,&quot;full_src_h&quot;:1616,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1-1000x1329.jpg&quot;,&quot;thumb_src_w&quot;:1000,&quot;thumb_src_h&quot;:1329,&quot;src_w&quot;:1000,&quot;src_h&quot;:1329},&quot;image_id&quot;:1090,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:10,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocs_price_code\&quot; data-currency=\&quot;\&quot; data-redraw-id=\&quot;64cd0063850f0\&quot;  data-product-id=\&quot;860\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;bdi&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;8.00&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;sku&quot;:&quot;wdt-sdg-11-19&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:860,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;43&quot;,&quot;weight_html&quot;:&quot;43 kg&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;blue&quot;,&quot;attribute_pa_size&quot;:&quot;m&quot;},&quot;availability_html&quot;:&quot;&lt;p class=\&quot;stock in-stock\&quot;&gt;10 in stock&lt;\/p&gt;\n&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;12&quot;,&quot;width&quot;:&quot;10&quot;,&quot;height&quot;:&quot;8&quot;},&quot;dimensions_html&quot;:&quot;12 &amp;times; 10 &amp;times; 8 cm&quot;,&quot;display_price&quot;:10,&quot;display_regular_price&quot;:10,&quot;image&quot;:{&quot;title&quot;:&quot;39.2&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2.jpg&quot;,&quot;alt&quot;:&quot;39.2&quot;,&quot;src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2-1000x1329.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2-1000x1329.jpg 1000w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2-226x300.jpg 226w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2-771x1024.jpg 771w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2-768x1021.jpg 768w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2-1156x1536.jpg 1156w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2.jpg 1216w&quot;,&quot;sizes&quot;:&quot;(max-width: 1000px) 100vw, 1000px&quot;,&quot;full_src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2.jpg&quot;,&quot;full_src_w&quot;:1216,&quot;full_src_h&quot;:1616,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.2-1000x1329.jpg&quot;,&quot;thumb_src_w&quot;:1000,&quot;thumb_src_h&quot;:1329,&quot;src_w&quot;:1000,&quot;src_h&quot;:1329},&quot;image_id&quot;:1091,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:10,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocs_price_code\&quot; data-currency=\&quot;\&quot; data-redraw-id=\&quot;64cd006385e1f\&quot;  data-product-id=\&quot;863\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;bdi&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;10.00&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;sku&quot;:&quot;wdt-sdg-11-19&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:863,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;43&quot;,&quot;weight_html&quot;:&quot;43 kg&quot;},{&quot;attributes&quot;:{&quot;attribute_pa_color&quot;:&quot;brown&quot;,&quot;attribute_pa_size&quot;:&quot;l&quot;},&quot;availability_html&quot;:&quot;&lt;p class=\&quot;stock in-stock\&quot;&gt;10 in stock&lt;\/p&gt;\n&quot;,&quot;backorders_allowed&quot;:false,&quot;dimensions&quot;:{&quot;length&quot;:&quot;12&quot;,&quot;width&quot;:&quot;10&quot;,&quot;height&quot;:&quot;8&quot;},&quot;dimensions_html&quot;:&quot;12 &amp;times; 10 &amp;times; 8 cm&quot;,&quot;display_price&quot;:12,&quot;display_regular_price&quot;:12,&quot;image&quot;:{&quot;title&quot;:&quot;39.3&quot;,&quot;caption&quot;:&quot;&quot;,&quot;url&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3.jpg&quot;,&quot;alt&quot;:&quot;39.3&quot;,&quot;src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3-1000x1329.jpg&quot;,&quot;srcset&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3-1000x1329.jpg 1000w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3-226x300.jpg 226w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3-771x1024.jpg 771w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3-768x1021.jpg 768w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3-1156x1536.jpg 1156w, https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3.jpg 1216w&quot;,&quot;sizes&quot;:&quot;(max-width: 1000px) 100vw, 1000px&quot;,&quot;full_src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3.jpg&quot;,&quot;full_src_w&quot;:1216,&quot;full_src_h&quot;:1616,&quot;gallery_thumbnail_src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3-100x100.jpg&quot;,&quot;gallery_thumbnail_src_w&quot;:100,&quot;gallery_thumbnail_src_h&quot;:100,&quot;thumb_src&quot;:&quot;https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.3-1000x1329.jpg&quot;,&quot;thumb_src_w&quot;:1000,&quot;thumb_src_h&quot;:1329,&quot;src_w&quot;:1000,&quot;src_h&quot;:1329},&quot;image_id&quot;:1092,&quot;is_downloadable&quot;:false,&quot;is_in_stock&quot;:true,&quot;is_purchasable&quot;:true,&quot;is_sold_individually&quot;:&quot;no&quot;,&quot;is_virtual&quot;:false,&quot;max_qty&quot;:10,&quot;min_qty&quot;:1,&quot;price_html&quot;:&quot;&lt;span class=\&quot;price\&quot;&gt;&lt;span class=\&quot;woocs_price_code\&quot; data-currency=\&quot;\&quot; data-redraw-id=\&quot;64cd006386a65\&quot;  data-product-id=\&quot;865\&quot;&gt;&lt;span class=\&quot;woocommerce-Price-amount amount\&quot;&gt;&lt;bdi&gt;&lt;span class=\&quot;woocommerce-Price-currencySymbol\&quot;&gt;&amp;#36;&lt;\/span&gt;12.00&lt;\/bdi&gt;&lt;\/span&gt;&lt;\/span&gt;&lt;\/span&gt;&quot;,&quot;sku&quot;:&quot;wdt-sdg-11-19&quot;,&quot;variation_description&quot;:&quot;&quot;,&quot;variation_id&quot;:865,&quot;variation_is_active&quot;:true,&quot;variation_is_visible&quot;:true,&quot;weight&quot;:&quot;43&quot;,&quot;weight_html&quot;:&quot;43 kg&quot;}]">
+                                                                                                                <div
+                                                                                                                    data-product_id="858"
+                                                                                                                    data-threshold_min="30"
+                                                                                                                    data-threshold_max="100"
+                                                                                                                    data-total="3">
+                                                                                                                    <div
+                                                                                                                        class="single_variation_wrap">
+                                                                                                                        <div
+                                                                                                                            class="woocommerce-variation single_variation"></div>
+                                                                                                                        <div
+                                                                                                                            class="woocommerce-variation-add-to-cart variations_button">
+
+                                                                                                                            <div
+                                                                                                                                class="quantity quantity-with-plusminus">
+                                                                                                                                <input
+                                                                                                                                    type="button"
+                                                                                                                                    value="-"
+                                                                                                                                    class="minus"/>
+                                                                                                                                <label
+                                                                                                                                    class="screen-reader-text"
+                                                                                                                                    for="quantity_64cd00638a008">Summer
+                                                                                                                                    Suit
+                                                                                                                                    quantity</label>
+                                                                                                                                <input
+                                                                                                                                    type="number"
+                                                                                                                                    id="quantity_64cd00638a008"
+                                                                                                                                    class="input-text qty text"
+                                                                                                                                    step="1"
+                                                                                                                                    min="1"
+                                                                                                                                    max="10"
+                                                                                                                                    name="quantity"
+                                                                                                                                    value="1"
+                                                                                                                                    title="Qty"
+                                                                                                                                    placeholder=""
+                                                                                                                                    inputmode="numeric"/>
+
+                                                                                                                                <input
+                                                                                                                                    type="button"
+                                                                                                                                    value="+"
+                                                                                                                                    class="plus"/>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                            </form>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="product-buy-now">
+                                                                                                    <button type="submit"
+                                                                                                       class="button quick_buy_now_button">Buy Now</button></div>
+                                                                                                <div
+                                                                                                    class="wdt-single-product-separator"></div>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -10707,559 +8966,523 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="wdt-carousel-pagination-wrapper">
-                                                                    <div
-                                                                        class="wdt-swiper-pagination wdt-swiper-pagination-11bbee5"></div>
+                                                            </section>
+                                                            <section
+                                                                class="elementor-section elementor-inner-section elementor-element elementor-element-a4379db elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                                                data-id="a4379db" data-element_type="section"
+                                                                data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
+                                                                <div
+                                                                    class="elementor-container elementor-column-gap-no">
+                                                                    <div class="elementor-row">
+                                                                        <div
+                                                                            class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-a1864ad"
+                                                                            data-id="a1864ad"
+                                                                            data-element_type="column">
+                                                                            <div
+                                                                                class="elementor-column-wrap elementor-element-populated">
+                                                                                <div class="elementor-widget-wrap">
+                                                                                    <div
+                                                                                        class="elementor-element elementor-element-4c5dbf1 elementor-widget elementor-widget-wdt-shop-product-single-tabs"
+                                                                                        data-id="4c5dbf1"
+                                                                                        data-element_type="widget"
+                                                                                        data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                                        data-widget_type="wdt-shop-product-single-tabs.default">
+                                                                                        <div
+                                                                                            class="elementor-widget-container">
+                                                                                            <div
+                                                                                                class="wdt-product-tabs-wrapper  ">
+                                                                                                <div
+                                                                                                    class="wdt-product-tabs">
+                                                                                                    <div
+                                                                                                        class="woocommerce-tabs wc-tabs-wrapper">
+                                                                                                        <ul class="tabs wc-tabs"
+                                                                                                            role="tablist">
+                                                                                                            <li class="description_tab"
+                                                                                                                id="tab-title-description"
+                                                                                                                role="tab"
+                                                                                                                aria-controls="tab-description">
+                                                                                                                <a href="#tab-description">
+                                                                                                                    Description </a>
+                                                                                                            </li>
+                                                                                                            <li class="additional_information_tab"
+                                                                                                                id="tab-title-additional_information"
+                                                                                                                role="tab"
+                                                                                                                aria-controls="tab-additional_information">
+                                                                                                                <a href="#tab-additional_information">
+                                                                                                                    Additional
+                                                                                                                    information </a>
+                                                                                                            </li>
+                                                                                                        </ul>
+                                                                                                        <div
+                                                                                                            class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab"
+                                                                                                            id="tab-description"
+                                                                                                            role="tabpanel"
+                                                                                                            aria-labelledby="tab-title-description">
+
+                                                                                                            <h2>
+                                                                                                                Description</h2>
+
+                                                                                                            <style>.elementor-365 .elementor-element.elementor-element-1f3c79d {
+                                                                                                                    margin-top: 0px;
+                                                                                                                    margin-bottom: 0px;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-890775a {
+                                                                                                                    width: 71%;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-890775a > .elementor-element-populated > .elementor-widget-wrap {
+                                                                                                                    padding: 0px 35px 0px 0px;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-c69c10b {
+                                                                                                                    color: var(--e-global-color-primary);
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:last-child) {
+                                                                                                                    padding-bottom: calc(15px / 2);
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:first-child) {
+                                                                                                                    margin-top: calc(15px / 2);
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item {
+                                                                                                                    margin-right: calc(15px / 2);
+                                                                                                                    margin-left: calc(15px / 2);
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-items.elementor-inline-items {
+                                                                                                                    margin-right: calc(-15px / 2);
+                                                                                                                    margin-left: calc(-15px / 2);
+                                                                                                                }
+
+                                                                                                                body.rtl .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after {
+                                                                                                                    left: calc(-15px / 2);
+                                                                                                                }
+
+                                                                                                                body:not(.rtl) .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after {
+                                                                                                                    right: calc(-15px / 2);
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-icon i {
+                                                                                                                    transition: color 0.3s;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-icon svg {
+                                                                                                                    transition: fill 0.3s;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e {
+                                                                                                                    --e-icon-list-icon-size: 6px;
+                                                                                                                    --icon-vertical-offset: 0px;
+                                                                                                                    width: var(--container-widget-width, 50%);
+                                                                                                                    max-width: 50%;
+                                                                                                                    --container-widget-width: 50%;
+                                                                                                                    --container-widget-flex-grow: 0;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-icon {
+                                                                                                                    padding-right: 15px;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-item > .elementor-icon-list-text, .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-item > a {
+                                                                                                                    font-family: "Jost", Sans-serif;
+                                                                                                                    font-weight: 400;
+                                                                                                                    line-height: 1.6em;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e .elementor-icon-list-text {
+                                                                                                                    transition: color 0.3s;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-91dcc6e > .elementor-widget-container {
+                                                                                                                    padding: 0px 30px 0px 0px;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:last-child) {
+                                                                                                                    padding-bottom: calc(15px / 2);
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:first-child) {
+                                                                                                                    margin-top: calc(15px / 2);
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item {
+                                                                                                                    margin-right: calc(15px / 2);
+                                                                                                                    margin-left: calc(15px / 2);
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-items.elementor-inline-items {
+                                                                                                                    margin-right: calc(-15px / 2);
+                                                                                                                    margin-left: calc(-15px / 2);
+                                                                                                                }
+
+                                                                                                                body.rtl .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after {
+                                                                                                                    left: calc(-15px / 2);
+                                                                                                                }
+
+                                                                                                                body:not(.rtl) .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after {
+                                                                                                                    right: calc(-15px / 2);
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-icon i {
+                                                                                                                    transition: color 0.3s;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-icon svg {
+                                                                                                                    transition: fill 0.3s;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 {
+                                                                                                                    --e-icon-list-icon-size: 6px;
+                                                                                                                    --icon-vertical-offset: 0px;
+                                                                                                                    width: var(--container-widget-width, 50%);
+                                                                                                                    max-width: 50%;
+                                                                                                                    --container-widget-width: 50%;
+                                                                                                                    --container-widget-flex-grow: 0;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-icon {
+                                                                                                                    padding-right: 15px;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-item > .elementor-icon-list-text, .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-item > a {
+                                                                                                                    font-family: "Jost", Sans-serif;
+                                                                                                                    font-weight: 400;
+                                                                                                                    line-height: 1.6em;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-f0db7f6 .elementor-icon-list-text {
+                                                                                                                    transition: color 0.3s;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-d796c2a {
+                                                                                                                    width: 29%;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-d796c2a > .elementor-element-populated > .elementor-widget-wrap {
+                                                                                                                    padding: 0px 0px 0px 35px;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-c45d7db .wdt-content-item {
+                                                                                                                    text-align: center;
+                                                                                                                    justify-content: center;
+                                                                                                                    justify-items: center;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-c45d7db {
+                                                                                                                    width: var(--container-widget-width, 50%);
+                                                                                                                    max-width: 50%;
+                                                                                                                    --container-widget-width: 50%;
+                                                                                                                    --container-widget-flex-grow: 0;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-161920c {
+                                                                                                                    text-align: center;
+                                                                                                                    font-family: "Jost", Sans-serif;
+                                                                                                                    font-weight: 500;
+                                                                                                                    letter-spacing: 1.6px;
+                                                                                                                    width: var(--container-widget-width, 50%);
+                                                                                                                    max-width: 50%;
+                                                                                                                    --container-widget-width: 50%;
+                                                                                                                    --container-widget-flex-grow: 0;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-161920c > .elementor-widget-container {
+                                                                                                                    margin: 20px 0px 0px 0px;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-e6c523a .wdt-content-item {
+                                                                                                                    text-align: center;
+                                                                                                                    justify-content: center;
+                                                                                                                    justify-items: center;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-e6c523a > .elementor-widget-container {
+                                                                                                                    margin: -20px 0px 0px 0px;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-e6c523a {
+                                                                                                                    width: var(--container-widget-width, 50%);
+                                                                                                                    max-width: 50%;
+                                                                                                                    --container-widget-width: 50%;
+                                                                                                                    --container-widget-flex-grow: 0;
+                                                                                                                }
+
+                                                                                                                .elementor-365 .elementor-element.elementor-element-7d1c7ca {
+                                                                                                                    text-align: center;
+                                                                                                                    font-family: "Jost", Sans-serif;
+                                                                                                                    font-weight: 500;
+                                                                                                                    letter-spacing: 1.6px;
+                                                                                                                    width: var(--container-widget-width, 50%);
+                                                                                                                    max-width: 50%;
+                                                                                                                    --container-widget-width: 50%;
+                                                                                                                    --container-widget-flex-grow: 0;
+                                                                                                                }
+
+                                                                                                                @media (max-width: 1540px) {
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-c45d7db {
+                                                                                                                        width: initial;
+                                                                                                                        max-width: initial;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-161920c {
+                                                                                                                        width: initial;
+                                                                                                                        max-width: initial;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-e6c523a {
+                                                                                                                        width: initial;
+                                                                                                                        max-width: initial;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-7d1c7ca {
+                                                                                                                        width: initial;
+                                                                                                                        max-width: initial;
+                                                                                                                    }
+                                                                                                                }
+
+                                                                                                                @media (max-width: 1280px) {
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-c45d7db {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-161920c {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-e6c523a {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-7d1c7ca {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+                                                                                                                }
+
+                                                                                                                @media (max-width: 1024px) {
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-c45d7db {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-161920c {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-e6c523a {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-7d1c7ca {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+                                                                                                                }
+
+                                                                                                                @media (max-width: 767px) {
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-91dcc6e {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+
+                                                                                                                    .elementor-365 .elementor-element.elementor-element-f0db7f6 {
+                                                                                                                        width: 100%;
+                                                                                                                        max-width: 100%;
+                                                                                                                    }
+                                                                                                                }</style>
+                                                                                                            <div
+                                                                                                                data-elementor-type="page"
+                                                                                                                data-elementor-id="365"
+                                                                                                                class="elementor elementor-365">
+                                                                                                                <div
+                                                                                                                    class="elementor-inner">
+                                                                                                                    <div
+                                                                                                                        class="elementor-section-wrap">
+                                                                                                                        <section
+                                                                                                                            class="elementor-section elementor-top-section elementor-element elementor-element-2e3942c elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                                                                                                            data-id="2e3942c"
+                                                                                                                            data-element_type="section"
+                                                                                                                            data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
+                                                                                                                            <div
+                                                                                                                                class="elementor-container elementor-column-gap-no">
+                                                                                                                                <div
+                                                                                                                                    class="elementor-row">
+                                                                                                                                    <div
+                                                                                                                                        class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-508622a"
+                                                                                                                                        data-id="508622a"
+                                                                                                                                        data-element_type="column">
+                                                                                                                                        <div
+                                                                                                                                            class="elementor-column-wrap elementor-element-populated">
+                                                                                                                                            <div
+                                                                                                                                                class="elementor-widget-wrap">
+                                                                                                                                                <section
+                                                                                                                                                    class="elementor-section elementor-inner-section elementor-element elementor-element-1f3c79d elementor-section-full_width wdt-section-wrap-col elementor-section-height-default elementor-section-height-default"
+                                                                                                                                                    data-id="1f3c79d"
+                                                                                                                                                    data-element_type="section"
+                                                                                                                                                    data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
+                                                                                                                                                    <div
+                                                                                                                                                        class="elementor-container elementor-column-gap-no">
+                                                                                                                                                        <div
+                                                                                                                                                            class="elementor-row">
+                                                                                                                                                            <div
+                                                                                                                                                                class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-890775a"
+                                                                                                                                                                data-id="890775a"
+                                                                                                                                                                data-element_type="column">
+                                                                                                                                                                <div
+                                                                                                                                                                    class="elementor-column-wrap elementor-element-populated">
+                                                                                                                                                                    <div
+                                                                                                                                                                        class="elementor-widget-wrap">
+                                                                                                                                                                        <div
+                                                                                                                                                                            class="elementor-element elementor-element-c69c10b elementor-widget elementor-widget-text-editor"
+                                                                                                                                                                            data-id="c69c10b"
+                                                                                                                                                                            data-element_type="widget"
+                                                                                                                                                                            data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                                                                                                                            data-widget_type="text-editor.default">
+                                                                                                                                                                            <div
+                                                                                                                                                                                class="elementor-widget-container">
+                                                                                                                                                                                <div
+                                                                                                                                                                                    class="elementor-text-editor elementor-clearfix">
+                                                                                                                                                                                    <p>{{ $product->description }}</p>
+                                                                                                                                                                                </div>
+                                                                                                                                                                            </div>
+                                                                                                                                                                        </div>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                            <div
+                                                                                                                                                                class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d796c2a"
+                                                                                                                                                                data-id="d796c2a"
+                                                                                                                                                                data-element_type="column">
+                                                                                                                                                                <div
+                                                                                                                                                                    class="elementor-column-wrap elementor-element-populated">
+                                                                                                                                                                    <div
+                                                                                                                                                                        class="elementor-widget-wrap">
+                                                                                                                                                                        <div
+                                                                                                                                                                            class="elementor-element elementor-element-c45d7db elementor-widget__width-initial elementor-widget-laptop__width-initial elementor-widget-tablet_extra__width-inherit elementor-widget-tablet__width-inherit wdt-custom-shop-desc-img-bx center elementor-widget elementor-widget-wdt-image-box"
+                                                                                                                                                                            data-id="c45d7db"
+                                                                                                                                                                            data-element_type="widget"
+                                                                                                                                                                            data-settings="{&quot;columns&quot;:&quot;3&quot;,&quot;columns_laptop&quot;:&quot;3&quot;,&quot;columns_tablet_extra&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;3&quot;,&quot;columns_mobile_extra&quot;:&quot;3&quot;,&quot;columns_mobile&quot;:&quot;3&quot;,&quot;carousel_arrows_prev_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                                                                                                                            data-widget_type="wdt-image-box.default">
+                                                                                                                                                                            <div
+                                                                                                                                                                                class="elementor-widget-container">
+                                                                                                                                                                                <div
+                                                                                                                                                                                    class="wdt-image-box-holder wdt-content-item-holder wdt-column-holder wdt-rc-template-custom-template"
+                                                                                                                                                                                    id="wdt-image-box-c45d7db"
+                                                                                                                                                                                    data-settings="{&quot;enable_popup&quot;:&quot;&quot;}">
+                                                                                                                                                                                </div>
+                                                                                                                                                                            </div>
+                                                                                                                                                                        </div>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                            </div>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                </section>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </section>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab"
+                                                                                                            id="tab-additional_information"
+                                                                                                            role="tabpanel"
+                                                                                                            aria-labelledby="tab-title-additional_information">
+
+                                                                                                            <h2>
+                                                                                                                Additional
+                                                                                                                information</h2>
+
+                                                                                                            <table
+                                                                                                                class="woocommerce-product-attributes shop_attributes">
+                                                                                                                <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--weight">
+                                                                                                                    <th class="woocommerce-product-attributes-item__label">
+                                                                                                                        Size
+                                                                                                                    </th>
+                                                                                                                    <td class="woocommerce-product-attributes-item__value">
+                                                                                                                        {{ $product->size_name }}
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                                <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_color">
+                                                                                                                    <th class="woocommerce-product-attributes-item__label">
+                                                                                                                        Color
+                                                                                                                    </th>
+                                                                                                                    <td class="woocommerce-product-attributes-item__value">
+                                                                                                                        <p>{{ $product->color_name }}</p>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                                <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_color">
+                                                                                                                    <th class="woocommerce-product-attributes-item__label">
+                                                                                                                        Material
+                                                                                                                    </th>
+                                                                                                                    <td class="woocommerce-product-attributes-item__value">
+                                                                                                                        <p>{{ $product->material_name }}</p>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
+                                                            </section>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section
+                                        class="elementor-section elementor-top-section elementor-element elementor-element-4b8a0be elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                        data-id="4b8a0be" data-element_type="section"
+                                        data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
+                                        <div class="elementor-container elementor-column-gap-no">
+                                            <div class="elementor-row">
+                                                <div
+                                                    class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2e1aabd"
+                                                    data-id="2e1aabd" data-element_type="column">
+                                                    <div class="elementor-column-wrap elementor-element-populated">
+                                                        <div class="elementor-widget-wrap">
+                                                            <div
+                                                                class="elementor-element elementor-element-ece11b1 wdt-custom-img-box-support center elementor-widget elementor-widget-wdt-image-box"
+                                                                data-id="ece11b1" data-element_type="widget"
+                                                                data-settings="{&quot;columns&quot;:&quot;4&quot;,&quot;columns_laptop&quot;:&quot;4&quot;,&quot;columns_tablet_extra&quot;:2,&quot;columns_tablet&quot;:2,&quot;columns_mobile_extra&quot;:1,&quot;columns_mobile&quot;:1,&quot;carousel_arrows_prev_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
+                                                                data-widget_type="wdt-image-box.default">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </section>
                                 </div>
-                            </section>
-                            <section
-                                class="elementor-section elementor-top-section elementor-element elementor-element-62dd4be elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                data-id="62dd4be" data-element_type="section"
-                                data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
-                                <div class="elementor-container elementor-column-gap-no">
-                                    <div class="elementor-row">
-                                        <div
-                                            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c3a40a0"
-                                            data-id="c3a40a0" data-element_type="column">
-                                            <div class="elementor-column-wrap elementor-element-populated">
-                                                <div class="elementor-widget-wrap">
-                                                    <section
-                                                        class="elementor-section elementor-inner-section elementor-element elementor-element-6a4064a elementor-section-full_width elementor-section-content-middle wdt-section-wrap-col elementor-section-height-default elementor-section-height-default"
-                                                        data-id="6a4064a" data-element_type="section"
-                                                        data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
-                                                        <div class="elementor-container elementor-column-gap-no">
-                                                            <div class="elementor-row">
-                                                                <div
-                                                                    class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-ede2614"
-                                                                    data-id="ede2614" data-element_type="column">
-                                                                    <div
-                                                                        class="elementor-column-wrap elementor-element-populated">
-                                                                        <div class="elementor-widget-wrap">
-                                                                            <div
-                                                                                class="elementor-element elementor-element-23bc3d4 start wdt-custom-image-banner-heading-style elementor-widget-tablet_extra__width-initial center elementor-invisible elementor-widget elementor-widget-wdt-heading"
-                                                                                data-id="23bc3d4"
-                                                                                data-element_type="widget"
-                                                                                data-settings="{&quot;_animation&quot;:&quot;fadeInDown&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                data-widget_type="wdt-heading.default">
-                                                                                <div class="elementor-widget-container">
-                                                                                    <div class="wdt-heading-holder "
-                                                                                         id="wdt-heading-23bc3d4"><h3
-                                                                                            class="wdt-heading-title-wrapper wdt-heading-align-center wdt-heading-deco-wrapper">
-                                                                                            <span
-                                                                                                class="wdt-heading-title">Browse Categories</span>
-                                                                                        </h3>
-                                                                                        <div
-                                                                                            class="wdt-heading-content-wrapper">
-                                                                                            Tincidunt convallis nulla
-                                                                                            bibendum. Sed egestas, nisi
-                                                                                            purus vestibulum augue, at
-                                                                                            iaculis.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div
-                                                                                class="elementor-element elementor-element-aee58ec start elementor-invisible elementor-widget elementor-widget-wdt-button"
-                                                                                data-id="aee58ec"
-                                                                                data-element_type="widget"
-                                                                                data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                data-widget_type="wdt-button.default">
-                                                                                <div class="elementor-widget-container">
-                                                                                    <div
-                                                                                        class="wdt-button-holder wdt-template-filled wdt-button-link wdt-button-style-default wdt-button-size-nm wdt-animation- wdt-button-icon-after"
-                                                                                        id="wdt-button-aee58ec"><a
-                                                                                            class="wdt-button"
-                                                                                            href="https://neytri.wpengine.com/shop/">
-                                                                                            <div
-                                                                                                class="wdt-button-text">
-                                                                                                <span>View All</span>
-                                                                                            </div>
-                                                                                        </a></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-75d909f"
-                                                                    data-id="75d909f" data-element_type="column">
-                                                                    <div
-                                                                        class="elementor-column-wrap elementor-element-populated">
-                                                                        <div class="elementor-widget-wrap">
-                                                                            <div
-                                                                                class="elementor-element elementor-element-cc02562 center wdt-custom-image-box-style-2 center elementor-invisible elementor-widget elementor-widget-wdt-image-box"
-                                                                                data-id="cc02562"
-                                                                                data-element_type="widget"
-                                                                                data-settings="{&quot;slides_to_show_opts_laptop&quot;:&quot;4&quot;,&quot;gap&quot;:{&quot;unit&quot;:&quot;dpt&quot;,&quot;size&quot;:30,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:50,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:-1.5,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:50,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_right_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:-1.5,&quot;sizes&quot;:[]},&quot;slides_to_show_opts_tablet_extra&quot;:&quot;4&quot;,&quot;slides_to_show_opts_tablet&quot;:&quot;3&quot;,&quot;gap_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]},&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;slides_to_show_opts_mobile_extra&quot;:&quot;2&quot;,&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;direction&quot;:&quot;horizontal&quot;,&quot;effect&quot;:&quot;default&quot;,&quot;slides_to_show_opts&quot;:4,&quot;slides_to_show_opts_mobile&quot;:1,&quot;slides_to_scroll_opts&quot;:&quot;single&quot;,&quot;arrows&quot;:&quot;yes&quot;,&quot;speed&quot;:300,&quot;gap_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;gap_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;loop&quot;:&quot;yes&quot;,&quot;centered_slides&quot;:&quot;no&quot;,&quot;carousel_arrows_prev_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_right_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_right_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_right_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_right_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_right_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                data-widget_type="wdt-image-box.default">
-                                                                                <div class="elementor-widget-container">
-                                                                                    <div
-                                                                                        class="wdt-image-box-holder wdt-content-item-holder wdt-carousel-holder wdt-rc-template-with-description"
-                                                                                        id="wdt-image-box-cc02562"
-                                                                                        data-id="cc02562"
-                                                                                        data-settings="{&quot;enable_popup&quot;:&quot;&quot;}">
-                                                                                        <div
-                                                                                            class="wdt-image-box-container swiper"
-                                                                                            data-settings="{&quot;direction&quot;:&quot;horizontal&quot;,&quot;effect&quot;:&quot;default&quot;,&quot;slides_to_show&quot;:4,&quot;slides_to_scroll&quot;:1,&quot;arrows&quot;:&quot;yes&quot;,&quot;pagination&quot;:&quot;&quot;,&quot;speed&quot;:300,&quot;autoplay&quot;:&quot;&quot;,&quot;autoplay_speed&quot;:null,&quot;loop&quot;:&quot;yes&quot;,&quot;centered_slides&quot;:&quot;no&quot;,&quot;pause_on_interaction&quot;:null,&quot;overflow_type&quot;:&quot;&quot;,&quot;overflow_opacity&quot;:&quot;&quot;,&quot;unequal_height_compatability&quot;:null,&quot;gap&quot;:30,&quot;responsive&quot;:[{&quot;breakpoint&quot;:319,&quot;toshow&quot;:1,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:480,&quot;toshow&quot;:2,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:768,&quot;toshow&quot;:3,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:1025,&quot;toshow&quot;:4,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:1281,&quot;toshow&quot;:4,&quot;toscroll&quot;:1},{&quot;breakpoint&quot;:1541,&quot;toshow&quot;:4,&quot;toscroll&quot;:1}],&quot;space_between_gaps&quot;:{&quot;desktop&quot;:30,&quot;mobile&quot;:30,&quot;mobile_extra&quot;:30,&quot;tablet&quot;:10,&quot;tablet_extra&quot;:20,&quot;laptop&quot;:30}}"
-                                                                                            id="wdt-image-box-swiper-cc02562">
-                                                                                            <div
-                                                                                                class="wdt-image-box-wrapper swiper-wrapper">
-                                                                                                <div
-                                                                                                    class="swiper-slide">
-                                                                                                    <div
-                                                                                                        class="wdt-content-item">
-                                                                                                        <div
-                                                                                                            class="wdt-content-media-group">
-                                                                                                            <div
-                                                                                                                class="wdt-content-elements-group wdt-media-group wdt-media-image-cover">
-                                                                                                                <div
-                                                                                                                    class="wdt-content-image-wrapper ">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-image">
-                                                                                                                        <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                           target="_blank"
-                                                                                                                           rel="nofollow"><img
-                                                                                                                                width="700"
-                                                                                                                                height="806"
-                                                                                                                                src="https://neytri.wpengine.com/wp-content/uploads/2023/05/image-03.jpg"
-                                                                                                                                class="attachment-full size-full wp-image-105"
-                                                                                                                                alt=""
-                                                                                                                                decoding="async"
-                                                                                                                                loading="lazy"
-                                                                                                                                srcset="https://neytri.wpengine.com/wp-content/uploads/2023/05/image-03.jpg 700w, https://neytri.wpengine.com/wp-content/uploads/2023/05/image-03-261x300.jpg 261w"
-                                                                                                                                sizes="(max-width: 700px) 100vw, 700px"/></a>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div
-                                                                                                                    class="wdt-media-image-cover-container">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-title">
-                                                                                                                        <h5>
-                                                                                                                            <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                               target="_blank"
-                                                                                                                               rel="nofollow">men</a>
-                                                                                                                        </h5>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="swiper-slide">
-                                                                                                    <div
-                                                                                                        class="wdt-content-item">
-                                                                                                        <div
-                                                                                                            class="wdt-content-media-group">
-                                                                                                            <div
-                                                                                                                class="wdt-content-elements-group wdt-media-group wdt-media-image-cover">
-                                                                                                                <div
-                                                                                                                    class="wdt-content-image-wrapper ">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-image">
-                                                                                                                        <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                           target="_blank"
-                                                                                                                           rel="nofollow"><img
-                                                                                                                                width="700"
-                                                                                                                                height="806"
-                                                                                                                                src="https://neytri.wpengine.com/wp-content/uploads/2023/05/image-04.jpg"
-                                                                                                                                class="attachment-full size-full wp-image-108"
-                                                                                                                                alt=""
-                                                                                                                                decoding="async"
-                                                                                                                                loading="lazy"
-                                                                                                                                srcset="https://neytri.wpengine.com/wp-content/uploads/2023/05/image-04.jpg 700w, https://neytri.wpengine.com/wp-content/uploads/2023/05/image-04-261x300.jpg 261w"
-                                                                                                                                sizes="(max-width: 700px) 100vw, 700px"/></a>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div
-                                                                                                                    class="wdt-media-image-cover-container">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-title">
-                                                                                                                        <h5>
-                                                                                                                            <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                               target="_blank"
-                                                                                                                               rel="nofollow">shop
-                                                                                                                                women</a>
-                                                                                                                        </h5>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="swiper-slide">
-                                                                                                    <div
-                                                                                                        class="wdt-content-item">
-                                                                                                        <div
-                                                                                                            class="wdt-content-media-group">
-                                                                                                            <div
-                                                                                                                class="wdt-content-elements-group wdt-media-group wdt-media-image-cover">
-                                                                                                                <div
-                                                                                                                    class="wdt-content-image-wrapper ">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-image">
-                                                                                                                        <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                           target="_blank"
-                                                                                                                           rel="nofollow"><img
-                                                                                                                                width="700"
-                                                                                                                                height="806"
-                                                                                                                                src="https://neytri.wpengine.com/wp-content/uploads/2023/05/image-02.jpg"
-                                                                                                                                class="attachment-full size-full wp-image-107"
-                                                                                                                                alt=""
-                                                                                                                                decoding="async"
-                                                                                                                                loading="lazy"
-                                                                                                                                srcset="https://neytri.wpengine.com/wp-content/uploads/2023/05/image-02.jpg 700w, https://neytri.wpengine.com/wp-content/uploads/2023/05/image-02-261x300.jpg 261w"
-                                                                                                                                sizes="(max-width: 700px) 100vw, 700px"/></a>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div
-                                                                                                                    class="wdt-media-image-cover-container">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-title">
-                                                                                                                        <h5>
-                                                                                                                            <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                               target="_blank"
-                                                                                                                               rel="nofollow">kids</a>
-                                                                                                                        </h5>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="swiper-slide">
-                                                                                                    <div
-                                                                                                        class="wdt-content-item">
-                                                                                                        <div
-                                                                                                            class="wdt-content-media-group">
-                                                                                                            <div
-                                                                                                                class="wdt-content-elements-group wdt-media-group wdt-media-image-cover">
-                                                                                                                <div
-                                                                                                                    class="wdt-content-image-wrapper ">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-image">
-                                                                                                                        <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                           target="_blank"
-                                                                                                                           rel="nofollow"><img
-                                                                                                                                width="700"
-                                                                                                                                height="806"
-                                                                                                                                src="https://neytri.wpengine.com/wp-content/uploads/2023/05/image-01-1.jpg"
-                                                                                                                                class="attachment-full size-full wp-image-106"
-                                                                                                                                alt=""
-                                                                                                                                decoding="async"
-                                                                                                                                loading="lazy"
-                                                                                                                                srcset="https://neytri.wpengine.com/wp-content/uploads/2023/05/image-01-1.jpg 700w, https://neytri.wpengine.com/wp-content/uploads/2023/05/image-01-1-261x300.jpg 261w"
-                                                                                                                                sizes="(max-width: 700px) 100vw, 700px"/></a>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div
-                                                                                                                    class="wdt-media-image-cover-container">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-title">
-                                                                                                                        <h5>
-                                                                                                                            <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                               target="_blank"
-                                                                                                                               rel="nofollow">foot
-                                                                                                                                wear</a>
-                                                                                                                        </h5>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="swiper-slide">
-                                                                                                    <div
-                                                                                                        class="wdt-content-item">
-                                                                                                        <div
-                                                                                                            class="wdt-content-media-group">
-                                                                                                            <div
-                                                                                                                class="wdt-content-elements-group wdt-media-group wdt-media-image-cover">
-                                                                                                                <div
-                                                                                                                    class="wdt-content-image-wrapper ">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-image">
-                                                                                                                        <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                           target="_blank"
-                                                                                                                           rel="nofollow"><img
-                                                                                                                                width="700"
-                                                                                                                                height="806"
-                                                                                                                                src="https://neytri.wpengine.com/wp-content/uploads/2023/06/home-3-carousel-1.jpg"
-                                                                                                                                class="attachment-full size-full wp-image-1261"
-                                                                                                                                alt=""
-                                                                                                                                decoding="async"
-                                                                                                                                loading="lazy"
-                                                                                                                                srcset="https://neytri.wpengine.com/wp-content/uploads/2023/06/home-3-carousel-1.jpg 700w, https://neytri.wpengine.com/wp-content/uploads/2023/06/home-3-carousel-1-261x300.jpg 261w"
-                                                                                                                                sizes="(max-width: 700px) 100vw, 700px"/></a>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div
-                                                                                                                    class="wdt-media-image-cover-container">
-                                                                                                                    <div
-                                                                                                                        class="wdt-content-title">
-                                                                                                                        <h5>
-                                                                                                                            <a href="https://neytri.wpengine.com/shop/"
-                                                                                                                               target="_blank"
-                                                                                                                               rel="nofollow">Handbags </a>
-                                                                                                                        </h5>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div
-                                                                                            class="wdt-carousel-pagination-wrapper">
-                                                                                            <div
-                                                                                                class="wdt-swiper-pagination wdt-swiper-pagination-cc02562"></div>
-                                                                                            <div
-                                                                                                class="wdt-carousel-arrow-pagination">
-                                                                                                <div
-                                                                                                    class="wdt-arrow-pagination-prev wdt-arrow-pagination-prev-cc02562"
-                                                                                                    id="wdt-arrow-pagination-prev-cc02562">
-                                                                                                    <i>
-                                                                                                        <svg
-                                                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                            x="0px"
-                                                                                                            y="0px"
-                                                                                                            viewBox="0 0 100 100"
-                                                                                                            style="enable-background:new 0 0 100 100;"
-                                                                                                            xml:space="preserve">
-<path d="M2.4,52.9L2.4,52.9c-0.2-0.5-0.3-0.9-0.4-1.4c0,0,0,0,0-0.1c-0.2-0.9-0.2-1.8,0-2.7c0,0,0,0,0-0.1
-	c0.1-0.4,0.2-0.9,0.4-1.3v-0.1c0.2-0.4,0.4-0.8,0.6-1.2v-0.1c0.3-0.4,0.6-0.8,0.9-1.2l30.1-30c2.9-2.9,7.7-2.9,10.6,0
-	c2.9,2.9,2.9,7.7,0,10.6l0,0L27.5,42.5h63.2c4.1,0,7.5,3.4,7.5,7.5s-3.4,7.5-7.5,7.5H27.5l17.2,17.2c2.9,2.9,2.9,7.7,0,10.6
-	s-7.7,2.9-10.6,0l0,0l-30-30c-0.3-0.4-0.6-0.7-0.9-1.2v-0.1C2.9,53.7,2.7,53.3,2.4,52.9"/>
-</svg>
-                                                                                                    </i></div>
-                                                                                                <div
-                                                                                                    class="wdt-arrow-pagination-next wdt-arrow-pagination-next-cc02562"
-                                                                                                    id="wdt-arrow-pagination-next-cc02562">
-                                                                                                    <i>
-                                                                                                        <svg
-                                                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                            x="0px"
-                                                                                                            y="0px"
-                                                                                                            viewBox="0 0 100 100"
-                                                                                                            style="enable-background:new 0 0 100 100;"
-                                                                                                            xml:space="preserve">
-<path d="M97.6,52.9L97.6,52.9c0.2-0.5,0.3-0.9,0.4-1.4c0,0,0,0,0-0.1c0.2-0.9,0.2-1.8,0-2.7c0,0,0,0,0-0.1
-	c-0.1-0.4-0.2-0.9-0.4-1.3v-0.1c-0.2-0.4-0.4-0.8-0.6-1.2v-0.1c-0.3-0.4-0.6-0.8-0.9-1.2l-30.1-30c-2.9-2.9-7.7-2.9-10.6,0
-	c-2.9,2.9-2.9,7.7,0,10.6l17.2,17.2H9.4c-4.1,0-7.5,3.4-7.5,7.5s3.4,7.5,7.5,7.5h63.2L55.3,74.7c-2.9,2.9-2.9,7.7,0,10.6
-	c2.9,2.9,7.7,2.9,10.6,0l0,0l30-30c0.3-0.4,0.6-0.7,0.9-1.2v-0.1C97.1,53.7,97.3,53.3,97.6,52.9"/>
-</svg>
-                                                                                                    </i></div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section
-                                class="elementor-section elementor-top-section elementor-element elementor-element-7733de1 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                data-id="7733de1" data-element_type="section"
-                                data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
-                                <div class="elementor-container elementor-column-gap-no">
-                                    <div class="elementor-row">
-                                        <div
-                                            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4d8c567"
-                                            data-id="4d8c567" data-element_type="column">
-                                            <div class="elementor-column-wrap elementor-element-populated">
-                                                <div class="elementor-widget-wrap">
-                                                    <section
-                                                        class="elementor-section elementor-inner-section elementor-element elementor-element-75ba989 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                                                        data-id="75ba989" data-element_type="section"
-                                                        data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
-                                                        <div class="elementor-container elementor-column-gap-no">
-                                                            <div class="elementor-row">
-                                                                <div
-                                                                    class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-1b96104"
-                                                                    data-id="1b96104" data-element_type="column">
-                                                                    <div
-                                                                        class="elementor-column-wrap elementor-element-populated">
-                                                                        <div class="elementor-widget-wrap">
-                                                                            <div
-                                                                                class="elementor-element elementor-element-3a0b00a elementor-widget-mobile__width-inherit elementor-widget__width-initial elementor-widget-laptop__width-initial elementor-widget-mobile_extra__width-inherit center elementor-invisible elementor-widget elementor-widget-wdt-heading"
-                                                                                data-id="3a0b00a"
-                                                                                data-element_type="widget"
-                                                                                data-settings="{&quot;_animation&quot;:&quot;fadeInDown&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                data-widget_type="wdt-heading.default">
-                                                                                <div class="elementor-widget-container">
-                                                                                    <div class="wdt-heading-holder "
-                                                                                         id="wdt-heading-3a0b00a"><h3
-                                                                                            class="wdt-heading-title-wrapper wdt-heading-align-center wdt-heading-deco-wrapper">
-                                                                                            <span
-                                                                                                class="wdt-heading-title">Outstanding Products</span>
-                                                                                        </h3>
-                                                                                        <div
-                                                                                            class="wdt-heading-content-wrapper">
-                                                                                            Vestibulum augue nulla
-                                                                                            tincidunt convallis
-                                                                                            bibendum. Sed egestas, nisi
-                                                                                            purus, at iaculis.
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div
-                                                                                class="elementor-element elementor-element-3960163 elementor-invisible elementor-widget elementor-widget-wdt-shop-products"
-                                                                                data-id="3960163"
-                                                                                data-element_type="widget"
-                                                                                data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                data-widget_type="wdt-shop-products.default">
-                                                                                <div class="elementor-widget-container">
-                                                                                    <div
-                                                                                        class="wdt-products-container woocommerce wdt-custom-homepg-1-shop wdt-custom-shop-bg-white ">
-                                                                                        <ul class="products  product-style-default product-hover-secimage-fade product-icongroup-hover-flipx product-with-space product-padding-default wdt-custom-main-shop true product-label-boxed true product-thumb-alignment-bottom product-thumb-iconsgroup-position-vertical vertical-position-top-right product-thumb-iconsgroup-style-bgfill-rounded product-thumb-buttonelement-style-simple product-thumb-buttonelement-stretch product-content-alignment-left product-content-iconsgroup-style-simple product-content-buttonelement-style-simple column-5 ">
-                                                                                            @foreach($products as $product)
-                                                                                                <li class="product-grid-view product type-product post-858 status-publish first instock product_cat-dress product_cat-hat product_cat-jean product_cat-scarf product_cat-shirt product_cat-sunglasses product_tag-accessories product_tag-footwear product_tag-kids product_tag-men product_tag-white-bg product_tag-women has-post-thumbnail shipping-taxable purchasable product-type-variable">
-                                                                                                <div
-                                                                                                    class="wdt-col wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-3 wdt-col-lg-3">
-                                                                                                    <div
-                                                                                                        class="product-wrapper">
-                                                                                                        <div
-                                                                                                            class="product-thumb">
-                                                                                                            <a class="image"
-                                                                                                               href="{{ route('detail', $product->id) }}"
-                                                                                                               title="Summer Suit">
-                                                                                                                <div
-                                                                                                                    class="product-thumb-overlay"></div>
-                                                                                                                <div
-                                                                                                                    class="primary-image">
-                                                                                                                    <img
-                                                                                                                        decoding="async"
-                                                                                                                        src="https://neytri.wpengine.com/wp-content/uploads/2023/06/39.1-1000x1329.jpg"
-                                                                                                                        alt="Shop Primary Image"
-                                                                                                                        title="Shop Primary Image"/>
-                                                                                                                </div>
-                                                                                                            </a>
-                                                                                                            <div
-                                                                                                                class="product-thumb-content">
-                                                                                                                <div
-                                                                                                                    class="product-buttons-wrapper product-icons">
-                                                                                                                    <div
-                                                                                                                        class="wc_inline_buttons">
-                                                                                                                        <div
-                                                                                                                            class="wcwl_btn_wrapper wc_btn_inline"
-                                                                                                                            data-tooltip="Wishlist">
-                                                                                                                            <div
-                                                                                                                                class="yith-wcwl-add-to-wishlist add-to-wishlist-858  wishlist-fragment on-first-load"
-                                                                                                                                data-fragment-ref="858"
-                                                                                                                                data-fragment-options="{&quot;base_url&quot;:&quot;&quot;,&quot;in_default_wishlist&quot;:false,&quot;is_single&quot;:false,&quot;show_exists&quot;:false,&quot;product_id&quot;:&quot;858&quot;,&quot;parent_product_id&quot;:858,&quot;product_type&quot;:&quot;variable&quot;,&quot;show_view&quot;:false,&quot;browse_wishlist_text&quot;:&quot;Browse wishlist&quot;,&quot;already_in_wishslist_text&quot;:&quot;The product is already in your wishlist!&quot;,&quot;product_added_text&quot;:&quot;Product added!&quot;,&quot;heading_icon&quot;:&quot;fa-heart-o&quot;,&quot;available_multi_wishlist&quot;:false,&quot;disable_wishlist&quot;:false,&quot;show_count&quot;:false,&quot;ajax_loading&quot;:false,&quot;loop_position&quot;:&quot;after_add_to_cart&quot;,&quot;item&quot;:&quot;add_to_wishlist&quot;}"
-                                                                                                                            >
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div
-                                                                                                                    class="product-buttons-wrapper product-button">
-                                                                                                                    <div
-                                                                                                                        class="wc_inline_buttons">
-                                                                                                                        <div
-                                                                                                                            class="wcct_btn_wrapper wc_btn_inline"
-                                                                                                                            data-tooltip="Add To Cart">
-                                                                                                                            <a href="{{ route('detail', $product->id) }}"
-                                                                                                                               data-quantity="1"
-                                                                                                                               class="wdt-button too-small button product_type_variable add_to_cart_button"
-                                                                                                                               data-product_id="858"
-                                                                                                                               data-product_sku="wdt-sdg-11-19"
-                                                                                                                               aria-label="Select options for &ldquo;Summer Suit&rdquo;"
-                                                                                                                               aria-describedby="This product has multiple variants. The options may be chosen on the product page"
-                                                                                                                               rel="nofollow">Select
-                                                                                                                                options</a>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <div
-                                                                                                            class="product-details">
-                                                                                                            <div
-                                                                                                                class="product-title">
-                                                                                                                <h5>
-                                                                                                                    <a href="{{ route('detail', $product->id) }}">Summer
-                                                                                                                        Suit</a>
-                                                                                                                </h5>
-                                                                                                            </div>
-                                                                                                            <div
-                                                                                                                class="product-price">
-                                                                                                                <span
-                                                                                                                    class="price"><span
-                                                                                                                        class="woocs_price_code"
-                                                                                                                        data-currency=""
-                                                                                                                        data-redraw-id="64a17b26000af"
-                                                                                                                        data-product-id="858"><span
-                                                                                                                            class="woocommerce-Price-amount amount"><bdi><span
-                                                                                                                                    class="woocommerce-Price-currencySymbol">&#36;</span>8.00</bdi></span>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </li>
-                                                                                            @endforeach
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div
-                                                                                class="elementor-element elementor-element-581e79e center elementor-invisible elementor-widget elementor-widget-wdt-button"
-                                                                                data-id="581e79e"
-                                                                                data-element_type="widget"
-                                                                                data-settings="{&quot;item_normal_background_background&quot;:&quot;classic&quot;,&quot;item_normal_background_color&quot;:&quot;#02010100&quot;,&quot;item_hover_background_background&quot;:&quot;classic&quot;,&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                data-widget_type="wdt-button.default">
-                                                                                <div class="elementor-widget-container">
-                                                                                    <div
-                                                                                        class="wdt-button-holder wdt-template-filled wdt-button-link wdt-button-style-default wdt-button-size-nm wdt-animation- wdt-button-icon-after"
-                                                                                        id="wdt-button-581e79e"><a
-                                                                                            class="wdt-button"
-                                                                                            href="https://neytri.wpengine.com/shop/">
-                                                                                            <div
-                                                                                                class="wdt-button-text">
-                                                                                                <span>View All</span>
-                                                                                            </div>
-                                                                                        </a></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+
+                </section><!-- ** Primary End ** -->
+
+
             </div><!-- ** Container End ** -->
         </div><!-- **Main - End ** -->
 
@@ -11267,156 +9490,49 @@
         <!-- **Footer** -->
         <footer id="footer">
             <div class="wdt-elementor-container-fluid">
-                <div id="footer-238" class="wdt-footer-tpl footer-238">
-                    <div data-elementor-type="wp-post" data-elementor-id="238" class="elementor elementor-238">
+                <div id="footer-232" class="wdt-footer-tpl footer-232">
+                    <div data-elementor-type="wp-post" data-elementor-id="232" class="elementor elementor-232">
                         <div class="elementor-inner">
                             <div class="elementor-section-wrap">
                                 <section
-                                    class="elementor-section elementor-top-section elementor-element elementor-element-fba2b7c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                    data-id="fba2b7c" data-element_type="section"
+                                    class="elementor-section elementor-top-section elementor-element elementor-element-5879163 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                    data-id="5879163" data-element_type="section"
                                     data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
                                     <div class="elementor-container elementor-column-gap-no">
                                         <div class="elementor-row">
                                             <div
-                                                class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0b99ec1"
-                                                data-id="0b99ec1" data-element_type="column">
+                                                class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8c86dd6"
+                                                data-id="8c86dd6" data-element_type="column">
                                                 <div class="elementor-column-wrap elementor-element-populated">
                                                     <div class="elementor-widget-wrap">
                                                         <section
-                                                            class="elementor-section elementor-inner-section elementor-element elementor-element-c509b14 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                                                            data-id="c509b14" data-element_type="section"
+                                                            class="elementor-section elementor-inner-section elementor-element elementor-element-c9825db elementor-section-full_width wdt-section-wrap-col elementor-section-height-default elementor-section-height-default"
+                                                            data-id="c9825db" data-element_type="section"
                                                             data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
-                                                            <div class="elementor-container elementor-column-gap-no">
-                                                                <div class="elementor-row">
-                                                                    <div
-                                                                        class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-21bc5f4"
-                                                                        data-id="21bc5f4" data-element_type="column">
-                                                                        <div
-                                                                            class="elementor-column-wrap elementor-element-populated">
-                                                                            <div class="elementor-widget-wrap">
-                                                                                <div
-                                                                                    class="elementor-element elementor-element-bfa89a4 elementor-align-center elementor-widget elementor-widget-wdt-logo"
-                                                                                    data-id="bfa89a4"
-                                                                                    data-element_type="widget"
-                                                                                    data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                    data-widget_type="wdt-logo.default">
-                                                                                    <div
-                                                                                        class="elementor-widget-container">
-                                                                                        <div id="neytri-bfa89a4"
-                                                                                             class="wdt-logo-container">
-                                                                                            <a href="https://neytri.wpengine.com/"
-                                                                                               rel="home"><img
-                                                                                                    src="https://neytri.wpengine.com/wp-content/uploads/2023/05/Logo.svg"
-                                                                                                    alt="Neytri Site"
-                                                                                                    width="79"
-                                                                                                    height="28"/></a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="elementor-element elementor-element-488a2a3 elementor-list-item-link-inline wdt-custom-footer-3-social-icons elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list"
-                                                                                    data-id="488a2a3"
-                                                                                    data-element_type="widget"
-                                                                                    data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
-                                                                                    data-widget_type="icon-list.default">
-                                                                                    <div
-                                                                                        class="elementor-widget-container">
-                                                                                        <ul class="elementor-icon-list-items">
-                                                                                            <li class="elementor-icon-list-item">
-                                                                                                <a href="#">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fab fa-facebook-f"></i>						</span>
-                                                                                                    <span
-                                                                                                        class="elementor-icon-list-text"></span>
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li class="elementor-icon-list-item">
-                                                                                                <a href="#">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fab fa-instagram"></i>						</span>
-                                                                                                    <span
-                                                                                                        class="elementor-icon-list-text"></span>
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li class="elementor-icon-list-item">
-                                                                                                <a href="#">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fab fa-twitter"></i>						</span>
-                                                                                                    <span
-                                                                                                        class="elementor-icon-list-text"></span>
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li class="elementor-icon-list-item">
-                                                                                                <a href="#">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fab fa-linkedin-in"></i>						</span>
-                                                                                                    <span
-                                                                                                        class="elementor-icon-list-text"></span>
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li class="elementor-icon-list-item">
-                                                                                                <a href="#">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fab fa-whatsapp"></i>						</span>
-                                                                                                    <span
-                                                                                                        class="elementor-icon-list-text"></span>
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li class="elementor-icon-list-item">
-                                                                                                <a href="#">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fab fa-youtube"></i>						</span>
-                                                                                                    <span
-                                                                                                        class="elementor-icon-list-text"></span>
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li class="elementor-icon-list-item">
-                                                                                                <a href="#">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fab fa-pinterest-p"></i>						</span>
-                                                                                                    <span
-                                                                                                        class="elementor-icon-list-text"></span>
-                                                                                                </a>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                         </section>
                                                         <section
-                                                            class="elementor-section elementor-inner-section elementor-element elementor-element-09d89a5 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                                            data-id="09d89a5" data-element_type="section"
+                                                            class="elementor-section elementor-inner-section elementor-element elementor-element-8864bb5 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                                            data-id="8864bb5" data-element_type="section"
                                                             data-settings="{&quot;wdt_bg_image&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_laptop&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_tablet&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile_extra&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_image_mobile&quot;:{&quot;url&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;size&quot;:&quot;&quot;},&quot;wdt_bg_position&quot;:&quot;center center&quot;,&quot;wdt_animation_effect&quot;:&quot;none&quot;}">
                                                             <div
                                                                 class="elementor-container elementor-column-gap-default">
                                                                 <div class="elementor-row">
                                                                     <div
-                                                                        class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-e5f652a"
-                                                                        data-id="e5f652a" data-element_type="column">
+                                                                        class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-cd5f785"
+                                                                        data-id="cd5f785" data-element_type="column">
                                                                         <div
                                                                             class="elementor-column-wrap elementor-element-populated">
                                                                             <div class="elementor-widget-wrap">
                                                                                 <div
-                                                                                    class="elementor-element elementor-element-d93d0e6 center elementor-widget elementor-widget-wdt-heading"
-                                                                                    data-id="d93d0e6"
+                                                                                    class="elementor-element elementor-element-a77083c elementor-widget elementor-widget-wdt-heading"
+                                                                                    data-id="a77083c"
                                                                                     data-element_type="widget"
                                                                                     data-settings="{&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
                                                                                     data-widget_type="wdt-heading.default">
                                                                                     <div
                                                                                         class="elementor-widget-container">
                                                                                         <div class="wdt-heading-holder "
-                                                                                             id="wdt-heading-d93d0e6">
+                                                                                             id="wdt-heading-a77083c">
                                                                                             <div
                                                                                                 class="wdt-heading-content-wrapper">
                                                                                                 © 2023 <a
@@ -11430,14 +9546,14 @@
                                                                         </div>
                                                                     </div>
                                                                     <div
-                                                                        class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-dd4397c"
-                                                                        data-id="dd4397c" data-element_type="column">
+                                                                        class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8ae5f6e"
+                                                                        data-id="8ae5f6e" data-element_type="column">
                                                                         <div
                                                                             class="elementor-column-wrap elementor-element-populated">
                                                                             <div class="elementor-widget-wrap">
                                                                                 <div
-                                                                                    class="elementor-element elementor-element-783824f elementor-widget__width-auto wdt-custom-payment-icons center elementor-widget elementor-widget-wdt-image-box"
-                                                                                    data-id="783824f"
+                                                                                    class="elementor-element elementor-element-0ab799f elementor-widget__width-auto wdt-custom-payment-icons center elementor-widget elementor-widget-wdt-image-box"
+                                                                                    data-id="0ab799f"
                                                                                     data-element_type="widget"
                                                                                     data-settings="{&quot;columns&quot;:&quot;5&quot;,&quot;columns_laptop&quot;:&quot;5&quot;,&quot;columns_tablet_extra&quot;:&quot;5&quot;,&quot;columns_tablet&quot;:&quot;5&quot;,&quot;columns_mobile_extra&quot;:&quot;5&quot;,&quot;columns_mobile&quot;:&quot;5&quot;,&quot;carousel_arrows_prev_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_prev_arrow_horizontal_left_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_vertical_top_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_tablet_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_tablet&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_mobile_extra&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;carousel_arrows_next_arrow_horizontal_left_indent_mobile&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;wdt_animation_effect&quot;:&quot;none&quot;}"
                                                                                     data-widget_type="wdt-image-box.default">
@@ -11445,7 +9561,7 @@
                                                                                         class="elementor-widget-container">
                                                                                         <div
                                                                                             class="wdt-image-box-holder wdt-content-item-holder wdt-column-holder wdt-rc-template-custom-template"
-                                                                                            id="wdt-image-box-783824f"
+                                                                                            id="wdt-image-box-0ab799f"
                                                                                             data-settings="{&quot;enable_popup&quot;:&quot;&quot;}">
                                                                                             <div
                                                                                                 class="wdt-column-wrapper wdt-column-gap-default">
@@ -11644,6 +9760,17 @@
         </div>
     </div>
 </div>
+<div class="wdt-shop-cart-widget activate-sidebar-widget">
+    <div class="wdt-shop-cart-widget-inner">
+        <div class="wdt-shop-cart-widget-header"><h3>Your Shopping cart<span></span></h3><a href="#"
+                                                                                            class="wdt-shop-cart-widget-close-button">Close</a>
+        </div>
+        <div class="wdt-shop-cart-widget-content-wrapper">
+            <div class="wdt-shop-cart-widget-content"></div>
+        </div>
+    </div>
+</div>
+<div class="wdt-shop-cart-widget-overlay"></div>
 <script type="text/javascript">
     (function () {
         var c = document.body.className;
@@ -11658,20 +9785,6 @@
       href='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/css/front.css?ver=1.4.0'
       type='text/css' media='all'/>
 <style id='woocommerce-currency-switcher-inline-css' type='text/css'>
-    .woocommerce-currency-switcher {
-        width: 100%;
-    }
-
-    .woocs_option_img_USD {
-        background: url(https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/img/no_flag.png) no-repeat 99% 0;
-        background-size: 30px 20px;
-    }
-
-    .woocs_option_img_EUR {
-        background: url(https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/img/no_flag.png) no-repeat 99% 0;
-        background-size: 30px 20px;
-    }
-
     .woocommerce-currency-switcher {
         width: 100%;
     }
@@ -12031,365 +10144,184 @@
 
 
     @media only screen and (min-width: 480px) {
-        #wdt-image-box-97a75aa .wdt-column {
+        #wdt-image-box-faef4d5 .wdt-column {
+        }
+    }
+
+    @media only screen and (max-width: 1540px) {
+        #wdt-image-box-faef4d5 .wdt-column {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 1280px) {
+        #wdt-image-box-faef4d5 .wdt-column {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        #wdt-image-box-faef4d5 .wdt-column {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        #wdt-image-box-faef4d5 .wdt-column {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 479px) {
+        #wdt-image-box-faef4d5 .wdt-column {
+            width: 100%;
+        }
+    }
+
+
+    @media only screen and (min-width: 480px) {
+        #wdt-image-box-618784c .wdt-column {
             width: 20%;
         }
     }
 
     @media only screen and (max-width: 1540px) {
-        #wdt-image-box-97a75aa .wdt-column {
+        #wdt-image-box-618784c .wdt-column {
             width: 20%;
         }
     }
 
     @media only screen and (max-width: 1280px) {
-        #wdt-image-box-97a75aa .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        #wdt-image-box-97a75aa .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        #wdt-image-box-97a75aa .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        #wdt-image-box-97a75aa .wdt-column {
-            width: 100%;
-        }
-    }
-
-
-    @media only screen and (min-width: 480px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
+        #wdt-image-box-618784c .wdt-column {
             width: 20%;
         }
     }
 
-    @media only screen and (max-width: 1540px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
+    @media only screen and (max-width: 1024px) {
+        #wdt-image-box-618784c .wdt-column {
             width: 20%;
         }
     }
 
-    @media only screen and (max-width: 1280px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 100%;
-        }
-    }
-
     @media only screen and (max-width: 767px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 100%;
-        }
-    }
-
-
-    @media only screen and (min-width: 480px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-        }
-    }
-
-    @media only screen and (max-width: 1540px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1280px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
-        }
-    }
-
-
-    @media only screen and (min-width: 480px) {
-        #wdt-image-box-97a75aa .wdt-column {
+        #wdt-image-box-618784c .wdt-column {
             width: 20%;
         }
     }
 
-    @media only screen and (max-width: 1540px) {
-        #wdt-image-box-97a75aa .wdt-column {
+    @media only screen and (max-width: 479px) {
+        #wdt-image-box-618784c .wdt-column {
             width: 20%;
         }
     }
 
-    @media only screen and (max-width: 1280px) {
-        #wdt-image-box-97a75aa .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        #wdt-image-box-97a75aa .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        #wdt-image-box-97a75aa .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        #wdt-image-box-97a75aa .wdt-column {
-            width: 100%;
-        }
-    }
-
 
     @media only screen and (min-width: 480px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 20%;
+        #wdt-image-box-c45d7db .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 1540px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 20%;
+        #wdt-image-box-c45d7db .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 1280px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 100%;
+        #wdt-image-box-c45d7db .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 1024px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 100%;
+        #wdt-image-box-c45d7db .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 767px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 100%;
+        #wdt-image-box-c45d7db .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 479px) {
-        #wdt-image-box-28e2ba4 .wdt-column {
-            width: 100%;
+        #wdt-image-box-c45d7db .wdt-column {
+            width: 33.33%;
         }
     }
 
 
     @media only screen and (min-width: 480px) {
-        #wdt-image-box-06d81c8 .wdt-column {
+        #wdt-image-box-e6c523a .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 1540px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
+        #wdt-image-box-e6c523a .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 1280px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
+        #wdt-image-box-e6c523a .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 1024px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
+        #wdt-image-box-e6c523a .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 767px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
+        #wdt-image-box-e6c523a .wdt-column {
+            width: 33.33%;
         }
     }
 
     @media only screen and (max-width: 479px) {
-        #wdt-image-box-06d81c8 .wdt-column {
-            width: 100%;
+        #wdt-image-box-e6c523a .wdt-column {
+            width: 33.33%;
         }
     }
 
 
     @media only screen and (min-width: 480px) {
-        #wdt-image-box-cc02562 .wdt-column {
-        }
-    }
-
-    @media only screen and (max-width: 1540px) {
-        #wdt-image-box-cc02562 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1280px) {
-        #wdt-image-box-cc02562 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        #wdt-image-box-cc02562 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        #wdt-image-box-cc02562 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        #wdt-image-box-cc02562 .wdt-column {
-            width: 100%;
-        }
-    }
-
-
-    @media only screen and (min-width: 480px) {
-        #wdt-image-box-5bd7885 .wdt-column {
-        }
-    }
-
-    @media only screen and (max-width: 1540px) {
-        #wdt-image-box-5bd7885 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1280px) {
-        #wdt-image-box-5bd7885 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        #wdt-image-box-5bd7885 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        #wdt-image-box-5bd7885 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        #wdt-image-box-5bd7885 .wdt-column {
-            width: 100%;
-        }
-    }
-
-
-    @media only screen and (min-width: 480px) {
-        #wdt-image-box-816bcd6 .wdt-column {
-        }
-    }
-
-    @media only screen and (max-width: 1540px) {
-        #wdt-image-box-816bcd6 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1280px) {
-        #wdt-image-box-816bcd6 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        #wdt-image-box-816bcd6 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        #wdt-image-box-816bcd6 .wdt-column {
-            width: 100%;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        #wdt-image-box-816bcd6 .wdt-column {
-            width: 100%;
-        }
-    }
-
-
-    @media only screen and (min-width: 480px) {
-        #wdt-image-box-0e7365c .wdt-column {
+        #wdt-image-box-ece11b1 .wdt-column {
             width: 25%;
         }
     }
 
     @media only screen and (max-width: 1540px) {
-        #wdt-image-box-0e7365c .wdt-column {
+        #wdt-image-box-ece11b1 .wdt-column {
             width: 25%;
         }
     }
 
     @media only screen and (max-width: 1280px) {
-        #wdt-image-box-0e7365c .wdt-column {
+        #wdt-image-box-ece11b1 .wdt-column {
             width: 50%;
         }
     }
 
     @media only screen and (max-width: 1024px) {
-        #wdt-image-box-0e7365c .wdt-column {
+        #wdt-image-box-ece11b1 .wdt-column {
             width: 50%;
         }
     }
 
     @media only screen and (max-width: 767px) {
-        #wdt-image-box-0e7365c .wdt-column {
+        #wdt-image-box-ece11b1 .wdt-column {
             width: 100%;
         }
     }
 
     @media only screen and (max-width: 479px) {
-        #wdt-image-box-0e7365c .wdt-column {
+        #wdt-image-box-ece11b1 .wdt-column {
             width: 100%;
         }
     }
@@ -12427,43 +10359,6 @@
 
     @media only screen and (max-width: 479px) {
         #wdt-image-box-0ab799f .wdt-column {
-            width: 20%;
-        }
-    }
-
-
-    @media only screen and (min-width: 480px) {
-        #wdt-image-box-783824f .wdt-column {
-            width: 20%;
-        }
-    }
-
-    @media only screen and (max-width: 1540px) {
-        #wdt-image-box-783824f .wdt-column {
-            width: 20%;
-        }
-    }
-
-    @media only screen and (max-width: 1280px) {
-        #wdt-image-box-783824f .wdt-column {
-            width: 20%;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        #wdt-image-box-783824f .wdt-column {
-            width: 20%;
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        #wdt-image-box-783824f .wdt-column {
-            width: 20%;
-        }
-    }
-
-    @media only screen and (max-width: 479px) {
-        #wdt-image-box-783824f .wdt-column {
             width: 20%;
         }
     }
@@ -12518,38 +10413,47 @@
 <link rel='stylesheet' id='wdt-logo-css'
       href='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/menu/elementor/widgets/assets/css/logo.css?ver=1.0.2'
       type='text/css' media='all'/>
-<link rel='stylesheet' id='elementor-post-214-css'
-      href='https://neytri.wpengine.com/wp-content/uploads/elementor/css/post-214.css?ver=1687922898' type='text/css'
-      media='all'/>
-<link rel='stylesheet' id='elementor-post-343-css'
-      href='https://neytri.wpengine.com/wp-content/uploads/elementor/css/post-343.css?ver=1687922901' type='text/css'
-      media='all'/>
-<link rel='stylesheet' id='wdt-heading-css'
-      href='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/heading/assets/css/style.css?ver=1.0.0'
+<link rel='stylesheet' id='wdt-shop-product-single-images-carousel-css'
+      href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/custom-template/elementor/widgets/images-carousel/assets/css/style.css?ver=6.2.2'
       type='text/css' media='all'/>
-<link rel='stylesheet' id='elementor-post-347-css'
-      href='https://neytri.wpengine.com/wp-content/uploads/elementor/css/post-347.css?ver=1687922901' type='text/css'
-      media='all'/>
-<link rel='stylesheet' id='wdt-advanced-carousel-css'
-      href='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/advanced-carousel/assets/css/style.css?ver=1.0.0'
+<link rel='stylesheet' id='wdt-shop-product-single-summary-css'
+      href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/custom-template/elementor/widgets/summary/assets/css/style.css?ver=6.2.2'
+      type='text/css' media='all'/>
+<link rel='stylesheet' id='wdt-shop-social-share-and-follow-css'
+      href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/social-share-and-follow/elementor/widgets/assets/css/style.css?ver=6.2.2'
       type='text/css' media='all'/>
 <link rel='stylesheet' id='wdt-shop-coundown-timer-css'
       href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/count-down-timer/assets/css/style.css?ver=6.2.2'
       type='text/css' media='all'/>
-<link rel='stylesheet' id='wdt-blogcarousel-css'
-      href='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/blog/elementor/widgets/assets/css/blogcarousel.css?ver=1.0.2'
+<link rel='stylesheet' id='wdt-shop-additional-info-css'
+      href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/additional-info/assets/css/style.css?ver=6.2.2'
+      type='text/css' media='all'/>
+<link rel='stylesheet' id='wdt-shop-buy-now-css'
+      href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/buy-now/assets/css/style.css?ver=6.2.2'
+      type='text/css' media='all'/>
+<link rel='stylesheet' id='wdt-shop-size-guide-css'
+      href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/others/size-guide/assets/css/style.css?ver=6.2.2'
+      type='text/css' media='all'/>
+<link rel='stylesheet' id='elementor-post-365-css'
+      href='https://neytri.wpengine.com/wp-content/uploads/elementor/css/post-365.css?ver=1687923583' type='text/css'
+      media='all'/>
+<link rel='stylesheet' id='wdt-shop-product-single-tabs-css'
+      href='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/custom-template/elementor/widgets/product-tabs/assets/css/style.css?ver=6.2.2'
       type='text/css' media='all'/>
 <link rel='stylesheet' id='elementor-post-232-css'
       href='https://neytri.wpengine.com/wp-content/uploads/elementor/css/post-232.css?ver=1687868366' type='text/css'
       media='all'/>
+<link rel='stylesheet' id='wdt-heading-css'
+      href='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/heading/assets/css/style.css?ver=1.0.0'
+      type='text/css' media='all'/>
 <link rel='stylesheet' id='wdt-mailchimp-css'
       href='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/mailchimp/assets/css/style.css?ver=1.0.0'
       type='text/css' media='all'/>
-<link rel='stylesheet' id='elementor-post-238-css'
-      href='https://neytri.wpengine.com/wp-content/uploads/elementor/css/post-238.css?ver=1687922904' type='text/css'
-      media='all'/>
 <link rel='stylesheet' id='wdt-elementor-sections-css'
       href='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/core/sections/assets/css/style.css?ver=1.0.0'
+      type='text/css' media='all'/>
+<link rel='stylesheet' id='wdt-elementor-columns-css'
+      href='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/core/columns/assets/css/style.css?ver=1.0.0'
       type='text/css' media='all'/>
 <link rel='stylesheet' id='wdt-elementor-widgets-css'
       href='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/core/widgets/assets/css/style.css?ver=1.0.0'
@@ -12594,14 +10498,14 @@
             "load_fragments": "load_fragments"
         },
         "nonce": {
-            "add_to_wishlist_nonce": "d71f02fa68",
-            "remove_from_wishlist_nonce": "815b3325e1",
-            "reload_wishlist_and_adding_elem_nonce": "b6a0d63be5",
-            "load_mobile_nonce": "4ab7267ba2",
-            "delete_item_nonce": "bf4be8771b",
-            "save_title_nonce": "a7058b6604",
-            "save_privacy_nonce": "4b4d88317c",
-            "load_fragments_nonce": "15b8580fae"
+            "add_to_wishlist_nonce": "4b2571bb94",
+            "remove_from_wishlist_nonce": "e01bdae460",
+            "reload_wishlist_and_adding_elem_nonce": "44a96cef63",
+            "load_mobile_nonce": "91894130bf",
+            "delete_item_nonce": "ef9c714c52",
+            "save_title_nonce": "7d65659ffb",
+            "save_privacy_nonce": "0ff9701639",
+            "load_fragments_nonce": "ba792cbe33"
         },
         "redirect_after_ask_estimate": "",
         "ask_estimate_redirect_url": "https:\/\/neytri.wpengine.com"
@@ -12611,6 +10515,20 @@
 <script type='text/javascript'
         src='https://neytri.wpengine.com/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.min.js?ver=3.22.0'
         id='jquery-yith-wcwl-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.7.7'
+        id='swv-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+    /* <![CDATA[ */
+    var wpcf7 = {
+        "api": {"root": "https:\/\/neytri.wpengine.com\/wp-json\/", "namespace": "contact-form-7\/v1"},
+        "cached": "1"
+    };
+    /* ]]> */
+</script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.7.7'
+        id='contact-form-7-js'></script>
 <script type='text/javascript' id='wdt-elementor-addon-core-js-extra'>
     /* <![CDATA[ */
     var wdtElementorAddonGlobals = {"ajaxUrl": "https:\/\/neytri.wpengine.com\/wp-admin\/admin-ajax.php"};
@@ -12638,6 +10556,48 @@
         src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=7.8.0'
         id='wc-add-to-cart-js'></script>
 <script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min.js?ver=2.7.2-wc.7.8.0'
+        id='flexslider-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min.js?ver=4.1.1-wc.7.8.0'
+        id='photoswipe-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min.js?ver=4.1.1-wc.7.8.0'
+        id='photoswipe-ui-default-js'></script>
+<script type='text/javascript' id='wc-single-product-js-extra'>
+    /* <![CDATA[ */
+    var wc_single_product_params = {
+        "i18n_required_rating_text": "Please select a rating",
+        "review_rating_required": "yes",
+        "flexslider": {
+            "rtl": false,
+            "animation": "slide",
+            "smoothHeight": true,
+            "directionNav": false,
+            "controlNav": "thumbnails",
+            "slideshow": false,
+            "animationSpeed": 500,
+            "animationLoop": false,
+            "allowOneSlide": false
+        },
+        "zoom_enabled": "",
+        "zoom_options": [],
+        "photoswipe_enabled": "1",
+        "photoswipe_options": {
+            "shareEl": false,
+            "closeOnScroll": false,
+            "history": false,
+            "hideAnimationDuration": 0,
+            "showAnimationDuration": 0
+        },
+        "flexslider_enabled": "1"
+    };
+    /* ]]> */
+</script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js?ver=7.8.0'
+        id='wc-single-product-js'></script>
+<script type='text/javascript'
         src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.7.8.0'
         id='js-cookie-js'></script>
 <script type='text/javascript' id='woocommerce-js-extra'>
@@ -12661,7 +10621,7 @@
     /* <![CDATA[ */
     var wpApiSettings = {
         "root": "https:\/\/neytri.wpengine.com\/wp-json\/",
-        "nonce": "5a23cdc1da",
+        "nonce": "be4d988f77",
         "versionString": "wp\/v2\/"
     };
     /* ]]> */
@@ -12681,7 +10641,7 @@
         id='wp-api-fetch-js'></script>
 <script type='text/javascript' id='wp-api-fetch-js-after'>
     wp.apiFetch.use(wp.apiFetch.createRootURLMiddleware("https://neytri.wpengine.com/wp-json/"));
-    wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware("5a23cdc1da");
+    wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware("be4d988f77");
     wp.apiFetch.use(wp.apiFetch.nonceMiddleware);
     wp.apiFetch.use(wp.apiFetch.mediaUploadMiddleware);
     wp.apiFetch.nonceEndpoint = "https://neytri.wpengine.com/wp-admin/admin-ajax.php?action=rest-nonce";
@@ -12783,6 +10743,8 @@
         id='jquery-magnific-popup-js'></script>
 <script type='text/javascript' src='https://neytri.wpengine.com/wp-content/themes/neytri/assets/js/custom.js?ver=6.2.2'
         id='neytri-jqcustom-js'></script>
+<script type='text/javascript' src='https://neytri.wpengine.com/wp-includes/js/comment-reply.min.js?ver=6.2.2'
+        id='comment-reply-js'></script>
 <script type='text/javascript' id='sp-scripts-js-extra'>
     /* <![CDATA[ */
     var dtspObjects = {"enable_suggested_products": "1"};
@@ -12799,167 +10761,22 @@
 <script type='text/javascript'
         src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/others/suggested-products/assets/js/jquery.cookie.min.js?ver=6.2.2'
         id='sp-cookies-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/custom-template/elementor/assets/js/jquery.nicescroll.js?ver=6.2.2'
-        id='jquery-nicescroll-js'></script>
-<script type='text/javascript' id='neytri-woo-cart-notification-js-after'>
-    jQuery.noConflict();
-
-    jQuery(document).ready(function ($) {
-        "use strict";
-
-        // After adding product to cart
-        $('body').on('added_to_cart', function (e) {
-
-            if ($('.wdt-shop-cart-widget').hasClass('activate-sidebar-widget')) {
-
-                $('.wdt-shop-cart-widget').addClass('wdt-shop-cart-widget-active');
-                $('.wdt-shop-cart-widget-overlay').addClass('wdt-shop-cart-widget-active');
-
-                // Nice scroll script
-
-                var winHeight = $(window).height();
-                var headerHeight = $('.wdt-shop-cart-widget-header').height();
-                var footerHeight = $('.woocommerce-mini-cart-footer').height();
-
-                var height = parseInt((winHeight - headerHeight - footerHeight), 10);
-
-                $('.wdt-shop-cart-widget-content').height(height).niceScroll({
-                    cursorcolor: "#000",
-                    cursorwidth: "5px",
-                    background: "rgba(20,20,20,0.3)",
-                    cursorborder: "none"
-                });
-
-            }
-
-            if ($('.wdt-shop-cart-widget').hasClass('cart-notification-widget')) {
-
-                $('.wdt-shop-cart-widget').addClass('wdt-shop-cart-widget-active');
-                $('.wdt-shop-cart-widget-overlay').addClass('wdt-shop-cart-widget-active');
-                setTimeout(function () {
-                    $('.wdt-shop-cart-widget').removeClass('wdt-shop-cart-widget-active');
-                    $('.wdt-shop-cart-widget-overlay').removeClass('wdt-shop-cart-widget-active');
-                }, 2400);
-
-            }
-
-            e.preventDefault();
-        });
-
-        $('body').on('click', '.wdt-shop-cart-widget-close-button, .wdt-shop-cart-widget-overlay', function (e) {
-            $('.wdt-shop-cart-widget').removeClass('wdt-shop-cart-widget-active');
-            $('.wdt-shop-cart-widget-overlay').removeClass('wdt-shop-cart-widget-active');
-            e.preventDefault();
-        });
-
-    });
+<script type='text/javascript' id='neytri-woo-js-extra'>
+    /* <![CDATA[ */
+    var wdtShopObjects = {
+        "ajaxurl": "https:\/\/neytri.wpengine.com\/wp-admin\/admin-ajax.php",
+        "enable_ajax_addtocart": "1",
+        "enable_countdown_scripts": "",
+        "enable_additional_info_scripts": "",
+        "enable_buy_now_scripts": "",
+        "product_enable_size_guide": "",
+        "product_template": "custom-template",
+        "enable_suggested_products": "1",
+        "enable_recently_viewed_products": ""
+    };
+    /* ]]> */
 </script>
-<script type='text/javascript' id='neytri-woo-quantity-plus-minus-js-after'>
-    jQuery.noConflict();
-
-    jQuery(document).ready(function ($) {
-        "use strict";
-
-        // Quatity plus & minus button
-
-        jQuery('body').delegate('.quantity .plus, .quantity .minus', 'click', function (e) {
-
-            var $qty = $(this).closest('.quantity').find('.qty'),
-                currentVal = parseFloat($qty.val()),
-                max = parseFloat($qty.attr('max')),
-                min = parseFloat($qty.attr('min')),
-                step = $qty.attr('step');
-
-            if (!currentVal || currentVal === '' || currentVal === 'NaN') currentVal = 0;
-            if (max === '' || max === 'NaN') max = '';
-            if (min === '' || min === 'NaN') min = 0;
-            if (step === 'any' || step === '' || step === undefined || parseFloat(step) === 'NaN') step = '1';
-
-            if ($(this).is('.plus')) {
-                if (max && (currentVal >= max)) {
-                    $qty.val(max);
-                } else {
-                    $qty.val(currentVal + parseFloat(step));
-                }
-            } else {
-                if (min && (currentVal <= min)) {
-                    $qty.val(min);
-                } else if (currentVal > 0) {
-                    $qty.val(currentVal - parseFloat(step));
-                }
-            }
-
-            $qty.trigger('change');
-
-            e.preventDefault();
-
-        });
-
-
-    });
-</script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/site-loader/assets/js/site-loader.js?ver=1.0.2'
-        id='site-loader-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/site-to-top/assets/js/go-to-top.js?ver=1.0.2'
-        id='go-to-top-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/post/assets/js/comment-form.js?ver=1.0.0'
-        id='comment-form-js'></script>
-<script type='text/javascript' src='https://neytri.wpengine.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2'
-        id='jquery-ui-core-js'></script>
-<script type='text/javascript' src='https://neytri.wpengine.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.2'
-        id='jquery-ui-mouse-js'></script>
-<script type='text/javascript' src='https://neytri.wpengine.com/wp-includes/js/jquery/ui/slider.min.js?ver=1.13.2'
-        id='jquery-ui-slider-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/jquery-ui-touch-punch/jquery-ui-touch-punch.min.js?ver=7.8.0'
-        id='wc-jquery-ui-touchpunch-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/price-slider_33.js?ver=1.4.0'
-        id='wc-price-slider_33-js'></script>
-<script type='text/javascript' id='wc-settings-js-before'>
-    var wcSettings = wcSettings || JSON.parse(decodeURIComponent('%7B%22shippingCostRequiresAddress%22%3Afalse%2C%22adminUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fwp-admin%5C%2F%22%2C%22countries%22%3A%7B%22AF%22%3A%22Afghanistan%22%2C%22AX%22%3A%22%5Cu00c5land%20Islands%22%2C%22AL%22%3A%22Albania%22%2C%22DZ%22%3A%22Algeria%22%2C%22AS%22%3A%22American%20Samoa%22%2C%22AD%22%3A%22Andorra%22%2C%22AO%22%3A%22Angola%22%2C%22AI%22%3A%22Anguilla%22%2C%22AQ%22%3A%22Antarctica%22%2C%22AG%22%3A%22Antigua%20and%20Barbuda%22%2C%22AR%22%3A%22Argentina%22%2C%22AM%22%3A%22Armenia%22%2C%22AW%22%3A%22Aruba%22%2C%22AU%22%3A%22Australia%22%2C%22AT%22%3A%22Austria%22%2C%22AZ%22%3A%22Azerbaijan%22%2C%22BS%22%3A%22Bahamas%22%2C%22BH%22%3A%22Bahrain%22%2C%22BD%22%3A%22Bangladesh%22%2C%22BB%22%3A%22Barbados%22%2C%22BY%22%3A%22Belarus%22%2C%22PW%22%3A%22Belau%22%2C%22BE%22%3A%22Belgium%22%2C%22BZ%22%3A%22Belize%22%2C%22BJ%22%3A%22Benin%22%2C%22BM%22%3A%22Bermuda%22%2C%22BT%22%3A%22Bhutan%22%2C%22BO%22%3A%22Bolivia%22%2C%22BQ%22%3A%22Bonaire%2C%20Saint%20Eustatius%20and%20Saba%22%2C%22BA%22%3A%22Bosnia%20and%20Herzegovina%22%2C%22BW%22%3A%22Botswana%22%2C%22BV%22%3A%22Bouvet%20Island%22%2C%22BR%22%3A%22Brazil%22%2C%22IO%22%3A%22British%20Indian%20Ocean%20Territory%22%2C%22BN%22%3A%22Brunei%22%2C%22BG%22%3A%22Bulgaria%22%2C%22BF%22%3A%22Burkina%20Faso%22%2C%22BI%22%3A%22Burundi%22%2C%22KH%22%3A%22Cambodia%22%2C%22CM%22%3A%22Cameroon%22%2C%22CA%22%3A%22Canada%22%2C%22CV%22%3A%22Cape%20Verde%22%2C%22KY%22%3A%22Cayman%20Islands%22%2C%22CF%22%3A%22Central%20African%20Republic%22%2C%22TD%22%3A%22Chad%22%2C%22CL%22%3A%22Chile%22%2C%22CN%22%3A%22China%22%2C%22CX%22%3A%22Christmas%20Island%22%2C%22CC%22%3A%22Cocos%20%28Keeling%29%20Islands%22%2C%22CO%22%3A%22Colombia%22%2C%22KM%22%3A%22Comoros%22%2C%22CG%22%3A%22Congo%20%28Brazzaville%29%22%2C%22CD%22%3A%22Congo%20%28Kinshasa%29%22%2C%22CK%22%3A%22Cook%20Islands%22%2C%22CR%22%3A%22Costa%20Rica%22%2C%22HR%22%3A%22Croatia%22%2C%22CU%22%3A%22Cuba%22%2C%22CW%22%3A%22Cura%26ccedil%3Bao%22%2C%22CY%22%3A%22Cyprus%22%2C%22CZ%22%3A%22Czech%20Republic%22%2C%22DK%22%3A%22Denmark%22%2C%22DJ%22%3A%22Djibouti%22%2C%22DM%22%3A%22Dominica%22%2C%22DO%22%3A%22Dominican%20Republic%22%2C%22EC%22%3A%22Ecuador%22%2C%22EG%22%3A%22Egypt%22%2C%22SV%22%3A%22El%20Salvador%22%2C%22GQ%22%3A%22Equatorial%20Guinea%22%2C%22ER%22%3A%22Eritrea%22%2C%22EE%22%3A%22Estonia%22%2C%22SZ%22%3A%22Eswatini%22%2C%22ET%22%3A%22Ethiopia%22%2C%22FK%22%3A%22Falkland%20Islands%22%2C%22FO%22%3A%22Faroe%20Islands%22%2C%22FJ%22%3A%22Fiji%22%2C%22FI%22%3A%22Finland%22%2C%22FR%22%3A%22France%22%2C%22GF%22%3A%22French%20Guiana%22%2C%22PF%22%3A%22French%20Polynesia%22%2C%22TF%22%3A%22French%20Southern%20Territories%22%2C%22GA%22%3A%22Gabon%22%2C%22GM%22%3A%22Gambia%22%2C%22GE%22%3A%22Georgia%22%2C%22DE%22%3A%22Germany%22%2C%22GH%22%3A%22Ghana%22%2C%22GI%22%3A%22Gibraltar%22%2C%22GR%22%3A%22Greece%22%2C%22GL%22%3A%22Greenland%22%2C%22GD%22%3A%22Grenada%22%2C%22GP%22%3A%22Guadeloupe%22%2C%22GU%22%3A%22Guam%22%2C%22GT%22%3A%22Guatemala%22%2C%22GG%22%3A%22Guernsey%22%2C%22GN%22%3A%22Guinea%22%2C%22GW%22%3A%22Guinea-Bissau%22%2C%22GY%22%3A%22Guyana%22%2C%22HT%22%3A%22Haiti%22%2C%22HM%22%3A%22Heard%20Island%20and%20McDonald%20Islands%22%2C%22HN%22%3A%22Honduras%22%2C%22HK%22%3A%22Hong%20Kong%22%2C%22HU%22%3A%22Hungary%22%2C%22IS%22%3A%22Iceland%22%2C%22IN%22%3A%22India%22%2C%22ID%22%3A%22Indonesia%22%2C%22IR%22%3A%22Iran%22%2C%22IQ%22%3A%22Iraq%22%2C%22IE%22%3A%22Ireland%22%2C%22IM%22%3A%22Isle%20of%20Man%22%2C%22IL%22%3A%22Israel%22%2C%22IT%22%3A%22Italy%22%2C%22CI%22%3A%22Ivory%20Coast%22%2C%22JM%22%3A%22Jamaica%22%2C%22JP%22%3A%22Japan%22%2C%22JE%22%3A%22Jersey%22%2C%22JO%22%3A%22Jordan%22%2C%22KZ%22%3A%22Kazakhstan%22%2C%22KE%22%3A%22Kenya%22%2C%22KI%22%3A%22Kiribati%22%2C%22KW%22%3A%22Kuwait%22%2C%22KG%22%3A%22Kyrgyzstan%22%2C%22LA%22%3A%22Laos%22%2C%22LV%22%3A%22Latvia%22%2C%22LB%22%3A%22Lebanon%22%2C%22LS%22%3A%22Lesotho%22%2C%22LR%22%3A%22Liberia%22%2C%22LY%22%3A%22Libya%22%2C%22LI%22%3A%22Liechtenstein%22%2C%22LT%22%3A%22Lithuania%22%2C%22LU%22%3A%22Luxembourg%22%2C%22MO%22%3A%22Macao%22%2C%22MG%22%3A%22Madagascar%22%2C%22MW%22%3A%22Malawi%22%2C%22MY%22%3A%22Malaysia%22%2C%22MV%22%3A%22Maldives%22%2C%22ML%22%3A%22Mali%22%2C%22MT%22%3A%22Malta%22%2C%22MH%22%3A%22Marshall%20Islands%22%2C%22MQ%22%3A%22Martinique%22%2C%22MR%22%3A%22Mauritania%22%2C%22MU%22%3A%22Mauritius%22%2C%22YT%22%3A%22Mayotte%22%2C%22MX%22%3A%22Mexico%22%2C%22FM%22%3A%22Micronesia%22%2C%22MD%22%3A%22Moldova%22%2C%22MC%22%3A%22Monaco%22%2C%22MN%22%3A%22Mongolia%22%2C%22ME%22%3A%22Montenegro%22%2C%22MS%22%3A%22Montserrat%22%2C%22MA%22%3A%22Morocco%22%2C%22MZ%22%3A%22Mozambique%22%2C%22MM%22%3A%22Myanmar%22%2C%22NA%22%3A%22Namibia%22%2C%22NR%22%3A%22Nauru%22%2C%22NP%22%3A%22Nepal%22%2C%22NL%22%3A%22Netherlands%22%2C%22NC%22%3A%22New%20Caledonia%22%2C%22NZ%22%3A%22New%20Zealand%22%2C%22NI%22%3A%22Nicaragua%22%2C%22NE%22%3A%22Niger%22%2C%22NG%22%3A%22Nigeria%22%2C%22NU%22%3A%22Niue%22%2C%22NF%22%3A%22Norfolk%20Island%22%2C%22KP%22%3A%22North%20Korea%22%2C%22MK%22%3A%22North%20Macedonia%22%2C%22MP%22%3A%22Northern%20Mariana%20Islands%22%2C%22NO%22%3A%22Norway%22%2C%22OM%22%3A%22Oman%22%2C%22PK%22%3A%22Pakistan%22%2C%22PS%22%3A%22Palestinian%20Territory%22%2C%22PA%22%3A%22Panama%22%2C%22PG%22%3A%22Papua%20New%20Guinea%22%2C%22PY%22%3A%22Paraguay%22%2C%22PE%22%3A%22Peru%22%2C%22PH%22%3A%22Philippines%22%2C%22PN%22%3A%22Pitcairn%22%2C%22PL%22%3A%22Poland%22%2C%22PT%22%3A%22Portugal%22%2C%22PR%22%3A%22Puerto%20Rico%22%2C%22QA%22%3A%22Qatar%22%2C%22RE%22%3A%22Reunion%22%2C%22RO%22%3A%22Romania%22%2C%22RU%22%3A%22Russia%22%2C%22RW%22%3A%22Rwanda%22%2C%22ST%22%3A%22S%26atilde%3Bo%20Tom%26eacute%3B%20and%20Pr%26iacute%3Bncipe%22%2C%22BL%22%3A%22Saint%20Barth%26eacute%3Blemy%22%2C%22SH%22%3A%22Saint%20Helena%22%2C%22KN%22%3A%22Saint%20Kitts%20and%20Nevis%22%2C%22LC%22%3A%22Saint%20Lucia%22%2C%22SX%22%3A%22Saint%20Martin%20%28Dutch%20part%29%22%2C%22MF%22%3A%22Saint%20Martin%20%28French%20part%29%22%2C%22PM%22%3A%22Saint%20Pierre%20and%20Miquelon%22%2C%22VC%22%3A%22Saint%20Vincent%20and%20the%20Grenadines%22%2C%22WS%22%3A%22Samoa%22%2C%22SM%22%3A%22San%20Marino%22%2C%22SA%22%3A%22Saudi%20Arabia%22%2C%22SN%22%3A%22Senegal%22%2C%22RS%22%3A%22Serbia%22%2C%22SC%22%3A%22Seychelles%22%2C%22SL%22%3A%22Sierra%20Leone%22%2C%22SG%22%3A%22Singapore%22%2C%22SK%22%3A%22Slovakia%22%2C%22SI%22%3A%22Slovenia%22%2C%22SB%22%3A%22Solomon%20Islands%22%2C%22SO%22%3A%22Somalia%22%2C%22ZA%22%3A%22South%20Africa%22%2C%22GS%22%3A%22South%20Georgia%5C%2FSandwich%20Islands%22%2C%22KR%22%3A%22South%20Korea%22%2C%22SS%22%3A%22South%20Sudan%22%2C%22ES%22%3A%22Spain%22%2C%22LK%22%3A%22Sri%20Lanka%22%2C%22SD%22%3A%22Sudan%22%2C%22SR%22%3A%22Suriname%22%2C%22SJ%22%3A%22Svalbard%20and%20Jan%20Mayen%22%2C%22SE%22%3A%22Sweden%22%2C%22CH%22%3A%22Switzerland%22%2C%22SY%22%3A%22Syria%22%2C%22TW%22%3A%22Taiwan%22%2C%22TJ%22%3A%22Tajikistan%22%2C%22TZ%22%3A%22Tanzania%22%2C%22TH%22%3A%22Thailand%22%2C%22TL%22%3A%22Timor-Leste%22%2C%22TG%22%3A%22Togo%22%2C%22TK%22%3A%22Tokelau%22%2C%22TO%22%3A%22Tonga%22%2C%22TT%22%3A%22Trinidad%20and%20Tobago%22%2C%22TN%22%3A%22Tunisia%22%2C%22TR%22%3A%22Turkey%22%2C%22TM%22%3A%22Turkmenistan%22%2C%22TC%22%3A%22Turks%20and%20Caicos%20Islands%22%2C%22TV%22%3A%22Tuvalu%22%2C%22UG%22%3A%22Uganda%22%2C%22UA%22%3A%22Ukraine%22%2C%22AE%22%3A%22United%20Arab%20Emirates%22%2C%22GB%22%3A%22United%20Kingdom%20%28UK%29%22%2C%22US%22%3A%22United%20States%20%28US%29%22%2C%22UM%22%3A%22United%20States%20%28US%29%20Minor%20Outlying%20Islands%22%2C%22UY%22%3A%22Uruguay%22%2C%22UZ%22%3A%22Uzbekistan%22%2C%22VU%22%3A%22Vanuatu%22%2C%22VA%22%3A%22Vatican%22%2C%22VE%22%3A%22Venezuela%22%2C%22VN%22%3A%22Vietnam%22%2C%22VG%22%3A%22Virgin%20Islands%20%28British%29%22%2C%22VI%22%3A%22Virgin%20Islands%20%28US%29%22%2C%22WF%22%3A%22Wallis%20and%20Futuna%22%2C%22EH%22%3A%22Western%20Sahara%22%2C%22YE%22%3A%22Yemen%22%2C%22ZM%22%3A%22Zambia%22%2C%22ZW%22%3A%22Zimbabwe%22%7D%2C%22currency%22%3A%7B%22code%22%3A%22USD%22%2C%22precision%22%3A2%2C%22symbol%22%3A%22%24%22%2C%22symbolPosition%22%3A%22left%22%2C%22decimalSeparator%22%3A%22.%22%2C%22thousandSeparator%22%3A%22%2C%22%2C%22priceFormat%22%3A%22%251%24s%252%24s%22%7D%2C%22currentUserId%22%3A0%2C%22currentUserIsAdmin%22%3Afalse%2C%22homeUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2F%22%2C%22locale%22%3A%7B%22siteLocale%22%3A%22en_US%22%2C%22userLocale%22%3A%22en_US%22%2C%22weekdaysShort%22%3A%5B%22Sun%22%2C%22Mon%22%2C%22Tue%22%2C%22Wed%22%2C%22Thu%22%2C%22Fri%22%2C%22Sat%22%5D%7D%2C%22dashboardUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fmy-account%5C%2F%22%2C%22orderStatuses%22%3A%7B%22pending%22%3A%22Pending%20payment%22%2C%22processing%22%3A%22Processing%22%2C%22on-hold%22%3A%22On%20hold%22%2C%22completed%22%3A%22Completed%22%2C%22cancelled%22%3A%22Cancelled%22%2C%22refunded%22%3A%22Refunded%22%2C%22failed%22%3A%22Failed%22%2C%22checkout-draft%22%3A%22Draft%22%7D%2C%22placeholderImgSrc%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fwp-content%5C%2Fuploads%5C%2Fwoocommerce-placeholder.png%22%2C%22productsSettings%22%3A%7B%22cartRedirectAfterAdd%22%3Afalse%7D%2C%22siteTitle%22%3A%22Neytri%20Site%22%2C%22storePages%22%3A%7B%22myaccount%22%3A%7B%22id%22%3A17%2C%22title%22%3A%22My%20account%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fmy-account%5C%2F%22%7D%2C%22shop%22%3A%7B%22id%22%3A0%2C%22title%22%3A%22%22%2C%22permalink%22%3Afalse%7D%2C%22cart%22%3A%7B%22id%22%3A15%2C%22title%22%3A%22Cart%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fcart%5C%2F%22%7D%2C%22checkout%22%3A%7B%22id%22%3A16%2C%22title%22%3A%22Checkout%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fcheckout%5C%2F%22%7D%2C%22privacy%22%3A%7B%22id%22%3A3%2C%22title%22%3A%22Privacy%20Policy%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fprivacy-policy%5C%2F%22%7D%2C%22terms%22%3A%7B%22id%22%3A0%2C%22title%22%3A%22%22%2C%22permalink%22%3Afalse%7D%7D%2C%22wcAssetUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fwp-content%5C%2Fplugins%5C%2Fwoocommerce%5C%2Fassets%5C%2F%22%2C%22wcVersion%22%3A%227.8.0%22%2C%22wpLoginUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fwp-login.php%22%2C%22wpVersion%22%3A%226.2.2%22%2C%22collectableMethodIds%22%3A%5B%5D%2C%22admin%22%3A%7B%22alertCount%22%3A%221%22%2C%22visibleTaskListIds%22%3A%5B%22setup%22%2C%22extended%22%5D%7D%7D'));
-</script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-settings.js?ver=65818fe286a322a861ab93f860649e9b'
-        id='wc-settings-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/price-format.js?ver=ceacd391939af0c777fd893a682230fb'
-        id='wc-price-format-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/priceformat.js?ver=1.4.0'
-        id='wc-priceformat-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/price-filter-frontend.js?ver=10.2.3'
-        id='wc-price-filter-block-frontend-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/price-filter-frontend.js?ver=1.4.0'
-        id='wc-price-filter-frontend-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/jquery.ddslick.min.js?ver=1.4.0'
-        id='jquery.ddslick.min-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/front.js?ver=1.4.0'
-        id='woocommerce-currency-switcher-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/image-box/assets/js/jquery.cookie.min.js?ver=6.2.2'
-        id='jquery.cookie-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/image-box/assets/js/jquery.magnific-popup.min.js?ver=6.2.2'
-        id='jquery.magnific-image-box-popup-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/image-box/assets/js/script.js?ver=6.2.2'
-        id='wdt-image-box-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/listings/elementor/widgets/products/assets/js/swiper.min.js?ver=6.2.2'
-        id='jquery-swiper-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/common-controls/layout/assets/js/carousel.js?ver=6.2.2'
-        id='wdt-carousel-js'></script>
-<script type='text/javascript' id='neytri-woo-non-archive-js-after'>
+<script type='text/javascript' id='neytri-woo-js-after'>
     jQuery.noConflict();
 
     jQuery(document).ready(function ($) {
@@ -13030,7 +10847,498 @@
         });
 
     });
+
+    (function ($) {
+
+        var wdtShopProductSingleAdditionalTabsExploded = function ($scope, $) {
+
+            if ($('.wdt-content-scroll').length) {
+                $('.wdt-content-scroll').niceScroll({
+                    cursorcolor: "#000",
+                    cursorwidth: "2px",
+                    background: "rgba(20,20,20,0.3)",
+                    cursorborder: "none"
+                });
+            }
+
+            $('.elementor-tab-title').each(function () {
+                if ($(this).parents('.elementor-toggle-item, .elementor-accordion-item').find('.wdt-content-scroll').length) {
+                    $(this).on('click', function (e) {
+                        setTimeout(function () {
+                            window.dispatchEvent(new Event('resize'));
+                        }, 600);
+                    });
+                }
+            });
+
+            $('.woocommerce-tabs li a').each(function () {
+                if ($(this).parents('.elementor').find('.wdt-content-scroll').length) {
+                    $(this).on('click', function (e) {
+                        setTimeout(function () {
+                            window.dispatchEvent(new Event('resize'));
+                        }, 600);
+                    });
+                }
+            });
+
+        };
+
+        $(window).on('elementor/frontend/init', function () {
+            elementorFrontend.hooks.addAction('frontend/element_ready/wdt-shop-product-single-additional-tabs-exploded.default', wdtShopProductSingleAdditionalTabsExploded);
+            elementorFrontend.hooks.addAction('frontend/element_ready/toggle.default', wdtShopProductSingleAdditionalTabsExploded);
+        });
+
+    })(jQuery);
+
+    jQuery.noConflict();
+
+    jQuery(document).ready(function ($) {
+
+        "use strict";
+
+        var $warp_fragment_refresh = {
+            url: wc_cart_fragments_params.wc_ajax_url.toString().replace('%%endpoint%%', 'get_refreshed_fragments'),
+            type: 'POST',
+            success: function (data) {
+
+                if (data && data.fragments) {
+
+                    $.each(data.fragments, function (key, value) {
+                        $(key).replaceWith(value);
+                    });
+
+                    $(document.body).trigger('wc_fragments_refreshed');
+                    $(document.body).trigger('added_to_cart');
+
+                }
+
+            }
+        };
+
+        $('.entry-summary form.cart').on('submit', function (e) {
+
+            if (!wdtShopObjects.enable_ajax_addtocart) {
+                return;
+            }
+
+            if ($(this).parents('.product').hasClass('product-type-external')) {
+                return;
+            }
+
+            e.preventDefault();
+
+            var product_url = window.location,
+                form = $(this);
+
+            form.find('.single_add_to_cart_button').addClass('loading');
+
+            var simple_addtocart = '';
+            if (form.parents('.product').hasClass('product-type-simple')) {
+                simple_addtocart = '&add-to-cart=' + form.find('.single_add_to_cart_button').attr('value');
+            }
+
+            $.post(product_url, form.serialize() + simple_addtocart + '&_wp_http_referer=' + product_url, function (result) {
+
+                var cart_dropdown = $('.widget_shopping_cart', result)
+                $('.widget_shopping_cart').replaceWith(cart_dropdown); // update dropdown cart
+                $.ajax($warp_fragment_refresh); // update fragments
+
+                form.find('.single_add_to_cart_button').removeClass('loading');
+
+            });
+
+        });
+
+    });
+
+
+    jQuery.noConflict();
+
+    jQuery(document).ready(function ($) {
+        "use strict";
+
+        // Quatity plus & minus button
+
+        jQuery('body').delegate('.quantity .plus, .quantity .minus', 'click', function (e) {
+
+            var $qty = $(this).closest('.quantity').find('.qty'),
+                currentVal = parseFloat($qty.val()),
+                max = parseFloat($qty.attr('max')),
+                min = parseFloat($qty.attr('min')),
+                step = $qty.attr('step');
+
+            if (!currentVal || currentVal === '' || currentVal === 'NaN') currentVal = 0;
+            if (max === '' || max === 'NaN') max = '';
+            if (min === '' || min === 'NaN') min = 0;
+            if (step === 'any' || step === '' || step === undefined || parseFloat(step) === 'NaN') step = '1';
+
+            if ($(this).is('.plus')) {
+                if (max && (currentVal >= max)) {
+                    $qty.val(max);
+                } else {
+                    $qty.val(currentVal + parseFloat(step));
+                }
+            } else {
+                if (min && (currentVal <= min)) {
+                    $qty.val(min);
+                } else if (currentVal > 0) {
+                    $qty.val(currentVal - parseFloat(step));
+                }
+            }
+
+            $qty.trigger('change');
+
+            e.preventDefault();
+
+        });
+
+
+    });
 </script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/custom-template/elementor/assets/js/jquery.nicescroll.js?ver=6.2.2'
+        id='jquery-nicescroll-js'></script>
+<script type='text/javascript' id='neytri-woo-archive-js-after'>
+    jQuery.noConflict();
+
+    jQuery(document).ready(function ($) {
+        "use strict";
+
+        var currentWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        if (currentWidth < 1200) {
+            $('.product-layout-controller').parents('.product-loop-sorting-item').addClass('hidden');
+        }
+
+        if (currentWidth < 768) {
+            $('.product-display-controller').parents('.product-loop-sorting-item').addClass('hidden');
+        }
+
+        if ($('#primary').hasClass('page-with-sidebar')) {
+            $('.product-layout-controller').parents('.product-loop-sorting-item').addClass('hidden');
+        }
+
+
+        // Product Change Layout
+        if ($('.product-change-layout').length) {
+            $('.product-change-layout').find('span').on('click', function (e) {
+
+                var this_item = $(this);
+
+                this_item.parents('.container').find('ul.products').addClass('product-loader');
+
+
+                this_item.parents('.product-change-layout').find('span').removeClass('active');
+                this_item.addClass('active');
+
+                if (this_item.parents('section').hasClass('page-with-sidebar')) {
+
+                    var $column = this_item.data('column');
+                    if ($column == 1) {
+                        var $column_class = 'wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-12 wdt-col-lg-12';
+                        var $wdt_column = 'wdt-columns-1';
+                    } else if ($column == 2) {
+                        var $column_class = 'wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-6 wdt-col-qxlg-6 wdt-col-lg-6';
+                        var $wdt_column = 'wdt-columns-2';
+                    } else if ($column == 3) {
+                        var $column_class = 'wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4';
+                        var $wdt_column = 'wdt-columns-3';
+                    } else if ($column == 4) {
+                        var $column_class = 'wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4';
+                        var $wdt_column = 'wdt-columns-4';
+                    } else if ($column == 5) {
+                        var $column_class = 'wdt-col wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-lg-1b5';
+                        var $wdt_column = 'wdt-columns-5';
+                    }
+
+                } else {
+
+                    var $column = this_item.data('column');
+                    if ($column == 1) {
+                        var $column_class = 'wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-12 wdt-col-lg-12';
+                        var $wdt_column = 'wdt-columns-1';
+                    } else if ($column == 2) {
+                        var $column_class = 'wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-6 wdt-col-hxlg-6 wdt-col-lg-6';
+                        var $wdt_column = 'wdt-columns-2';
+                    } else if ($column == 3) {
+                        var $column_class = 'wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4';
+                        var $wdt_column = 'wdt-columns-3';
+                    } else if ($column == 4) {
+                        var $column_class = 'wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-3 wdt-col-lg-3';
+                        var $wdt_column = 'wdt-columns-4';
+                    } else if ($column == 5) {
+                        var $column_class = 'wdt-col wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-lg-1b5';
+                        var $wdt_column = 'wdt-columns-5';
+                    }
+
+                }
+
+                var $holder = this_item.parents('.container').find('ul.products .wdt-col');
+                var $wdt_col = this_item.parents('.container').find('ul.products');
+
+                $holder.removeClass('wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-12 wdt-col-lg-12 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-6 wdt-col-qxlg-6 wdt-col-lg-6 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-12 wdt-col-lg-12 wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-6 wdt-col-hxlg-6 wdt-col-lg-6 wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-3 wdt-col-lg-3 first');
+                $holder.addClass($column_class);
+
+                $wdt_col.removeClass('wdt-columns-4 wdt-columns-3 wdt-columns-2 first');
+                $wdt_col.addClass($wdt_column);
+
+                this_item.parents('.container').find('ul.products').removeClass('product-loader');
+
+                // Product Listing Isotope
+                setTimeout(function () {
+                    $('.products-apply-isotope').each(function () {
+                        if (!$(this).hasClass('swiper-wrapper')) {
+                            $(this).isotope({itemSelector: '.wdt-col', transformsEnabled: false});
+                        }
+                    });
+                }, 900);
+
+                e.preventDefault();
+
+            });
+        }
+
+        // Product List Options
+        if ($('.product-list-options').length) {
+            $('.product-list-options').find('span').on('click', function (e) {
+
+                var this_item = $(this);
+
+                this_item.parents('.container').find('ul.products').addClass('product-loader');
+
+
+                this_item.parents('.product-list-options').find('span').removeClass('active');
+                this_item.addClass('active');
+
+
+                var $list_option = this_item.data('list-option');
+                if ($list_option == 'right-thumb') {
+                    var $list_option_class = 'product-list-right-thumb';
+                } else {
+                    var $list_option_class = 'product-list-left-thumb';
+                }
+
+                var $holder = this_item.parents('.container').find('ul.products li.product:not(.product-category)');
+
+                $holder.removeClass('product-list-left-thumb product-list-right-thumb');
+                $holder.addClass($list_option_class);
+
+                this_item.parents('.container').find('ul.products').removeClass('product-loader');
+
+                e.preventDefault();
+
+            });
+        }
+
+        // Product Change Display View
+        if ($('.product-change-display').length) {
+            $('.product-change-display').find('span').on('click', function (e) {
+
+                var this_item = $(this);
+
+                this_item.parents('.container').find('ul.products').addClass('product-loader');
+                var display_type = this_item.data('display');
+                if (display_type == 'list') {
+                    this_item.parents('.container').find('ul.products').addClass('list-product-active');
+                } else {
+                    this_item.parents('.container').find('ul.products').removeClass('list-product-active');
+                }
+
+                this_item.parents('.product-change-display').find('span').removeClass('active');
+                this_item.addClass('active');
+
+                var $display = this_item.data('display');
+
+                if ($display == 'list') {
+                    this_item.parents('.product-loop-sorting').find('.product-layout-controller').addClass('hidden');
+                    this_item.parents('.product-loop-sorting').find('.product-list-options-controller').removeClass('hidden');
+                } else {
+                    this_item.parents('.product-loop-sorting').find('.product-layout-controller').removeClass('hidden');
+                    this_item.parents('.product-loop-sorting').find('.product-list-options-controller').addClass('hidden');
+                }
+                this_item.parents('.product-loop-sorting').find('.product-change-layout span').removeClass('active');
+                this_item.parents('.product-loop-sorting').find('.product-change-layout span[data-column=4]').addClass('active');
+
+                this_item.parents('.container').find('ul.products').removeClass('wdt-columns-');
+
+                this_item.parents('.product-loop-sorting').find('.product-list-options span').removeClass('active');
+                this_item.parents('.product-loop-sorting').find('.product-list-options span[data-list-option=left-thumb]').addClass('active');
+
+
+                var $holder = this_item.parents('.container').find('ul.products li.product');
+
+                $.each($holder, function (i, val) {
+
+                    $(val).removeClass('product-grid-view product-list-view product-list-left-thumb product-list-right-thumb');
+
+                    if (($display == 'list' && $(val).hasClass('product-category')) || $display == 'grid') {
+
+                        $(val).addClass('product-grid-view');
+
+                        $(val).find('.wdt-col').removeClass('wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-12 wdt-col-lg-12 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-6 wdt-col-qxlg-6 wdt-col-lg-6 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-12 wdt-col-lg-12 wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-6 wdt-col-hxlg-6 wdt-col-lg-6 wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-3 wdt-col-lg-3 first');
+
+                        if (this_item.parents('section').hasClass('page-with-sidebar')) {
+                            $(val).find('.wdt-col').addClass('wdt-col wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4');
+                        } else {
+                            $(val).find('.wdt-col').addClass('wdt-col wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-3 wdt-col-lg-3');
+                        }
+
+                    } else {
+
+                        $(val).addClass('product-list-view product-list-left-thumb');
+
+                        $(val).find('.wdt-col').removeClass('wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-12 wdt-col-lg-12 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-6 wdt-col-qxlg-6 wdt-col-lg-6 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-12 wdt-col-lg-12 wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-6 wdt-col-hxlg-6 wdt-col-lg-6 wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-4 wdt-col-lg-4 wdt-col-xs-12 wdt-col-sm-6 wdt-col-md-6 wdt-col-qxlg-4 wdt-col-hxlg-3 wdt-col-lg-3 first');
+                        $(val).find('.wdt-col').addClass('wdt-col-xs-12 wdt-col-sm-12 wdt-col-md-12 wdt-col-lg-12');
+
+                    }
+
+                });
+
+                this_item.parents('.container').find('ul.products').removeClass('product-loader');
+
+                // Product Listing Isotope
+                setTimeout(function () {
+                    $('.products-apply-isotope').each(function () {
+                        if (!$(this).hasClass('swiper-wrapper')) {
+                            $(this).isotope({itemSelector: '.wdt-col', transformsEnabled: false});
+                        }
+                    });
+                }, 900);
+
+                e.preventDefault();
+
+            });
+        }
+
+        // Product filters
+        $('.product-loop-filters-area-group').each(function () {
+            $(this).find('.product-loop-filters-area-title').on('click', function (e) {
+                var $contentItem = $(this).parents('.product-loop-sorting').next('.product-loop-filters-area-content');
+                if ($contentItem.length) {
+                    if ($contentItem.hasClass('hide')) {
+                        $contentItem.slideDown().removeClass('hide');
+                    } else {
+                        $contentItem.slideUp().addClass('hide');
+                    }
+                }
+            });
+        });
+
+    });
+</script>
+<script type='text/javascript' id='neytri-woo-cart-notification-js-after'>
+    jQuery.noConflict();
+
+    jQuery(document).ready(function ($) {
+        "use strict";
+
+        // After adding product to cart
+        $('body').on('added_to_cart', function (e) {
+
+            if ($('.wdt-shop-cart-widget').hasClass('activate-sidebar-widget')) {
+
+                $('.wdt-shop-cart-widget').addClass('wdt-shop-cart-widget-active');
+                $('.wdt-shop-cart-widget-overlay').addClass('wdt-shop-cart-widget-active');
+
+                // Nice scroll script
+
+                var winHeight = $(window).height();
+                var headerHeight = $('.wdt-shop-cart-widget-header').height();
+                var footerHeight = $('.woocommerce-mini-cart-footer').height();
+
+                var height = parseInt((winHeight - headerHeight - footerHeight), 10);
+
+                $('.wdt-shop-cart-widget-content').height(height).niceScroll({
+                    cursorcolor: "#000",
+                    cursorwidth: "5px",
+                    background: "rgba(20,20,20,0.3)",
+                    cursorborder: "none"
+                });
+
+            }
+
+            if ($('.wdt-shop-cart-widget').hasClass('cart-notification-widget')) {
+
+                $('.wdt-shop-cart-widget').addClass('wdt-shop-cart-widget-active');
+                $('.wdt-shop-cart-widget-overlay').addClass('wdt-shop-cart-widget-active');
+                setTimeout(function () {
+                    $('.wdt-shop-cart-widget').removeClass('wdt-shop-cart-widget-active');
+                    $('.wdt-shop-cart-widget-overlay').removeClass('wdt-shop-cart-widget-active');
+                }, 2400);
+
+            }
+
+            e.preventDefault();
+        });
+
+        $('body').on('click', '.wdt-shop-cart-widget-close-button, .wdt-shop-cart-widget-overlay', function (e) {
+            $('.wdt-shop-cart-widget').removeClass('wdt-shop-cart-widget-active');
+            $('.wdt-shop-cart-widget-overlay').removeClass('wdt-shop-cart-widget-active');
+            e.preventDefault();
+        });
+
+    });
+</script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/site-loader/assets/js/site-loader.js?ver=1.0.2'
+        id='site-loader-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/site-to-top/assets/js/go-to-top.js?ver=1.0.2'
+        id='go-to-top-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/post/assets/js/comment-form.js?ver=1.0.0'
+        id='comment-form-js'></script>
+<script type='text/javascript' src='https://neytri.wpengine.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2'
+        id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://neytri.wpengine.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.2'
+        id='jquery-ui-mouse-js'></script>
+<script type='text/javascript' src='https://neytri.wpengine.com/wp-includes/js/jquery/ui/slider.min.js?ver=1.13.2'
+        id='jquery-ui-slider-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/jquery-ui-touch-punch/jquery-ui-touch-punch.min.js?ver=7.8.0'
+        id='wc-jquery-ui-touchpunch-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/price-slider_33.js?ver=1.4.0'
+        id='wc-price-slider_33-js'></script>
+<script type='text/javascript' id='wc-settings-js-before'>
+    var wcSettings = wcSettings || JSON.parse(decodeURIComponent('%7B%22shippingCostRequiresAddress%22%3Afalse%2C%22adminUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fwp-admin%5C%2F%22%2C%22countries%22%3A%7B%22AF%22%3A%22Afghanistan%22%2C%22AX%22%3A%22%5Cu00c5land%20Islands%22%2C%22AL%22%3A%22Albania%22%2C%22DZ%22%3A%22Algeria%22%2C%22AS%22%3A%22American%20Samoa%22%2C%22AD%22%3A%22Andorra%22%2C%22AO%22%3A%22Angola%22%2C%22AI%22%3A%22Anguilla%22%2C%22AQ%22%3A%22Antarctica%22%2C%22AG%22%3A%22Antigua%20and%20Barbuda%22%2C%22AR%22%3A%22Argentina%22%2C%22AM%22%3A%22Armenia%22%2C%22AW%22%3A%22Aruba%22%2C%22AU%22%3A%22Australia%22%2C%22AT%22%3A%22Austria%22%2C%22AZ%22%3A%22Azerbaijan%22%2C%22BS%22%3A%22Bahamas%22%2C%22BH%22%3A%22Bahrain%22%2C%22BD%22%3A%22Bangladesh%22%2C%22BB%22%3A%22Barbados%22%2C%22BY%22%3A%22Belarus%22%2C%22PW%22%3A%22Belau%22%2C%22BE%22%3A%22Belgium%22%2C%22BZ%22%3A%22Belize%22%2C%22BJ%22%3A%22Benin%22%2C%22BM%22%3A%22Bermuda%22%2C%22BT%22%3A%22Bhutan%22%2C%22BO%22%3A%22Bolivia%22%2C%22BQ%22%3A%22Bonaire%2C%20Saint%20Eustatius%20and%20Saba%22%2C%22BA%22%3A%22Bosnia%20and%20Herzegovina%22%2C%22BW%22%3A%22Botswana%22%2C%22BV%22%3A%22Bouvet%20Island%22%2C%22BR%22%3A%22Brazil%22%2C%22IO%22%3A%22British%20Indian%20Ocean%20Territory%22%2C%22BN%22%3A%22Brunei%22%2C%22BG%22%3A%22Bulgaria%22%2C%22BF%22%3A%22Burkina%20Faso%22%2C%22BI%22%3A%22Burundi%22%2C%22KH%22%3A%22Cambodia%22%2C%22CM%22%3A%22Cameroon%22%2C%22CA%22%3A%22Canada%22%2C%22CV%22%3A%22Cape%20Verde%22%2C%22KY%22%3A%22Cayman%20Islands%22%2C%22CF%22%3A%22Central%20African%20Republic%22%2C%22TD%22%3A%22Chad%22%2C%22CL%22%3A%22Chile%22%2C%22CN%22%3A%22China%22%2C%22CX%22%3A%22Christmas%20Island%22%2C%22CC%22%3A%22Cocos%20%28Keeling%29%20Islands%22%2C%22CO%22%3A%22Colombia%22%2C%22KM%22%3A%22Comoros%22%2C%22CG%22%3A%22Congo%20%28Brazzaville%29%22%2C%22CD%22%3A%22Congo%20%28Kinshasa%29%22%2C%22CK%22%3A%22Cook%20Islands%22%2C%22CR%22%3A%22Costa%20Rica%22%2C%22HR%22%3A%22Croatia%22%2C%22CU%22%3A%22Cuba%22%2C%22CW%22%3A%22Cura%26ccedil%3Bao%22%2C%22CY%22%3A%22Cyprus%22%2C%22CZ%22%3A%22Czech%20Republic%22%2C%22DK%22%3A%22Denmark%22%2C%22DJ%22%3A%22Djibouti%22%2C%22DM%22%3A%22Dominica%22%2C%22DO%22%3A%22Dominican%20Republic%22%2C%22EC%22%3A%22Ecuador%22%2C%22EG%22%3A%22Egypt%22%2C%22SV%22%3A%22El%20Salvador%22%2C%22GQ%22%3A%22Equatorial%20Guinea%22%2C%22ER%22%3A%22Eritrea%22%2C%22EE%22%3A%22Estonia%22%2C%22SZ%22%3A%22Eswatini%22%2C%22ET%22%3A%22Ethiopia%22%2C%22FK%22%3A%22Falkland%20Islands%22%2C%22FO%22%3A%22Faroe%20Islands%22%2C%22FJ%22%3A%22Fiji%22%2C%22FI%22%3A%22Finland%22%2C%22FR%22%3A%22France%22%2C%22GF%22%3A%22French%20Guiana%22%2C%22PF%22%3A%22French%20Polynesia%22%2C%22TF%22%3A%22French%20Southern%20Territories%22%2C%22GA%22%3A%22Gabon%22%2C%22GM%22%3A%22Gambia%22%2C%22GE%22%3A%22Georgia%22%2C%22DE%22%3A%22Germany%22%2C%22GH%22%3A%22Ghana%22%2C%22GI%22%3A%22Gibraltar%22%2C%22GR%22%3A%22Greece%22%2C%22GL%22%3A%22Greenland%22%2C%22GD%22%3A%22Grenada%22%2C%22GP%22%3A%22Guadeloupe%22%2C%22GU%22%3A%22Guam%22%2C%22GT%22%3A%22Guatemala%22%2C%22GG%22%3A%22Guernsey%22%2C%22GN%22%3A%22Guinea%22%2C%22GW%22%3A%22Guinea-Bissau%22%2C%22GY%22%3A%22Guyana%22%2C%22HT%22%3A%22Haiti%22%2C%22HM%22%3A%22Heard%20Island%20and%20McDonald%20Islands%22%2C%22HN%22%3A%22Honduras%22%2C%22HK%22%3A%22Hong%20Kong%22%2C%22HU%22%3A%22Hungary%22%2C%22IS%22%3A%22Iceland%22%2C%22IN%22%3A%22India%22%2C%22ID%22%3A%22Indonesia%22%2C%22IR%22%3A%22Iran%22%2C%22IQ%22%3A%22Iraq%22%2C%22IE%22%3A%22Ireland%22%2C%22IM%22%3A%22Isle%20of%20Man%22%2C%22IL%22%3A%22Israel%22%2C%22IT%22%3A%22Italy%22%2C%22CI%22%3A%22Ivory%20Coast%22%2C%22JM%22%3A%22Jamaica%22%2C%22JP%22%3A%22Japan%22%2C%22JE%22%3A%22Jersey%22%2C%22JO%22%3A%22Jordan%22%2C%22KZ%22%3A%22Kazakhstan%22%2C%22KE%22%3A%22Kenya%22%2C%22KI%22%3A%22Kiribati%22%2C%22KW%22%3A%22Kuwait%22%2C%22KG%22%3A%22Kyrgyzstan%22%2C%22LA%22%3A%22Laos%22%2C%22LV%22%3A%22Latvia%22%2C%22LB%22%3A%22Lebanon%22%2C%22LS%22%3A%22Lesotho%22%2C%22LR%22%3A%22Liberia%22%2C%22LY%22%3A%22Libya%22%2C%22LI%22%3A%22Liechtenstein%22%2C%22LT%22%3A%22Lithuania%22%2C%22LU%22%3A%22Luxembourg%22%2C%22MO%22%3A%22Macao%22%2C%22MG%22%3A%22Madagascar%22%2C%22MW%22%3A%22Malawi%22%2C%22MY%22%3A%22Malaysia%22%2C%22MV%22%3A%22Maldives%22%2C%22ML%22%3A%22Mali%22%2C%22MT%22%3A%22Malta%22%2C%22MH%22%3A%22Marshall%20Islands%22%2C%22MQ%22%3A%22Martinique%22%2C%22MR%22%3A%22Mauritania%22%2C%22MU%22%3A%22Mauritius%22%2C%22YT%22%3A%22Mayotte%22%2C%22MX%22%3A%22Mexico%22%2C%22FM%22%3A%22Micronesia%22%2C%22MD%22%3A%22Moldova%22%2C%22MC%22%3A%22Monaco%22%2C%22MN%22%3A%22Mongolia%22%2C%22ME%22%3A%22Montenegro%22%2C%22MS%22%3A%22Montserrat%22%2C%22MA%22%3A%22Morocco%22%2C%22MZ%22%3A%22Mozambique%22%2C%22MM%22%3A%22Myanmar%22%2C%22NA%22%3A%22Namibia%22%2C%22NR%22%3A%22Nauru%22%2C%22NP%22%3A%22Nepal%22%2C%22NL%22%3A%22Netherlands%22%2C%22NC%22%3A%22New%20Caledonia%22%2C%22NZ%22%3A%22New%20Zealand%22%2C%22NI%22%3A%22Nicaragua%22%2C%22NE%22%3A%22Niger%22%2C%22NG%22%3A%22Nigeria%22%2C%22NU%22%3A%22Niue%22%2C%22NF%22%3A%22Norfolk%20Island%22%2C%22KP%22%3A%22North%20Korea%22%2C%22MK%22%3A%22North%20Macedonia%22%2C%22MP%22%3A%22Northern%20Mariana%20Islands%22%2C%22NO%22%3A%22Norway%22%2C%22OM%22%3A%22Oman%22%2C%22PK%22%3A%22Pakistan%22%2C%22PS%22%3A%22Palestinian%20Territory%22%2C%22PA%22%3A%22Panama%22%2C%22PG%22%3A%22Papua%20New%20Guinea%22%2C%22PY%22%3A%22Paraguay%22%2C%22PE%22%3A%22Peru%22%2C%22PH%22%3A%22Philippines%22%2C%22PN%22%3A%22Pitcairn%22%2C%22PL%22%3A%22Poland%22%2C%22PT%22%3A%22Portugal%22%2C%22PR%22%3A%22Puerto%20Rico%22%2C%22QA%22%3A%22Qatar%22%2C%22RE%22%3A%22Reunion%22%2C%22RO%22%3A%22Romania%22%2C%22RU%22%3A%22Russia%22%2C%22RW%22%3A%22Rwanda%22%2C%22ST%22%3A%22S%26atilde%3Bo%20Tom%26eacute%3B%20and%20Pr%26iacute%3Bncipe%22%2C%22BL%22%3A%22Saint%20Barth%26eacute%3Blemy%22%2C%22SH%22%3A%22Saint%20Helena%22%2C%22KN%22%3A%22Saint%20Kitts%20and%20Nevis%22%2C%22LC%22%3A%22Saint%20Lucia%22%2C%22SX%22%3A%22Saint%20Martin%20%28Dutch%20part%29%22%2C%22MF%22%3A%22Saint%20Martin%20%28French%20part%29%22%2C%22PM%22%3A%22Saint%20Pierre%20and%20Miquelon%22%2C%22VC%22%3A%22Saint%20Vincent%20and%20the%20Grenadines%22%2C%22WS%22%3A%22Samoa%22%2C%22SM%22%3A%22San%20Marino%22%2C%22SA%22%3A%22Saudi%20Arabia%22%2C%22SN%22%3A%22Senegal%22%2C%22RS%22%3A%22Serbia%22%2C%22SC%22%3A%22Seychelles%22%2C%22SL%22%3A%22Sierra%20Leone%22%2C%22SG%22%3A%22Singapore%22%2C%22SK%22%3A%22Slovakia%22%2C%22SI%22%3A%22Slovenia%22%2C%22SB%22%3A%22Solomon%20Islands%22%2C%22SO%22%3A%22Somalia%22%2C%22ZA%22%3A%22South%20Africa%22%2C%22GS%22%3A%22South%20Georgia%5C%2FSandwich%20Islands%22%2C%22KR%22%3A%22South%20Korea%22%2C%22SS%22%3A%22South%20Sudan%22%2C%22ES%22%3A%22Spain%22%2C%22LK%22%3A%22Sri%20Lanka%22%2C%22SD%22%3A%22Sudan%22%2C%22SR%22%3A%22Suriname%22%2C%22SJ%22%3A%22Svalbard%20and%20Jan%20Mayen%22%2C%22SE%22%3A%22Sweden%22%2C%22CH%22%3A%22Switzerland%22%2C%22SY%22%3A%22Syria%22%2C%22TW%22%3A%22Taiwan%22%2C%22TJ%22%3A%22Tajikistan%22%2C%22TZ%22%3A%22Tanzania%22%2C%22TH%22%3A%22Thailand%22%2C%22TL%22%3A%22Timor-Leste%22%2C%22TG%22%3A%22Togo%22%2C%22TK%22%3A%22Tokelau%22%2C%22TO%22%3A%22Tonga%22%2C%22TT%22%3A%22Trinidad%20and%20Tobago%22%2C%22TN%22%3A%22Tunisia%22%2C%22TR%22%3A%22Turkey%22%2C%22TM%22%3A%22Turkmenistan%22%2C%22TC%22%3A%22Turks%20and%20Caicos%20Islands%22%2C%22TV%22%3A%22Tuvalu%22%2C%22UG%22%3A%22Uganda%22%2C%22UA%22%3A%22Ukraine%22%2C%22AE%22%3A%22United%20Arab%20Emirates%22%2C%22GB%22%3A%22United%20Kingdom%20%28UK%29%22%2C%22US%22%3A%22United%20States%20%28US%29%22%2C%22UM%22%3A%22United%20States%20%28US%29%20Minor%20Outlying%20Islands%22%2C%22UY%22%3A%22Uruguay%22%2C%22UZ%22%3A%22Uzbekistan%22%2C%22VU%22%3A%22Vanuatu%22%2C%22VA%22%3A%22Vatican%22%2C%22VE%22%3A%22Venezuela%22%2C%22VN%22%3A%22Vietnam%22%2C%22VG%22%3A%22Virgin%20Islands%20%28British%29%22%2C%22VI%22%3A%22Virgin%20Islands%20%28US%29%22%2C%22WF%22%3A%22Wallis%20and%20Futuna%22%2C%22EH%22%3A%22Western%20Sahara%22%2C%22YE%22%3A%22Yemen%22%2C%22ZM%22%3A%22Zambia%22%2C%22ZW%22%3A%22Zimbabwe%22%7D%2C%22currency%22%3A%7B%22code%22%3A%22USD%22%2C%22precision%22%3A2%2C%22symbol%22%3A%22%24%22%2C%22symbolPosition%22%3A%22left%22%2C%22decimalSeparator%22%3A%22.%22%2C%22thousandSeparator%22%3A%22%2C%22%2C%22priceFormat%22%3A%22%251%24s%252%24s%22%7D%2C%22currentUserId%22%3A0%2C%22currentUserIsAdmin%22%3Afalse%2C%22homeUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2F%22%2C%22locale%22%3A%7B%22siteLocale%22%3A%22en_US%22%2C%22userLocale%22%3A%22en_US%22%2C%22weekdaysShort%22%3A%5B%22Sun%22%2C%22Mon%22%2C%22Tue%22%2C%22Wed%22%2C%22Thu%22%2C%22Fri%22%2C%22Sat%22%5D%7D%2C%22dashboardUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fmy-account%5C%2F%22%2C%22orderStatuses%22%3A%7B%22pending%22%3A%22Pending%20payment%22%2C%22processing%22%3A%22Processing%22%2C%22on-hold%22%3A%22On%20hold%22%2C%22completed%22%3A%22Completed%22%2C%22cancelled%22%3A%22Cancelled%22%2C%22refunded%22%3A%22Refunded%22%2C%22failed%22%3A%22Failed%22%2C%22checkout-draft%22%3A%22Draft%22%7D%2C%22placeholderImgSrc%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fwp-content%5C%2Fuploads%5C%2Fwoocommerce-placeholder.png%22%2C%22productsSettings%22%3A%7B%22cartRedirectAfterAdd%22%3Afalse%7D%2C%22siteTitle%22%3A%22Neytri%20Site%22%2C%22storePages%22%3A%7B%22myaccount%22%3A%7B%22id%22%3A17%2C%22title%22%3A%22My%20account%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fmy-account%5C%2F%22%7D%2C%22shop%22%3A%7B%22id%22%3A0%2C%22title%22%3A%22%22%2C%22permalink%22%3Afalse%7D%2C%22cart%22%3A%7B%22id%22%3A15%2C%22title%22%3A%22Cart%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fcart%5C%2F%22%7D%2C%22checkout%22%3A%7B%22id%22%3A16%2C%22title%22%3A%22Checkout%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fcheckout%5C%2F%22%7D%2C%22privacy%22%3A%7B%22id%22%3A3%2C%22title%22%3A%22Privacy%20Policy%22%2C%22permalink%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fprivacy-policy%5C%2F%22%7D%2C%22terms%22%3A%7B%22id%22%3A0%2C%22title%22%3A%22%22%2C%22permalink%22%3Afalse%7D%7D%2C%22wcAssetUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fwp-content%5C%2Fplugins%5C%2Fwoocommerce%5C%2Fassets%5C%2F%22%2C%22wcVersion%22%3A%227.8.0%22%2C%22wpLoginUrl%22%3A%22https%3A%5C%2F%5C%2Fneytri.wpengine.com%5C%2Fwp-login.php%22%2C%22wpVersion%22%3A%226.2.2%22%2C%22collectableMethodIds%22%3A%5B%5D%2C%22admin%22%3A%7B%22alertCount%22%3A%221%22%2C%22visibleTaskListIds%22%3A%5B%22setup%22%2C%22extended%22%5D%7D%7D'));
+</script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-settings.js?ver=65818fe286a322a861ab93f860649e9b'
+        id='wc-settings-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/price-format.js?ver=ceacd391939af0c777fd893a682230fb'
+        id='wc-price-format-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/priceformat.js?ver=1.4.0'
+        id='wc-priceformat-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/price-filter-frontend.js?ver=10.2.3'
+        id='wc-price-filter-block-frontend-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/price-filter-frontend.js?ver=1.4.0'
+        id='wc-price-filter-frontend-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/jquery.ddslick.min.js?ver=1.4.0'
+        id='jquery.ddslick.min-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce-currency-switcher/js/front.js?ver=1.4.0'
+        id='woocommerce-currency-switcher-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/image-box/assets/js/jquery.cookie.min.js?ver=6.2.2'
+        id='jquery.cookie-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/image-box/assets/js/jquery.magnific-popup.min.js?ver=6.2.2'
+        id='jquery.magnific-image-box-popup-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/image-box/assets/js/script.js?ver=6.2.2'
+        id='wdt-image-box-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/listings/elementor/widgets/products/assets/js/swiper.min.js?ver=6.2.2'
+        id='jquery-swiper-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/common-controls/layout/assets/js/carousel.js?ver=6.2.2'
+        id='wdt-carousel-js'></script>
 <script type='text/javascript' id='wdt-shop-products-js-extra'>
     /* <![CDATA[ */
     var wdtShopScObjects = {"ajaxurl": "https:\/\/neytri.wpengine.com\/wp-admin\/admin-ajax.php"};
@@ -13043,68 +11351,45 @@
         src='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/menu/elementor/widgets/assets/js/header-icons.js?ver=1.0.2'
         id='wdt-header-icons-js'></script>
 <script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/count-down-timer/assets/js/jquery.downcount.js?ver=6.2.2'
-        id='jquery-downcount-js'></script>
-<script type='text/javascript' id='wdt-shop-coundown-timer-js-extra'>
-    /* <![CDATA[ */
-    var wdtShopObjects = {"enable_countdown_scripts": "1"};
-    /* ]]> */
-</script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/count-down-timer/assets/js/scripts.js?ver=6.2.2'
-        id='wdt-shop-coundown-timer-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/neytri-plus/modules/blog/elementor/widgets/assets/js/blogcarousel.js?ver=1.0.2'
-        id='wdt-blogcarousel-js'></script>
-<script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/mailchimp/assets/js/script.js?ver=6.2.2'
-        id='wdt-mailchimp-js'></script>
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/custom-template/elementor/widgets/images-carousel/assets/js/script.js?ver=6.2.2'
+        id='wdt-shop-product-single-images-carousel-js'></script>
 <script type='text/javascript' id='wc-add-to-cart-variation-js-extra'>
     /* <![CDATA[ */
     var wc_add_to_cart_variation_params = {
         "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
         "i18n_no_matching_variations_text": "Sorry, no products matched your selection. Please choose a different combination.",
         "i18n_make_a_selection_text": "Please select some product options before adding this product to your cart.",
-        "i18n_unavailable_text": "Sorry, this product is unavailable. Please choose a different combination."
+        "i18n_unavailable_text": "Sorry, this product is unavailable. Please choose a different combination.",
+        "woo_variation_swatches_ajax_variation_threshold_min": "30",
+        "woo_variation_swatches_ajax_variation_threshold_max": "100",
+        "woo_variation_swatches_total_children": {}
     };
     /* ]]> */
 </script>
 <script type='text/javascript'
         src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js?ver=7.8.0'
         id='wc-add-to-cart-variation-js'></script>
-<script type='text/javascript' id='wc-single-product-js-extra'>
-    /* <![CDATA[ */
-    var wc_single_product_params = {
-        "i18n_required_rating_text": "Please select a rating",
-        "review_rating_required": "yes",
-        "flexslider": {
-            "rtl": false,
-            "animation": "slide",
-            "smoothHeight": true,
-            "directionNav": false,
-            "controlNav": "thumbnails",
-            "slideshow": false,
-            "animationSpeed": 500,
-            "animationLoop": false,
-            "allowOneSlide": false
-        },
-        "zoom_enabled": "",
-        "zoom_options": [],
-        "photoswipe_enabled": "",
-        "photoswipe_options": {
-            "shareEl": false,
-            "closeOnScroll": false,
-            "history": false,
-            "hideAnimationDuration": 0,
-            "showAnimationDuration": 0
-        },
-        "flexslider_enabled": ""
-    };
-    /* ]]> */
-</script>
 <script type='text/javascript'
-        src='https://neytri.wpengine.com/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js?ver=7.8.0'
-        id='wc-single-product-js'></script>
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/custom-template/elementor/widgets/summary/assets/js/script.js?ver=6.2.2'
+        id='wdt-shop-product-single-summary-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/count-down-timer/assets/js/jquery.downcount.js?ver=6.2.2'
+        id='jquery-downcount-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/count-down-timer/assets/js/scripts.js?ver=6.2.2'
+        id='wdt-shop-coundown-timer-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/additional-info/assets/js/scripts.js?ver=6.2.2'
+        id='wdt-shop-additional-info-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/single/modules/buy-now/assets/js/scripts.js?ver=6.2.2'
+        id='wdt-shop-buy-now-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/neytri-pro/modules/woocommerce/others/size-guide/assets/js/scripts.js?ver=6.2.2'
+        id='wdt-shop-size-guide-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/widgets/mailchimp/assets/js/script.js?ver=6.2.2'
+        id='wdt-mailchimp-js'></script>
 <script type='text/javascript'
         src='https://neytri.wpengine.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.14.1'
         id='elementor-webpack-runtime-js'></script>
@@ -13213,7 +11498,12 @@
             "lightbox_title_src": "title",
             "lightbox_description_src": "description"
         },
-        "post": {"id": 500, "title": "Home%203%20%E2%80%93%20Neytri%20Site", "excerpt": "", "featuredImage": false}
+        "post": {
+            "id": 858,
+            "title": "Summer%20Suit%20%E2%80%93%20Neytri%20Site",
+            "excerpt": "Nunc vehicula quam semper odio varius tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posue.",
+            "featuredImage": "https:\/\/neytri.wpengine.com\/wp-content\/uploads\/2023\/06\/39.1-771x1024.jpg"
+        }
     };
 </script>
 <script type='text/javascript'
@@ -13222,6 +11512,15 @@
 <script type='text/javascript'
         src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/core/sections/assets/js/script.js?ver=1.0.0'
         id='wdt-elementor-sections-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/core/columns/assets/js/ResizeSensor.js?ver=1.0.0'
+        id='wdt-resize-sensor-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/core/columns/assets/js/sticky-sidebar.min.js?ver=1.0.0'
+        id='wdt-sticky-sidebar-js'></script>
+<script type='text/javascript'
+        src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/inc/core/columns/assets/js/script.js?ver=1.0.0'
+        id='wdt-elementor-columns-js'></script>
 <script type='text/javascript'
         src='https://neytri.wpengine.com/wp-content/plugins/wedesigntech-elementor-addon/assets/js/parallax-scroll.min.js?ver=1.0.0'
         id='wdt-parallax-scroll-js'></script>
@@ -13236,4 +11535,5 @@
     <span class="back-to-top-icon"><i class="wdticon-angle-up"></i></span>
 </a></body>
 
+<!-- Mirrored from neytri.wpengine.com/product/summer-suit/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 04 Aug 2023 13:44:00 GMT -->
 </html>
