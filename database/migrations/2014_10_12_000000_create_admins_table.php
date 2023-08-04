@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('email')->unique();
-            $table->string('active')->default('False');
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('role_id')->nullable();
+            $table->string('name');
+            $table->String('address');
+            $table->boolean('active')->default(0);
             $table->dateTime('last_login')->nullable();
             $table->rememberToken();
             $table->timestamps();

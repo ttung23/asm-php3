@@ -6,9 +6,10 @@ use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
-use App\Models\User;
+use App\Models\Admin;
 
 class ProfileController extends Controller
 {
@@ -17,8 +18,23 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('profile.index', compact('users'));
+        $admins = Admin::all();
+        return view('profile.index', compact('admins'));
+    }
+
+    public function create () {
+        return view('profile.create');
+    }
+
+    public function store (Request $request) {
+        $user = Admin::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'address' => $request->address,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return Redirect::route('admin.profile.index');
     }
 
     public function edit(Request $request): View

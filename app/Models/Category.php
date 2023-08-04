@@ -10,5 +10,5 @@ class Category extends Model
     use HasFactory;
 
     protected $table = "categories";
-    protected $fillable = ['name', 'quantity_of_products'];
+    protected $fillable = ['name', 'short_name'];
 }

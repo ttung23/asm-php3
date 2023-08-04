@@ -12,7 +12,7 @@
                 <thead>
                 <tr>
                     <th>
-                        <a href="{{ route('products.create') }}">Create</a>
+                        <a href="{{ route('admin.profile.create') }}">Create</a>
                     </th>
                 </tr>
                 <tr>
@@ -23,17 +23,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach($users as $user)
+                    @foreach($admins as $admin)
                     <tr>
-                        <td>{{ $user->id }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
+                        <td>{{ $admin->id }}</td>
+                        <td>{{ $admin->name }}</td>
+                        <td>{{ $admin->email }}</td>
                         <td>
                             <a href="">Edit</a>
                             <form action="" method="POST">
                                 @method("delete")
                                 @csrf
-                                <button onclick="return confirm('XOA HA?')" type="submit">Delete</button>
+                                <button onclick="return confirm('Are you sure?')" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>
