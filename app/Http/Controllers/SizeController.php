@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Size;
 use Illuminate\Http\Request;
 
 class SizeController extends Controller
@@ -11,7 +12,8 @@ class SizeController extends Controller
      */
     public function index()
     {
-        //
+        $sizes = Size::orderBy('id')->paginate(5);
+        return view('sizes.index', compact('sizes'));
     }
 
     /**
@@ -19,7 +21,7 @@ class SizeController extends Controller
      */
     public function create()
     {
-        //
+        return view('sizes.create');
     }
 
     /**
@@ -27,23 +29,26 @@ class SizeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Size::create($request->post());
+
+        return redirect()->route('admin.sizes.index')->with('success','Size has been created successfully.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
+//    public function show(string $id)
+//    {
+//        //
+//    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        $size = Size::find($id);
+        return view('sizes.edit', compact('size'));
     }
 
     /**
@@ -51,7 +56,10 @@ class SizeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $size = Size::find($id);
+        $size->fill($request->post())->save();
+
+        return redirect()->route('admin.sizes.index')->with('success','Size has Been updated successfully');
     }
 
     /**
@@ -59,6 +67,7 @@ class SizeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Size::find($id)->delete();
+        return redirect()->route('admin.sizes.index')->with('success','Size has Been updated successfully');
     }
 }

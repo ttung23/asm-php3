@@ -31,7 +31,7 @@ class CategoryController extends Controller
         ]);
         Category::create($request->post());
 
-        return redirect()->route('categories.index')->with('success','Category has been created successfully.');
+        return redirect()->route('admin.categories.index')->with('success','Category has been created successfully.');
     }
 
     /**
@@ -64,7 +64,7 @@ class CategoryController extends Controller
         $categorie = Category::find($id);
         $categorie->fill($request->post())->save();
 
-        return redirect()->route('categories.index')->with('success','Company Has Been updated successfully');
+        return redirect()->route('admin.categories.index')->with('success','Company Has Been updated successfully');
     }
 
     /**
@@ -73,6 +73,6 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         Category::find($id)->delete();
-        return redirect()->route('categories.index')->with('success','Company Has Been updated successfully');
+        return redirect()->route('admin.categories.index')->with('success','Company Has Been updated successfully');
     }
 }

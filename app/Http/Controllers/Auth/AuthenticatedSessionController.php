@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,6 +30,13 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+
+        $admin = Admin::where('email', $request->input('email'))->first();
+
+        $current_time = Carbon::now('Asia/Ho_Chi_Minh');
+
+        $admin->last_login = $current_time->format('Y-m-d H:i:s');
+        $admin->save();
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }

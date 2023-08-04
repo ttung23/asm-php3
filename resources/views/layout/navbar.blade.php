@@ -18,19 +18,35 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav nav flex-column">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('products.index') }}"><i class="mdi mdi-account-circle-outline mr-2"></i>Products</a>
+                        <a class="nav-link" href="{{ route('admin.products.index') }}"><i class="mdi mdi-account-circle-outline mr-2"></i>Products</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('categories.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Categories</a>
+                        <a class="nav-link" href="{{ route('admin.categories.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Categories</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Users</a>
+                        <a class="nav-link" href="{{ route('admin.colors.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Colors</a>
                     </li>
 
                     <li class="nav-item">
-                        <form action="{{ route('logout') }}" method="post">
+                        <a class="nav-link" href="{{ route('admin.materials.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Materials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.sizes.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Sizes</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.profile.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Admins</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Users</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <form action="{{ route('admin.logout') }}" method="post">
                             @csrf
                             <button class="mdi mdi-sitemap mr-2">Logout</button>
                         </form>

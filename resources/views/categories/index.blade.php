@@ -12,13 +12,13 @@
                 <thead>
                 <tr>
                     <th>
-                        <a href="{{ route('categories.create') }}">Create</a>
+                        <a href="{{ route('admin.categories.create') }}">Create</a>
                     </th>
                 </tr>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Quantity of product</th>
+                    <th>Short name</th>
                     <th>Updated at</th>
                     <th>Created at</th>
                     <th>Action</th>
@@ -29,12 +29,12 @@
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
-                        <td>{{ $category->quantity_of_products }}</td>
+                        <td>{{ $category->short_name }}</td>
                         <td>{{ $category->updated_at }}</td>
                         <td>{{ $category->created_at }}</td>
                         <td>
-                            <a href="{{ route('categories.edit', $category) }}">Edit</a>
-                            <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
+                            <a href="{{ route('admin.categories.edit', $category) }}">Edit</a>
+                            <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST">
                                 @method("delete")
                                 @csrf
                                 <button onclick="return confirm('XOA HA?')" type="submit">Delete</button>
