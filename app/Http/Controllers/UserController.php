@@ -60,6 +60,7 @@ class UserController extends Controller
             // Mật khẩu khớp, tiến hành đăng nhập
             session(['user' => $user]);
             return redirect()->route('guests.home');
+            
             // Tiếp tục xử lý hoặc trả về kết quả
         } else {
             return redirect()->route('users.login')->with('error', 'Incorrect account or password');

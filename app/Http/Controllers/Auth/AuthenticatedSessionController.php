@@ -11,6 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Hash;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -25,33 +26,49 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function store(LoginRequest $request)
     {
-        $request->authenticate();
+        $email = $request->input('email');
+        $password = $request->input('password');
 
-        $request->session()->regenerate();
+        // Tìm người dùng dựa trên email
+        // $admin = Admin::where('email', $email)->first();
 
-        $admin = Admin::where('email', $request->input('email'))->first();
+        $admin = Admin::join('role_detail', 'role_detail.admin_id', '=', 'admins.id')
+            ->join('roles', 'roles.id', '=', 'role_detail.role_id')
+            ->select("*")
+            ->where('email', $email)->first();
 
-        $current_time = Carbon::now('Asia/Ho_Chi_Minh');
+        // dd($admin);
 
-        $admin->last_login = $current_time->format('Y-m-d H:i:s');
-        $admin->save();
+        if ($admin && Hash::check($password, $admin->password)) {
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+            // Mật khẩu khớp, tiến hành đăng nhập
+            session(['admin' => $admin]);
+            session(['role' => $admin->name]);
+
+            return redirect()->route('admin');
+
+            // Tiếp tục xử lý hoặc trả về kết quả
+        } else {
+            return redirect()->route('admin.login')->with('error', 'Incorrect account or password');
+        }
     }
 
     /**
      * Destroy an authenticated session.
      */
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(Request $request)
     {
-        Auth::guard('web')->logout();
+        session()->forget('admin');
+        session()->forget('role');
+        
+        // Auth::guard('web')->logout();
 
-        $request->session()->invalidate();
+        // $request->session()->invalidate();
 
-        $request->session()->regenerateToken();
+        // $request->session()->regenerateToken();
 
-        return redirect('/');
+        // return redirect('/');
     }
 }

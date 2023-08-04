@@ -8176,7 +8176,11 @@
                                                                                         data-widget_type="icon-list.default">
                                                                                         <div
                                                                                             class="elementor-widget-container">
-                                                                                            {{ session('user')->email }}
+                                                                                            @if (session('user'))
+                                                                                                {{ session('user')->email }}
+                                                                                            @else
+                                                                                                <a href="{{ route('users.login') }}">Login</a>
+                                                                                            @endif
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>

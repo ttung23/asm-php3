@@ -19,17 +19,18 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::join('categories', 'categories.id', '=', 'products.cate_id')
-                            ->join('materials', 'materials.id', '=', 'products.material_id')
-                            ->join('colors', 'colors.id', '=', 'products.color_id')
-                            ->join('sizes', 'sizes.id', '=', 'products.size_id')
-//                            ->orderBy('products.id', 'asc')
-                            ->select('products.*',
-                                'categories.name as cate_name',
-                                'materials.name as material_name',
-                                'colors.name as color_name',
-                                'sizes.name as size_name'
-                            )
-                            ->get();
+            ->join('materials', 'materials.id', '=', 'products.material_id')
+            ->join('colors', 'colors.id', '=', 'products.color_id')
+            ->join('sizes', 'sizes.id', '=', 'products.size_id')
+            //                            ->orderBy('products.id', 'asc')
+            ->select(
+                'products.*',
+                'categories.name as cate_name',
+                'materials.name as material_name',
+                'colors.name as color_name',
+                'sizes.name as size_name'
+            )
+            ->get();
         return view('products.list_products', compact('products'));
     }
 
@@ -66,16 +67,16 @@ class ProductController extends Controller
         $product->img = $filePathAfterUpload;
         $product->save();
 
-        return redirect()->route('admin.products.index')->with('success','Company has been created successfully.');
+        return redirect()->route('admin.products.index')->with('success', 'Company has been created successfully.');
     }
 
     /**
      * Display the specified resource.
      */
-//    public function show(string $id)
-//    {
-//        //
-//    }
+    //    public function show(string $id)
+    //    {
+    //        //
+    //    }
 
     /**
      * Show the form for editing the specified resource.
@@ -96,10 +97,10 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-//        $request->validate([
-//            'name' => 'required',
-//            'rate' => 'required',
-//        ]);
+        //        $request->validate([
+        //            'name' => 'required',
+        //            'rate' => 'required',
+        //        ]);
 
         $product = Product::find($id);
         $product->fill($request->except('img'));
@@ -112,7 +113,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('admin.products.index')->with('success','Company Has Been updated successfully');
+        return redirect()->route('admin.products.index')->with('success', 'Company Has Been updated successfully');
     }
 
     /**
@@ -121,6 +122,6 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         Product::find($id)->delete();
-        return redirect()->route('products.index')->with('success','Company Has Been updated successfully');
+        return redirect()->route('products.index')->with('success', 'Company Has Been updated successfully');
     }
 }

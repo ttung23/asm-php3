@@ -12,16 +12,12 @@
                 <thead>
                 <tr>
                     <th>
-                        <a href="{{ route('products.create') }}">Create</a>
+                        <a href="{{ route('admin.roles.create') }}">Create</a>
                     </th>
                 </tr>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Material</th>
-                    <th>Rate</th>
-                    <th>Price</th>
+                    <th>Admin</th>
                     <th>Description</th>
                     <th>Updated at</th>
                     <th>Created at</th>
@@ -29,20 +25,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach($products as $product)
+                    @foreach($roles as $role)
                     <tr>
-                        <td>{{ $product->id }}</td>
-                        <td>{{ $product->name }}</td>
-                        <td>{{ $product->cate_name }}</td>
-                        <td>{{ $product->rate }}</td>
-                        <td>{{ $product->material }}</td>
-                        <td>{{ $product->price }}</td>
-                        <td>{{ $product->description }}</td>
-                        <td>{{ $product->updated_at }}</td>
-                        <td>{{ $product->created_at }}</td>
+                        <td>{{ $role->id }}</td>
+                        <td>{{ $role->name }}</td>
+                        <td>{{ $role->description }}</td>
+                        <td>{{ $role->updated_at }}</td>
+                        <td>{{ $role->created_at }}</td>
                         <td>
-                            <a href="{{ route('products.edit', $product) }}">Edit</a>
-                            <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                            <a href="{{ route('admin.roles.edit', $role) }}">Edit</a>
+                            <form action="{{ route('admin.roles.destroy', $role->id) }}" method="POST">
                                 @method("delete")
                                 @csrf
                                 <button onclick="return confirm('XOA HA?')" type="submit">Delete</button>

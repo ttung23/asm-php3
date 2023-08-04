@@ -46,6 +46,10 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.promotions.index') }}"><i class="mdi mdi-sitemap mr-2"></i>Promotions</a>
+                    </li>
+
+                    <li class="nav-item">
                         <form action="{{ route('admin.logout') }}" method="post">
                             @csrf
                             <button class="mdi mdi-sitemap mr-2">Logout</button>

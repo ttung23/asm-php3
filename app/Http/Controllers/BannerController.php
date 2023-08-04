@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BannerController extends Controller
 {
@@ -11,7 +13,8 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //
+        $banners = Banner::all();
+        return view('banners.index', compact('banners'));
     }
 
     /**
@@ -19,7 +22,7 @@ class BannerController extends Controller
      */
     public function create()
     {
-        //
+        return view('banners.create');
     }
 
     /**
@@ -27,7 +30,20 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $banner = new Banner();
+        $banner->fill($request->except('img'));
+        $file = $request->file('img');
+
+        $folder = 'image';
+
+        $filePathAfterUpload = Storage::put($folder, $file);
+
+        $filePathAfterUpload = 'storage/' . $filePathAfterUpload;
+
+        $banner->img = $filePathAfterUpload;
+        $banner->save();
+
+        return redirect()->route('admin.banners.index')->with('success', 'Banner has been created successfully.');
     }
 
     /**
@@ -43,7 +59,8 @@ class BannerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $banner = Banner::find($id);
+        return view('banners.edit', compact('banner'));
     }
 
     /**
@@ -51,7 +68,24 @@ class BannerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $banner = Banner::find($id);
+        
+        // dd($banner);
+
+        $banner->fill($request->except('img'));
+
+        // dd($file);
+        
+        $oldImg = $banner->img;
+
+        if ($request->hasFile('img')) {
+            $banner->img = upload_file('image', $request->file('img'));
+            delete_file($oldImg);
+        }
+
+        $banner->save();
+
+        return redirect()->route('admin.banners.index')->with('success', 'Banner has been created successfully.');
     }
 
     /**
@@ -59,6 +93,8 @@ class BannerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Banner::find($id)->delete();
+        return redirect()->route('admin.banners.index')->with('success','banner Has Been updated successfully');
+
     }
 }

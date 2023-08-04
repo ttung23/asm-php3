@@ -7,6 +7,8 @@ use App\Http\Controllers\GuestController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\UserController;
 use Google\Service\Analytics\Profile;
@@ -42,7 +44,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // ADMIN
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'role')->group(function () {
     Route::get('/admin/profile/', [ProfileController::class, 'index'])->name('admin.profile.index');
     Route::get('/admin/profile/create/', [ProfileController::class, 'create'])->name('admin.profile.create');
     Route::post('/admin/profile/', [ProfileController::class, 'store'])->name('admin.profile.store');
@@ -109,6 +111,36 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/sizes/edit/{id}', [SizeController::class, 'edit'])->name('admin.sizes.edit');
     Route::post('/admin/sizes/update/{id}', [SizeController::class, 'update'])->name('admin.sizes.update');
     Route::delete('/admin/sizes/delete/{id}', [SizeController::class, 'destroy'])->name('admin.sizes.destroy');
+});
+
+// PROMOTION
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/promotions/', [PromotionController::class, 'index'])->name('admin.promotions.index');
+    Route::get('/admin/promotions/create/', [PromotionController::class, 'create'])->name('admin.promotions.create');
+    Route::post('/admin/promotions/', [PromotionController::class, 'store'])->name('admin.promotions.store');
+    Route::get('/admin/promotions/edit/{id}', [PromotionController::class, 'edit'])->name('admin.promotions.edit');
+    Route::post('/admin/promotions/update/{id}', [PromotionController::class, 'update'])->name('admin.promotions.update');
+    Route::delete('/admin/promotions/delete/{id}', [PromotionController::class, 'destroy'])->name('admin.promotions.destroy');
+});
+
+// BANNER
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/banners/', [BannerController::class, 'index'])->name('admin.banners.index');
+    Route::get('/admin/banners/create/', [BannerController::class, 'create'])->name('admin.banners.create');
+    Route::post('/admin/banners/', [BannerController::class, 'store'])->name('admin.banners.store');
+    Route::get('/admin/banners/edit/{id}', [BannerController::class, 'edit'])->name('admin.banners.edit');
+    Route::post('/admin/banners/update/{id}', [BannerController::class, 'update'])->name('admin.banners.update');
+    Route::delete('/admin/banners/delete/{id}', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
+});
+
+// ROLE
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/roles/', [RoleController::class, 'index'])->name('admin.roles.index');
+    Route::get('/admin/roles/create/', [RoleController::class, 'create'])->name('admin.roles.create');
+    Route::post('/admin/roles/', [RoleController::class, 'store'])->name('admin.roles.store');
+    Route::get('/admin/roles/edit/{id}', [RoleController::class, 'edit'])->name('admin.roles.edit');
+    Route::post('/admin/roles/update/{id}', [RoleController::class, 'update'])->name('admin.roles.update');
+    Route::delete('/admin/roles/delete/{id}', [RoleController::class, 'destroy'])->name('admin.roles.destroy');
 });
 
 require __DIR__.'/auth.php';
