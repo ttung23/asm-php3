@@ -36,7 +36,7 @@ class UserController extends Controller
 //        ]);
         User::create($request->post());
 
-        return redirect()->route('admin.users.index')->with('success','User has been created successfully.');
+        return redirect()->route('admin.users.index')->with('success', 'User has been created successfully.');
     }
 
     /**
@@ -47,7 +47,8 @@ class UserController extends Controller
         return view('users.login');
     }
 
-    public function authen (Request $request) {
+    public function authen(Request $request)
+    {
         $email = $request->input('email');
         $password = $request->input('password');
 
@@ -57,37 +58,9 @@ class UserController extends Controller
         $user->save();
 
         if ($user && $password == $user->password) {
-            // Mật khẩu khớp, tiến hành đăng nhập
             session(['user' => $user]);
-            return redirect()->route('guests.home');
-            
-            // Tiếp tục xử lý hoặc trả về kết quả
-        } else {
-            return redirect()->route('users.login')->with('error', 'Incorrect account or password');
+            return redirect()->route('home');
         }
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect()->route('users.login')->with('error', 'incorrect');
     }
 }

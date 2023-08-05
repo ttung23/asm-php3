@@ -24,7 +24,6 @@
                     <th>Material</th>
                     <th>Color</th>
                     <th>Size</th>
-                    <th>Rate</th>
                     <th>Price</th>
                     <th>Description</th>
                     <th>Updated at</th>
@@ -43,7 +42,6 @@
                         <td>{{ $product->material_name }}</td>
                         <td>{{ $product->color_name }}</td>
                         <td>{{ $product->size_name }}</td>
-                        <td>{{ $product->rate }}</td>
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->description }}</td>
                         <td>{{ $product->updated_at }}</td>

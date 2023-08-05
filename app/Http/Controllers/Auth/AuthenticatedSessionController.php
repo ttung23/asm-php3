@@ -62,7 +62,8 @@ class AuthenticatedSessionController extends Controller
     {
         session()->forget('admin');
         session()->forget('role');
-        
+        return redirect()->route('admin.login');
+
         // Auth::guard('web')->logout();
 
         // $request->session()->invalidate();

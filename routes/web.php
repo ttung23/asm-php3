@@ -26,9 +26,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [GuestController::class, 'home'])->name('home');
+Route::get('/detail/{id}', [GuestController::class, 'detail'])->name('detail');
 
 Route::get('/login', [UserController::class, 'login'])->name('users.login');
 Route::post('/authen', [UserController::class, 'authen'])->name('users.authen');
+
+Route::get('/cart', [GuestController::class, 'cart'])->name('cart');
+Route::middleware('checkCart')->post('/addCart', [GuestController::class, 'addCart'])->name('addCart');
 
 Route::middleware('auth')->get('/admin/', [ProductController::class, 'index'])
     ->name('admin');
